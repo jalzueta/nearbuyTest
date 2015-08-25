@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59ED38371B8D1638004C6F0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38361B8D1638004C6F0A /* main.m */; };
+		59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38391B8D1638004C6F0A /* AppDelegate.m */; };
+		59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383B1B8D1639004C6F0A /* Images.xcassets */; };
+		59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */; };
+		59ED384B1B8D1639004C6F0A /* NearbuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED384A1B8D1639004C6F0A /* NearbuyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59ED38451B8D1639004C6F0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59ED38291B8D1636004C6F0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59ED38301B8D1636004C6F0A;
+			remoteInfo = Nearbuy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		59ED38311B8D1637004C6F0A /* Nearbuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nearbuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59ED38351B8D1638004C6F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59ED38361B8D1638004C6F0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		59ED38381B8D1638004C6F0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		59ED38391B8D1638004C6F0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		59ED383B1B8D1639004C6F0A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		59ED383E1B8D1639004C6F0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		59ED38441B8D1639004C6F0A /* NearbuyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbuyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59ED38491B8D1639004C6F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59ED384A1B8D1639004C6F0A /* NearbuyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearbuyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59ED382E1B8D1636004C6F0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ED38411B8D1639004C6F0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59ED38281B8D1636004C6F0A = {
+			isa = PBXGroup;
+			children = (
+				59ED38331B8D1637004C6F0A /* Nearbuy */,
+				59ED38471B8D1639004C6F0A /* NearbuyTests */,
+				59ED38321B8D1637004C6F0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59ED38321B8D1637004C6F0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59ED38311B8D1637004C6F0A /* Nearbuy.app */,
+				59ED38441B8D1639004C6F0A /* NearbuyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59ED38331B8D1637004C6F0A /* Nearbuy */ = {
+			isa = PBXGroup;
+			children = (
+				59ED38381B8D1638004C6F0A /* AppDelegate.h */,
+				59ED38391B8D1638004C6F0A /* AppDelegate.m */,
+				59ED383B1B8D1639004C6F0A /* Images.xcassets */,
+				59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */,
+				59ED38341B8D1638004C6F0A /* Supporting Files */,
+			);
+			path = Nearbuy;
+			sourceTree = "<group>";
+		};
+		59ED38341B8D1638004C6F0A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59ED38351B8D1638004C6F0A /* Info.plist */,
+				59ED38361B8D1638004C6F0A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59ED38471B8D1639004C6F0A /* NearbuyTests */ = {
+			isa = PBXGroup;
+			children = (
+				59ED384A1B8D1639004C6F0A /* NearbuyTests.m */,
+				59ED38481B8D1639004C6F0A /* Supporting Files */,
+			);
+			path = NearbuyTests;
+			sourceTree = "<group>";
+		};
+		59ED38481B8D1639004C6F0A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59ED38491B8D1639004C6F0A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59ED38301B8D1636004C6F0A /* Nearbuy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59ED384E1B8D1639004C6F0A /* Build configuration list for PBXNativeTarget "Nearbuy" */;
+			buildPhases = (
+				59ED382D1B8D1636004C6F0A /* Sources */,
+				59ED382E1B8D1636004C6F0A /* Frameworks */,
+				59ED382F1B8D1636004C6F0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nearbuy;
+			productName = Nearbuy;
+			productReference = 59ED38311B8D1637004C6F0A /* Nearbuy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59ED38431B8D1639004C6F0A /* NearbuyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59ED38511B8D1639004C6F0A /* Build configuration list for PBXNativeTarget "NearbuyTests" */;
+			buildPhases = (
+				59ED38401B8D1639004C6F0A /* Sources */,
+				59ED38411B8D1639004C6F0A /* Frameworks */,
+				59ED38421B8D1639004C6F0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59ED38461B8D1639004C6F0A /* PBXTargetDependency */,
+			);
+			name = NearbuyTests;
+			productName = NearbuyTests;
+			productReference = 59ED38441B8D1639004C6F0A /* NearbuyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59ED38291B8D1636004C6F0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = JavierAlzueta;
+				TargetAttributes = {
+					59ED38301B8D1636004C6F0A = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					59ED38431B8D1639004C6F0A = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 59ED38301B8D1636004C6F0A;
+					};
+				};
+			};
+			buildConfigurationList = 59ED382C1B8D1636004C6F0A /* Build configuration list for PBXProject "Nearbuy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 59ED38281B8D1636004C6F0A;
+			productRefGroup = 59ED38321B8D1637004C6F0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59ED38301B8D1636004C6F0A /* Nearbuy */,
+				59ED38431B8D1639004C6F0A /* NearbuyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59ED382F1B8D1636004C6F0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */,
+				59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ED38421B8D1639004C6F0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59ED382D1B8D1636004C6F0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */,
+				59ED38371B8D1638004C6F0A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ED38401B8D1639004C6F0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59ED384B1B8D1639004C6F0A /* NearbuyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59ED38461B8D1639004C6F0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59ED38301B8D1636004C6F0A /* Nearbuy */;
+			targetProxy = 59ED38451B8D1639004C6F0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59ED383E1B8D1639004C6F0A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59ED384C1B8D1639004C6F0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59ED384D1B8D1639004C6F0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59ED384F1B8D1639004C6F0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Nearbuy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		59ED38501B8D1639004C6F0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Nearbuy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		59ED38521B8D1639004C6F0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NearbuyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nearbuy.app/Nearbuy";
+			};
+			name = Debug;
+		};
+		59ED38531B8D1639004C6F0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NearbuyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nearbuy.app/Nearbuy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59ED382C1B8D1636004C6F0A /* Build configuration list for PBXProject "Nearbuy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59ED384C1B8D1639004C6F0A /* Debug */,
+				59ED384D1B8D1639004C6F0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59ED384E1B8D1639004C6F0A /* Build configuration list for PBXNativeTarget "Nearbuy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59ED384F1B8D1639004C6F0A /* Debug */,
+				59ED38501B8D1639004C6F0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		59ED38511B8D1639004C6F0A /* Build configuration list for PBXNativeTarget "NearbuyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59ED38521B8D1639004C6F0A /* Debug */,
+				59ED38531B8D1639004C6F0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59ED38291B8D1636004C6F0A /* Project object */;
+}
