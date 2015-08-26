@@ -7,7 +7,8 @@
 //
 
 #import "FLGPushNotificationReceiverViewController.h"
+@import CoreLocation;
 
-@interface FLGPoisTableViewController : FLGPushNotificationReceiverViewController
+@interface FLGPoisTableViewController : FLGPushNotificationReceiverViewController<CLLocationManagerDelegate>
 
 @end

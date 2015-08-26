@@ -9,7 +9,7 @@
 #import "NearbyClient.h"
 #import <AFNetworking/AFNetworking.h>
 #import "UserDefaultsUtils.h"
-@import CoreLocation;
+#import "Poi.h"
 
 @interface NearbyClient ()
 
@@ -29,14 +29,15 @@
     return self;
 }
 
-- (void) sendLocationCoincidence: (CLLocation *) location{
+- (void) sendLocationCoincidenceForPoi: (Poi *) poi{
     NSDictionary *parameters = @{
-                                 @"latitude" : [NSNumber numberWithDouble:location.coordinate.latitude],
-                                 @"longitude" : [NSNumber numberWithDouble:location.coordinate.longitude],
-                                 @"pushNotificationToken" : [UserDefaultsUtils pushNotificationToken]
+                                 @"latitude" : poi.latitude,
+                                 @"longitude" : poi.longitude,
+                                 @"pushNotificationToken" : [UserDefaultsUtils pushNotificationToken],
+                                 @"poiName" : poi.name
                                  };
     
-//    [self GET:@"coincidence_get.php" parameters:parameters];
+    //[self GET:@"coincidence_get.php" parameters:parameters];
     [self POST:@"coincidence_post.php" parameters:parameters];
 }
 

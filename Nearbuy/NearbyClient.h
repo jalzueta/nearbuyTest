@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-@class CLLocation;
+@class Poi;
 
 @interface NearbyClient : NSObject
 
-- (void) sendLocationCoincidence: (CLLocation *) location;
+- (void) sendLocationCoincidenceForPoi: (Poi *) poi;
 
 @end

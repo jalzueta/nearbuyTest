@@ -18,6 +18,7 @@
 		59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED385F1B8DAE45004C6F0A /* FLGPoisTableViewController.m */; };
 		59ED38621B8DAE45004C6F0A /* FLGPoisTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */; };
 		59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */; };
+		59ED38681B8DCC02004C6F0A /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38671B8DCC02004C6F0A /* Poi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoisTableViewController.xib; sourceTree = "<group>"; };
 		59ED38631B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPushNotificationReceiverViewController.h; sourceTree = "<group>"; };
 		59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPushNotificationReceiverViewController.m; sourceTree = "<group>"; };
+		59ED38661B8DCC02004C6F0A /* Poi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
+		59ED38671B8DCC02004C6F0A /* Poi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poi.m; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +116,7 @@
 				59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */,
 				59ED38551B8D8FCF004C6F0A /* API Client */,
 				59ED38591B8D93BA004C6F0A /* Utils */,
+				59ED38691B8DCC8E004C6F0A /* Models */,
 				59ED385D1B8DADF3004C6F0A /* Controllers */,
 				59ED38341B8D1638004C6F0A /* Supporting Files */,
 			);
@@ -173,6 +177,15 @@
 				59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		59ED38691B8DCC8E004C6F0A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59ED38661B8DCC02004C6F0A /* Poi.h */,
+				59ED38671B8DCC02004C6F0A /* Poi.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		BA6769658ABEBD8CE228C44F /* Pods */ = {
@@ -327,6 +340,7 @@
 				59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */,
 				59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */,
 				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
+				59ED38681B8DCC02004C6F0A /* Poi.m in Sources */,
 				59ED38371B8D1638004C6F0A /* main.m in Sources */,
 				59ED385C1B8D93DA004C6F0A /* UserDefaultsUtils.m in Sources */,
 				59ED38581B8D9017004C6F0A /* NearbyClient.m in Sources */,
