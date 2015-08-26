@@ -16,6 +16,7 @@
 @implementation FLGPushNotificationReceiverViewController
 
 #pragma mark - Life Cycle
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupNotifications];
@@ -42,7 +43,7 @@
     [nc removeObserver:self];
 }
 
-// APPOINTMENTS_DID_RECEIVE_RESPONSE
+// PUSH_NOTIFICATION_RECEIVED
 - (void) notifyThatDidReceivePushNotification: (NSNotification *) aNotification{
     
     NSString *pushNotificationTitle = [aNotification.userInfo objectForKey:PUSH_NOTIFICATION_TITLE_KEY];

@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 JavierAlzueta. All rights reserved.
 //
 
-#import "FLGPushNotificationReceiverViewController.h"
-@import CoreLocation;
+#import "FLGLocationCoincidenceCheckerViewController.h"
 
-@interface FLGPoisTableViewController : FLGPushNotificationReceiverViewController<CLLocationManagerDelegate>
+@interface FLGPoisTableViewController : FLGLocationCoincidenceCheckerViewController
 
 @end
