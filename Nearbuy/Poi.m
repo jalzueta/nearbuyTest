@@ -37,4 +37,8 @@
     return self;
 }
 
+- (NSString *)coordinateString{
+    return [NSString stringWithFormat:@"(%@, %@)", self.latitude, self.longitude];
+}
+
 @end

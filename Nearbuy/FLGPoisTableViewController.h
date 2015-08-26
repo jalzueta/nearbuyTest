@@ -7,7 +7,8 @@
 //
 
 #import "FLGLocationCoincidenceCheckerViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface FLGPoisTableViewController : FLGLocationCoincidenceCheckerViewController<UITableViewDataSource, UITableViewDelegate>
+@interface FLGPoisTableViewController : FLGLocationCoincidenceCheckerViewController<UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 
 @end

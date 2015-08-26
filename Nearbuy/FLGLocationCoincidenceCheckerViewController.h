@@ -9,11 +9,14 @@
 #import "FLGPushNotificationReceiverViewController.h"
 @import CoreLocation;
 @class PoisSet;
+@class Poi;
 
 @interface FLGLocationCoincidenceCheckerViewController : FLGPushNotificationReceiverViewController<CLLocationManagerDelegate>
 
+@property (strong, nonatomic, readonly) CLLocation *currentLocation;
 @property (strong, nonatomic, readonly) PoisSet *poisSet;
 
-- (void) sendLocationCoincidence;
+- (void) sendLocationCoincidenceWithPoi: (Poi *) coincidencePoi;
+- (void) currentLocationUpdatedWithLocation: (CLLocation *) currentLocation;
 
 @end

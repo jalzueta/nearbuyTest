@@ -31,14 +31,15 @@
     }
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
     
     FLGPoisTableViewController *poisTableViewController = [[FLGPoisTableViewController alloc]init];
-    
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:poisTableViewController];
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = nav;
+    
+    [self setAppAppearance];
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -64,6 +65,27 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Appearance
+
+- (void) setAppAppearance{
+    [self printAllFontNames];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIColor orangeColor], NSForegroundColorAttributeName,
+                                                          [UIFont fontWithName:@"Raleway-SemiBold" size:20.0], NSFontAttributeName, nil]];
+    
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigation_bar"] forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void) printAllFontNames {
+    for (NSString *familyName in [UIFont familyNames]) {
+        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+            NSLog(@"%@", fontName);
+        }
+    }
 }
 
 #pragma mark - Push Notifications

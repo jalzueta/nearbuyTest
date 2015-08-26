@@ -16,6 +16,7 @@
 @interface FLGLocationCoincidenceCheckerViewController ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
 @property (strong, nonatomic) PoisSet *poisSet;
 @property (strong, nonatomic) Poi *lastDetectedPoi;
 
@@ -116,11 +117,6 @@
 
 #pragma mark - Utils
 
-- (void) sendLocationCoincidence {
-    NearbyClient *client = [[NearbyClient alloc] init];
-    [client sendLocationCoincidenceForPoi:self.lastDetectedPoi];
-}
-
 - (void) startReceivingLocation{
     [self.locationManager startUpdatingLocation];
     
@@ -161,14 +157,19 @@
     }
 }
 
+- (void) sendLocationCoincidenceWithPoi: (Poi *) coincidencePoi {
+    NearbyClient *client = [[NearbyClient alloc] init];
+    [client sendLocationCoincidenceForPoi:coincidencePoi];
+}
+
+
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
     NSLog(@"Cambio de autorizacion: %d", status);
 }
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
                                initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -176,18 +177,18 @@
 }
 
 // Before iOS 8
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    CLLocation *currentLocation = newLocation;
-    [self checkLocationCoincidenceForLocation:currentLocation];
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    [self currentLocationUpdatedWithLocation:newLocation];
 }
 
 // After iOS 8
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    NSLog(@"%@", [locations lastObject]);
-    CLLocation *currentLocation = [locations lastObject];
-    [self checkLocationCoincidenceForLocation:currentLocation];
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    [self currentLocationUpdatedWithLocation:[locations lastObject]];
+}
+
+- (void) currentLocationUpdatedWithLocation: (CLLocation *) currentLocation{
+    self.currentLocation = currentLocation;
+    [self checkLocationCoincidenceForLocation:self.currentLocation];
 }
 
 - (void) checkLocationCoincidenceForLocation: (CLLocation *) currentLocation{
@@ -196,7 +197,7 @@
         NSLog(@"Poi detectado: %@", poiInCurrentLocation.name);
         if (poiInCurrentLocation && [UserDefaultsUtils pushNotificationToken]) {
             self.lastDetectedPoi = poiInCurrentLocation;
-            [self sendLocationCoincidence];
+            [self sendLocationCoincidenceWithPoi:self.lastDetectedPoi];
         }
     }
 }

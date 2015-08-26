@@ -23,6 +23,17 @@
 		59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED386E1B8DFBC2004C6F0A /* PoisSet.m */; };
 		59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38721B8E0883004C6F0A /* FLGPoiTableViewCell.m */; };
 		59ED38751B8E0883004C6F0A /* FLGPoiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */; };
+		59ED38771B8E5CE8004C6F0A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ED38761B8E5CE8004C6F0A /* MapKit.framework */; };
+		59ED387A1B8E678A004C6F0A /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38791B8E678A004C6F0A /* MyLocation.m */; };
+		59ED38B41B8E855F004C6F0A /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38AB1B8E855F004C6F0A /* Raleway-Bold.ttf */; };
+		59ED38B51B8E855F004C6F0A /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38AC1B8E855F004C6F0A /* Raleway-ExtraBold.ttf */; };
+		59ED38B61B8E855F004C6F0A /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38AD1B8E855F004C6F0A /* Raleway-ExtraLight.ttf */; };
+		59ED38B71B8E855F004C6F0A /* Raleway-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38AE1B8E855F004C6F0A /* Raleway-Heavy.ttf */; };
+		59ED38B81B8E855F004C6F0A /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38AF1B8E855F004C6F0A /* Raleway-Light.ttf */; };
+		59ED38B91B8E855F004C6F0A /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B01B8E855F004C6F0A /* Raleway-Medium.ttf */; };
+		59ED38BA1B8E855F004C6F0A /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B11B8E855F004C6F0A /* Raleway-Regular.ttf */; };
+		59ED38BB1B8E855F004C6F0A /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B21B8E855F004C6F0A /* Raleway-SemiBold.ttf */; };
+		59ED38BC1B8E855F004C6F0A /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +77,18 @@
 		59ED38711B8E0883004C6F0A /* FLGPoiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoiTableViewCell.h; sourceTree = "<group>"; };
 		59ED38721B8E0883004C6F0A /* FLGPoiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPoiTableViewCell.m; sourceTree = "<group>"; };
 		59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoiTableViewCell.xib; sourceTree = "<group>"; };
+		59ED38761B8E5CE8004C6F0A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		59ED38781B8E678A004C6F0A /* MyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocation.h; sourceTree = "<group>"; };
+		59ED38791B8E678A004C6F0A /* MyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocation.m; sourceTree = "<group>"; };
+		59ED38AB1B8E855F004C6F0A /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		59ED38AC1B8E855F004C6F0A /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		59ED38AD1B8E855F004C6F0A /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
+		59ED38AE1B8E855F004C6F0A /* Raleway-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Heavy.ttf"; sourceTree = "<group>"; };
+		59ED38AF1B8E855F004C6F0A /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		59ED38B01B8E855F004C6F0A /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		59ED38B11B8E855F004C6F0A /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		59ED38B21B8E855F004C6F0A /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59ED38771B8E5CE8004C6F0A /* MapKit.framework in Frameworks */,
 				429164934E001DA9E7351771 /* libPods-Nearbuy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +116,7 @@
 		0B92789CF6B38FA5686296AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59ED38761B8E5CE8004C6F0A /* MapKit.framework */,
 				48AF2F2923D1EC95F3E82FFA /* libPods-Nearbuy.a */,
 			);
 			name = Frameworks;
@@ -130,6 +155,7 @@
 				59ED38691B8DCC8E004C6F0A /* Models */,
 				59ED38701B8E0869004C6F0A /* Views */,
 				59ED385D1B8DADF3004C6F0A /* Controllers */,
+				59ED387B1B8E80ED004C6F0A /* Resources */,
 				59ED38341B8D1638004C6F0A /* Supporting Files */,
 			);
 			path = Nearbuy;
@@ -200,6 +226,8 @@
 				59ED38671B8DCC02004C6F0A /* Poi.m */,
 				59ED386D1B8DFBC2004C6F0A /* PoisSet.h */,
 				59ED386E1B8DFBC2004C6F0A /* PoisSet.m */,
+				59ED38781B8E678A004C6F0A /* MyLocation.h */,
+				59ED38791B8E678A004C6F0A /* MyLocation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -212,6 +240,30 @@
 				59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		59ED387B1B8E80ED004C6F0A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				59ED387C1B8E80F4004C6F0A /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		59ED387C1B8E80F4004C6F0A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				59ED38AB1B8E855F004C6F0A /* Raleway-Bold.ttf */,
+				59ED38AC1B8E855F004C6F0A /* Raleway-ExtraBold.ttf */,
+				59ED38AD1B8E855F004C6F0A /* Raleway-ExtraLight.ttf */,
+				59ED38AE1B8E855F004C6F0A /* Raleway-Heavy.ttf */,
+				59ED38AF1B8E855F004C6F0A /* Raleway-Light.ttf */,
+				59ED38B01B8E855F004C6F0A /* Raleway-Medium.ttf */,
+				59ED38B11B8E855F004C6F0A /* Raleway-Regular.ttf */,
+				59ED38B21B8E855F004C6F0A /* Raleway-SemiBold.ttf */,
+				59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		BA6769658ABEBD8CE228C44F /* Pods */ = {
@@ -310,9 +362,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59ED38B51B8E855F004C6F0A /* Raleway-ExtraBold.ttf in Resources */,
 				59ED38751B8E0883004C6F0A /* FLGPoiTableViewCell.xib in Resources */,
 				59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */,
 				59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */,
+				59ED38B71B8E855F004C6F0A /* Raleway-Heavy.ttf in Resources */,
+				59ED38B41B8E855F004C6F0A /* Raleway-Bold.ttf in Resources */,
+				59ED38B81B8E855F004C6F0A /* Raleway-Light.ttf in Resources */,
+				59ED38B91B8E855F004C6F0A /* Raleway-Medium.ttf in Resources */,
+				59ED38B61B8E855F004C6F0A /* Raleway-ExtraLight.ttf in Resources */,
+				59ED38BC1B8E855F004C6F0A /* Raleway-Thin.ttf in Resources */,
+				59ED38BB1B8E855F004C6F0A /* Raleway-SemiBold.ttf in Resources */,
+				59ED38BA1B8E855F004C6F0A /* Raleway-Regular.ttf in Resources */,
 				59ED38621B8DAE45004C6F0A /* FLGPoisTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +429,7 @@
 				59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */,
 				59ED386C1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m in Sources */,
 				59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */,
+				59ED387A1B8E678A004C6F0A /* MyLocation.m in Sources */,
 				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
 				59ED38681B8DCC02004C6F0A /* Poi.m in Sources */,
 				59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */,

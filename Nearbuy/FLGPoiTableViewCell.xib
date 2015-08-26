@@ -29,24 +29,14 @@
                             <constraint firstAttribute="width" constant="80" id="aj3-Wh-Ybt"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eroski" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sR-US-0aX">
-                        <rect key="frame" x="88" y="8" width="44" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="Xb8-YT-aU2"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="nBu-Oe-qGu"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
-                        <color key="textColor" red="0.56000000000000005" green="0.56000000000000005" blue="0.56000000000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates: (14, 12)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaR-bJ-gF9">
-                        <rect key="frame" x="88" y="42" width="120" height="30"/>
+                        <rect key="frame" x="88" y="42" width="131" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="0sZ-SJ-hBM"/>
                             <constraint firstAttribute="height" constant="30" id="jej-rv-W54"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway" pointSize="14"/>
-                        <color key="textColor" red="0.56000000000000005" green="0.56000000000000005" blue="0.56000000000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
@@ -54,8 +44,18 @@
                             </mask>
                         </variation>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eroski" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sR-US-0aX">
+                        <rect key="frame" x="88" y="8" width="44" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Xb8-YT-aU2"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="nBu-Oe-qGu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
+                        <color key="textColor" red="0.75111120939254761" green="0.32056775689125061" blue="0.019752500578761101" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="UfS-oN-Oq4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="31J-uM-2nc"/>
                     <constraint firstItem="qaR-bJ-gF9" firstAttribute="leading" secondItem="UfS-oN-Oq4" secondAttribute="trailing" constant="8" id="BwE-sZ-wgj"/>

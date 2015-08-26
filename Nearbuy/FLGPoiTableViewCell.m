@@ -24,7 +24,7 @@
 
 - (void) configureWithPoi: (Poi *)poi{
     self.nameLabel.text = poi.name;
-    self.coordinateLabel.text = [NSString stringWithFormat:@"(%@, %@)", poi.latitude, poi.longitude];
+    self.coordinateLabel.text = poi.coordinateString;
 }
 
 - (void) prepareForReuse{

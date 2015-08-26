@@ -13,6 +13,7 @@
 @interface PoisSet : NSObject
 
 @property (nonatomic, readonly) NSUInteger poisCount;
+@property (copy, nonatomic, readonly) NSMutableArray *annotations;
 
 + (instancetype) poiSetWithArrayOfPois: (NSArray *) arrayOfPois;
 

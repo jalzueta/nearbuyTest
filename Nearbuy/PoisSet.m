@@ -9,10 +9,12 @@
 #import "PoisSet.h"
 #import "Poi.h"
 @import CoreLocation;
+#import "MyLocation.h"
 
 @interface PoisSet ()
 
 @property(copy, nonatomic, readonly) NSArray *arrayOfPois;
+@property(copy, nonatomic) NSMutableArray *annotations;
 
 @end
 
@@ -25,12 +27,24 @@
 - (instancetype) initWithArrayOfPois: (NSArray *) arrayOfPois{
     if (self = [super init]) {
         _arrayOfPois = arrayOfPois;
+        _annotations = [NSMutableArray new];
     }
     return self;
 }
 
 - (NSUInteger)poisCount{
     return self.arrayOfPois.count;
+}
+
+- (NSMutableArray *)annotations{
+    for (Poi *poi in self.arrayOfPois) {
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([poi.latitude doubleValue], [poi.longitude doubleValue]);
+        MyLocation *annotation = [[MyLocation alloc]initWithTitle:poi.name
+                                                         subtitle:poi.coordinateString
+                                                       coordinate:coordinate];
+        [_annotations addObject:annotation];
+    }
+    return _annotations;
 }
 
 - (Poi *) poiAtIndex:(NSUInteger) index{
