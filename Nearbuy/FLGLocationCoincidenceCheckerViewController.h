@@ -12,6 +12,8 @@
 
 @interface FLGLocationCoincidenceCheckerViewController : FLGPushNotificationReceiverViewController<CLLocationManagerDelegate>
 
+@property (strong, nonatomic, readonly) PoisSet *poisSet;
+
 - (void) sendLocationCoincidence;
 
 @end

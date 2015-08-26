@@ -20,6 +20,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupNotifications];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void) viewWillDisappear:(BOOL)animated{

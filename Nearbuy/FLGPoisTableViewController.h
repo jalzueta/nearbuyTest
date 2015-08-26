@@ -8,6 +8,6 @@
 
 #import "FLGLocationCoincidenceCheckerViewController.h"
 
-@interface FLGPoisTableViewController : FLGLocationCoincidenceCheckerViewController
+@interface FLGPoisTableViewController : FLGLocationCoincidenceCheckerViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end

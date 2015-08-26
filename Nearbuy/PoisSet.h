@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class Poi;
+@class CLLocation;
 
 @interface PoisSet : NSObject
 

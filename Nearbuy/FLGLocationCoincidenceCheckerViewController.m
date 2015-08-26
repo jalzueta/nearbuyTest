@@ -15,7 +15,7 @@
 @interface FLGLocationCoincidenceCheckerViewController ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (copy, nonatomic) PoisSet *poisSet;
+@property (strong, nonatomic) PoisSet *poisSet;
 @property (strong, nonatomic) Poi *lastDetectedPoi;
 
 @end

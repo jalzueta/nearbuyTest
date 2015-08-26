@@ -35,7 +35,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     FLGPoisTableViewController *poisTableViewController = [[FLGPoisTableViewController alloc]init];
-    self.window.rootViewController = poisTableViewController;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:poisTableViewController];
+    
+    self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
     return YES;

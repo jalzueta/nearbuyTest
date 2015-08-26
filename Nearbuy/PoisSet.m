@@ -29,6 +29,10 @@
     return self;
 }
 
+- (NSUInteger)poisCount{
+    return self.arrayOfPois.count;
+}
+
 - (Poi *) poiAtIndex:(NSUInteger) index{
     if (index < self.arrayOfPois.count) {
         return [self.arrayOfPois objectAtIndex:index];

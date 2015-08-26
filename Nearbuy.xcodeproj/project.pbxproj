@@ -21,6 +21,8 @@
 		59ED38681B8DCC02004C6F0A /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38671B8DCC02004C6F0A /* Poi.m */; };
 		59ED386C1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED386B1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m */; };
 		59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED386E1B8DFBC2004C6F0A /* PoisSet.m */; };
+		59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38721B8E0883004C6F0A /* FLGPoiTableViewCell.m */; };
+		59ED38751B8E0883004C6F0A /* FLGPoiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		59ED386B1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGLocationCoincidenceCheckerViewController.m; sourceTree = "<group>"; };
 		59ED386D1B8DFBC2004C6F0A /* PoisSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoisSet.h; sourceTree = "<group>"; };
 		59ED386E1B8DFBC2004C6F0A /* PoisSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoisSet.m; sourceTree = "<group>"; };
+		59ED38711B8E0883004C6F0A /* FLGPoiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoiTableViewCell.h; sourceTree = "<group>"; };
+		59ED38721B8E0883004C6F0A /* FLGPoiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPoiTableViewCell.m; sourceTree = "<group>"; };
+		59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoiTableViewCell.xib; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +128,7 @@
 				59ED38551B8D8FCF004C6F0A /* API Client */,
 				59ED38591B8D93BA004C6F0A /* Utils */,
 				59ED38691B8DCC8E004C6F0A /* Models */,
+				59ED38701B8E0869004C6F0A /* Views */,
 				59ED385D1B8DADF3004C6F0A /* Controllers */,
 				59ED38341B8D1638004C6F0A /* Supporting Files */,
 			);
@@ -196,6 +202,16 @@
 				59ED386E1B8DFBC2004C6F0A /* PoisSet.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		59ED38701B8E0869004C6F0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				59ED38711B8E0883004C6F0A /* FLGPoiTableViewCell.h */,
+				59ED38721B8E0883004C6F0A /* FLGPoiTableViewCell.m */,
+				59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		BA6769658ABEBD8CE228C44F /* Pods */ = {
@@ -294,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59ED38751B8E0883004C6F0A /* FLGPoiTableViewCell.xib in Resources */,
 				59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */,
 				59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */,
 				59ED38621B8DAE45004C6F0A /* FLGPoisTableViewController.xib in Resources */,
@@ -353,6 +370,7 @@
 				59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */,
 				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
 				59ED38681B8DCC02004C6F0A /* Poi.m in Sources */,
+				59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */,
 				59ED38371B8D1638004C6F0A /* main.m in Sources */,
 				59ED385C1B8D93DA004C6F0A /* UserDefaultsUtils.m in Sources */,
 				59ED38581B8D9017004C6F0A /* NearbyClient.m in Sources */,
