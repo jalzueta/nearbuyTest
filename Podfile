@@ -3,7 +3,6 @@
 
 target 'Nearbuy' do
     pod 'AFNetworking'
-    pod 'Parse'
 end
 
 target 'NearbuyTests' do
