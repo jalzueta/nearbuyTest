@@ -10,11 +10,12 @@
 #import "Constants.h"
 #import "NearbyClient.h"
 #import "Poi.h"
+#import "PoisSet.h"
 
 @interface FLGLocationCoincidenceCheckerViewController ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (copy, nonatomic) NSMutableArray *arrayOfPois;
+@property (copy, nonatomic) PoisSet *poisSet;
 @property (strong, nonatomic) Poi *lastDetectedPoi;
 
 @end
@@ -37,67 +38,79 @@
     }
     [self startReceivingLocation];
     
-    Poi *poi1 = [Poi poiWithName:@"Mercadona"
-                        latitude:@(42.794589)
-                       longitude:@(-1.613783)
-                     minDistance:@50];
+    Poi *poi1 = [Poi poiWithIdentifier:1
+                                  name:@"Mercadona"
+                              latitude:@(42.794589)
+                             longitude:@(-1.613783)
+                           minDistance:@50];
     
-    Poi *poi2 = [Poi poiWithName:@"Casa"
-                        latitude:@(42.794820)
-                       longitude:@(-1.616424)
-                     minDistance:@50];
+    Poi *poi2 = [Poi poiWithIdentifier:2
+                                  name:@"Casa"
+                              latitude:@(42.794820)
+                             longitude:@(-1.616424)
+                           minDistance:@50];
     
-    Poi *poi3 = [Poi poiWithName:@"La Hacienda"
-                        latitude:@(42.796038)
-                       longitude:@(-1.613448)
-                     minDistance:@50];
+    Poi *poi3 = [Poi poiWithIdentifier:3
+                                  name:@"La Hacienda"
+                              latitude:@(42.796038)
+                             longitude:@(-1.613448)
+                           minDistance:@50];
     
-    Poi *poi4 = [Poi poiWithName:@"Navarra Padel"
-                        latitude:@(42.795778)
-                       longitude:@(-1.613732)
-                     minDistance:@50];
+    Poi *poi4 = [Poi poiWithIdentifier:4
+                                  name:@"Navarra Padel"
+                              latitude:@(42.795778)
+                             longitude:@(-1.613732)
+                           minDistance:@50];
     
-    Poi *poi5 = [Poi poiWithName:@"Conasa"
-                        latitude:@(42.796912)
-                       longitude:@(-1.613313)
-                     minDistance:@50];
+    Poi *poi5 = [Poi poiWithIdentifier:5
+                                  name:@"Conasa"
+                              latitude:@(42.796912)
+                             longitude:@(-1.613313)
+                           minDistance:@50];
     
-    Poi *poi6 = [Poi poiWithName:@"Eroski"
-                        latitude:@(42.798044)
-                       longitude:@(-1.613447)
-                     minDistance:@50];
+    Poi *poi6 = [Poi poiWithIdentifier:6
+                                  name:@"Eroski"
+                              latitude:@(42.798044)
+                             longitude:@(-1.613447)
+                           minDistance:@50];
     
-    Poi *poi7 = [Poi poiWithName:@"Irulegui"
-                        latitude:@(42.792406)
-                       longitude:@(-1.614967)
-                     minDistance:@50];
+    Poi *poi7 = [Poi poiWithIdentifier:7
+                                  name:@"Irulegui"
+                              latitude:@(42.792406)
+                             longitude:@(-1.614967)
+                           minDistance:@50];
     
-    Poi *poi8 = [Poi poiWithName:@"Farmacia Maria"
-                        latitude:@(42.789182)
-                       longitude:@(-1.616590)
-                     minDistance:@50];
+    Poi *poi8 = [Poi poiWithIdentifier:8
+                                  name:@"Farmacia Maria"
+                              latitude:@(42.789182)
+                             longitude:@(-1.616590)
+                           minDistance:@50];
     
-    Poi *poi9 = [Poi poiWithName:@"Tienda Padel/Tenis"
-                        latitude:@(42.788825)
-                       longitude:@(-1.617003)
-                     minDistance:@50];
+    Poi *poi9 = [Poi poiWithIdentifier:9
+                                  name:@"Tienda Padel/Tenis"
+                              latitude:@(42.788825)
+                             longitude:@(-1.617003)
+                           minDistance:@50];
     
-    Poi *poi10 = [Poi poiWithName:@"Ayuntamiento"
-                         latitude:@(42.789294)
-                        longitude:@(-1.617413)
-                      minDistance:@50];
+    Poi *poi10 = [Poi poiWithIdentifier:10
+                                   name:@"Ayuntamiento"
+                               latitude:@(42.789294)
+                              longitude:@(-1.617413)
+                            minDistance:@50];
     
-    self.arrayOfPois = [NSMutableArray arrayWithObjects:poi1,
-                        poi2,
-                        poi3,
-                        poi4,
-                        poi5,
-                        poi6,
-                        poi7,
-                        poi8,
-                        poi9,
-                        poi10,
-                        nil];
+    NSMutableArray *arrayOfPois = [NSMutableArray arrayWithObjects:poi1,
+                                   poi2,
+                                   poi3,
+                                   poi4,
+                                   poi5,
+                                   poi6,
+                                   poi7,
+                                   poi8,
+                                   poi9,
+                                   poi10,
+                                   nil];
+    
+    self.poisSet = [PoisSet poiSetWithArrayOfPois:arrayOfPois];
 }
 
 #pragma mark - Utils
@@ -177,26 +190,14 @@
 }
 
 - (void) checkLocationCoincidenceForLocation: (CLLocation *) currentLocation{
-    Poi *detectedPoi = [self detectedPoiInCurrentLocation:currentLocation];
-    if (detectedPoi != self.lastDetectedPoi) {
-        NSLog(@"Poi detectado: %@", detectedPoi.name);
-        self.lastDetectedPoi = detectedPoi;
-        [self sendLocationCoincidence];
-    }
-}
-
-- (Poi *) detectedPoiInCurrentLocation: (CLLocation *) currentLocation{
-    Poi *detectedPoi;
-    for (Poi *poi in self.arrayOfPois) {
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:[poi.latitude doubleValue]
-                                                          longitude:[poi.longitude doubleValue]];
-        if ([currentLocation distanceFromLocation:location] <= [poi.minDistance doubleValue]) {
-            NSLog(@"Distance to %@: %f", poi.name, [currentLocation distanceFromLocation:location]);
-            detectedPoi = poi;
-            break;
+    Poi *poiInCurrentLocation = [self.poisSet poiInCurrentLocation:currentLocation];
+    if (poiInCurrentLocation != self.lastDetectedPoi) {
+        NSLog(@"Poi detectado: %@", poiInCurrentLocation.name);
+        self.lastDetectedPoi = poiInCurrentLocation;
+        if (poiInCurrentLocation) {
+            [self sendLocationCoincidence];
         }
     }
-    return detectedPoi;
 }
 
 @end

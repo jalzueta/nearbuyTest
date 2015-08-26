@@ -10,21 +10,25 @@
 
 @implementation Poi
 
-+ (instancetype)poiWithName: (NSString *) name
-                   latitude: (NSNumber *) latitude
-                  longitude: (NSNumber *) longitude
-                minDistance: (NSNumber *) minDistance{
-    return [[self alloc] initWithName:name
-                             latitude:latitude
-                            longitude:longitude
-                          minDistance:minDistance];
++ (instancetype) poiWithIdentifier: (NSUInteger) identifier
+                             name: (NSString *) name
+                         latitude: (NSNumber *) latitude
+                        longitude: (NSNumber *) longitude
+                      minDistance: (NSNumber *) minDistance{
+    return [[self alloc] initWithIdentifier:identifier
+                                       name:name
+                                   latitude:latitude
+                                  longitude:longitude
+                                minDistance:minDistance];
 }
 
-- (instancetype)initWithName: (NSString *) name
-                    latitude: (NSNumber *) latitude
-                   longitude: (NSNumber *) longitude
-                 minDistance: (NSNumber *) minDistance{
+- (instancetype) initWithIdentifier: (NSUInteger) identifier
+                              name: (NSString *) name
+                          latitude: (NSNumber *) latitude
+                         longitude: (NSNumber *) longitude
+                       minDistance: (NSNumber *) minDistance{
     if (self = [super init]) {
+        _identifier = identifier;
         _name = name;
         _latitude = latitude;
         _longitude = longitude;

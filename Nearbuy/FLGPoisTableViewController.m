@@ -21,4 +21,6 @@
 //    self.lastDetectedPoi = nil;
 }
 
+#pragma mark - TableViewDataSource
+
 @end

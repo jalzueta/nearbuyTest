@@ -20,6 +20,7 @@
 		59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */; };
 		59ED38681B8DCC02004C6F0A /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38671B8DCC02004C6F0A /* Poi.m */; };
 		59ED386C1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED386B1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m */; };
+		59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED386E1B8DFBC2004C6F0A /* PoisSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		59ED38671B8DCC02004C6F0A /* Poi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poi.m; sourceTree = "<group>"; };
 		59ED386A1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGLocationCoincidenceCheckerViewController.h; sourceTree = "<group>"; };
 		59ED386B1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGLocationCoincidenceCheckerViewController.m; sourceTree = "<group>"; };
+		59ED386D1B8DFBC2004C6F0A /* PoisSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoisSet.h; sourceTree = "<group>"; };
+		59ED386E1B8DFBC2004C6F0A /* PoisSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoisSet.m; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +192,8 @@
 			children = (
 				59ED38661B8DCC02004C6F0A /* Poi.h */,
 				59ED38671B8DCC02004C6F0A /* Poi.m */,
+				59ED386D1B8DFBC2004C6F0A /* PoisSet.h */,
+				59ED386E1B8DFBC2004C6F0A /* PoisSet.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */,
 				59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */,
 				59ED386C1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m in Sources */,
+				59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */,
 				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
 				59ED38681B8DCC02004C6F0A /* Poi.m in Sources */,
 				59ED38371B8D1638004C6F0A /* main.m in Sources */,
