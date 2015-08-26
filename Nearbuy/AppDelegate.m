@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
+#import "UserDefaultsUtils.h"
+#import "FLGPoisTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -29,8 +32,11 @@
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    FLGPoisTableViewController *poisTableViewController = [[FLGPoisTableViewController alloc]init];
+    self.window.rootViewController = poisTableViewController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -61,11 +67,45 @@
 
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
     NSLog(@"My token (1) is: %@", devToken);
-    // TODO: save token in User Defaults
+    [UserDefaultsUtils savePushNotificationToken:devToken];
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
     NSLog(@"Error in registration. Error: %@", err);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSLog(@"application didReceiveRemoteNotification: %@", userInfo);
+    NSString *pushNotificationTitle = [self getPushNotificationTitleFromUserInfoDictionary:userInfo];
+    NSString *pushNotificationBody = [self getPushNotificationBodyFromUserInfoDictionary:userInfo];
+    NSString *pushNotificationType = [self getPushNotificationTypeFromUserInfoDictionary:userInfo];
+    NSNumber *pushNotificationId = [self getPushNotificationIdFromUserInfoDictionary:userInfo];
+    
+    NSNotification *n = [NSNotification notificationWithName:PUSH_NOTIFICATION_RECEIVED
+                                                      object:self
+                                                    userInfo:@{
+                                                               PUSH_NOTIFICATION_TITLE_KEY: pushNotificationTitle,
+                                                               PUSH_NOTIFICATION_BODY_KEY: pushNotificationBody,
+                                                               PUSH_NOTIFICATION_TYPE_KEY: pushNotificationType,
+                                                               PUSH_NOTIFICATION_ID_KEY: pushNotificationId
+                                                               }];
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+}
+
+- (NSString *) getPushNotificationTitleFromUserInfoDictionary: (NSDictionary *) notificationDict{
+    return [[[notificationDict objectForKey:@"aps"] objectForKey:@"alert"] objectForKey:@"title"];
+}
+
+- (NSString *) getPushNotificationBodyFromUserInfoDictionary: (NSDictionary *) notificationDict{
+    return [[[notificationDict objectForKey:@"aps"] objectForKey:@"alert"] objectForKey:@"body"];
+}
+
+- (NSString *) getPushNotificationTypeFromUserInfoDictionary: (NSDictionary *) notificationDict{
+    return [[notificationDict objectForKey:PUSH_NOTIFICATION_CUSTOM_DATA_PARSE_KEY] objectForKey:PUSH_NOTIFICATION_TYPE_PARSE_KEY];
+}
+
+- (NSNumber *) getPushNotificationIdFromUserInfoDictionary: (NSDictionary *) notificationDict{
+    return [[notificationDict objectForKey:PUSH_NOTIFICATION_CUSTOM_DATA_PARSE_KEY] objectForKey:PUSH_NOTIFICATION_ID_PARSE_KEY];
 }
 
 @end

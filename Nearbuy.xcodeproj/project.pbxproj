@@ -13,6 +13,11 @@
 		59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383B1B8D1639004C6F0A /* Images.xcassets */; };
 		59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */; };
 		59ED384B1B8D1639004C6F0A /* NearbuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED384A1B8D1639004C6F0A /* NearbuyTests.m */; };
+		59ED38581B8D9017004C6F0A /* NearbyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38571B8D9017004C6F0A /* NearbyClient.m */; };
+		59ED385C1B8D93DA004C6F0A /* UserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED385B1B8D93DA004C6F0A /* UserDefaultsUtils.m */; };
+		59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED385F1B8DAE45004C6F0A /* FLGPoisTableViewController.m */; };
+		59ED38621B8DAE45004C6F0A /* FLGPoisTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */; };
+		59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,16 @@
 		59ED38441B8D1639004C6F0A /* NearbuyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbuyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ED38491B8D1639004C6F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59ED384A1B8D1639004C6F0A /* NearbuyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearbuyTests.m; sourceTree = "<group>"; };
+		59ED38541B8D8F58004C6F0A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		59ED38561B8D9017004C6F0A /* NearbyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyClient.h; sourceTree = "<group>"; };
+		59ED38571B8D9017004C6F0A /* NearbyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyClient.m; sourceTree = "<group>"; };
+		59ED385A1B8D93DA004C6F0A /* UserDefaultsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsUtils.h; sourceTree = "<group>"; };
+		59ED385B1B8D93DA004C6F0A /* UserDefaultsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsUtils.m; sourceTree = "<group>"; };
+		59ED385E1B8DAE45004C6F0A /* FLGPoisTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoisTableViewController.h; sourceTree = "<group>"; };
+		59ED385F1B8DAE45004C6F0A /* FLGPoisTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPoisTableViewController.m; sourceTree = "<group>"; };
+		59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoisTableViewController.xib; sourceTree = "<group>"; };
+		59ED38631B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPushNotificationReceiverViewController.h; sourceTree = "<group>"; };
+		59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPushNotificationReceiverViewController.m; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +108,12 @@
 			children = (
 				59ED38381B8D1638004C6F0A /* AppDelegate.h */,
 				59ED38391B8D1638004C6F0A /* AppDelegate.m */,
+				59ED38541B8D8F58004C6F0A /* Constants.h */,
 				59ED383B1B8D1639004C6F0A /* Images.xcassets */,
 				59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */,
+				59ED38551B8D8FCF004C6F0A /* API Client */,
+				59ED38591B8D93BA004C6F0A /* Utils */,
+				59ED385D1B8DADF3004C6F0A /* Controllers */,
 				59ED38341B8D1638004C6F0A /* Supporting Files */,
 			);
 			path = Nearbuy;
@@ -124,6 +143,36 @@
 				59ED38491B8D1639004C6F0A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59ED38551B8D8FCF004C6F0A /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				59ED38561B8D9017004C6F0A /* NearbyClient.h */,
+				59ED38571B8D9017004C6F0A /* NearbyClient.m */,
+			);
+			name = "API Client";
+			sourceTree = "<group>";
+		};
+		59ED38591B8D93BA004C6F0A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				59ED385A1B8D93DA004C6F0A /* UserDefaultsUtils.h */,
+				59ED385B1B8D93DA004C6F0A /* UserDefaultsUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		59ED385D1B8DADF3004C6F0A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				59ED38631B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.h */,
+				59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */,
+				59ED385E1B8DAE45004C6F0A /* FLGPoisTableViewController.h */,
+				59ED385F1B8DAE45004C6F0A /* FLGPoisTableViewController.m */,
+				59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		BA6769658ABEBD8CE228C44F /* Pods */ = {
@@ -224,6 +273,7 @@
 			files = (
 				59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */,
 				59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */,
+				59ED38621B8DAE45004C6F0A /* FLGPoisTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */,
 				59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */,
+				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
 				59ED38371B8D1638004C6F0A /* main.m in Sources */,
+				59ED385C1B8D93DA004C6F0A /* UserDefaultsUtils.m in Sources */,
+				59ED38581B8D9017004C6F0A /* NearbyClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +450,7 @@
 			baseConfigurationReference = ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Javier Alzueta Pellicer (WP72ZHSJRN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Javier Alzueta Pellicer (WP72ZHSJRN)";
 				INFOPLIST_FILE = Nearbuy/Info.plist;
@@ -411,6 +466,7 @@
 			baseConfigurationReference = AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Nearbuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
