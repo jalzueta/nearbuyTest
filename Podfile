@@ -2,8 +2,8 @@
 # platform :ios, '6.0'
 
 target 'Nearbuy' do
-    pod 'AFNetworking'  #gestion de conexiones de red
-
+    pod 'AFNetworking'
+    pod 'Parse'
 end
 
 target 'NearbuyTests' do
