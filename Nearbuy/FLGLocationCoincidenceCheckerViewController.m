@@ -11,6 +11,7 @@
 #import "NearbyClient.h"
 #import "Poi.h"
 #import "PoisSet.h"
+#import "UserDefaultsUtils.h"
 
 @interface FLGLocationCoincidenceCheckerViewController ()
 
@@ -193,8 +194,8 @@
     Poi *poiInCurrentLocation = [self.poisSet poiInCurrentLocation:currentLocation];
     if (poiInCurrentLocation != self.lastDetectedPoi) {
         NSLog(@"Poi detectado: %@", poiInCurrentLocation.name);
-        self.lastDetectedPoi = poiInCurrentLocation;
-        if (poiInCurrentLocation) {
+        if (poiInCurrentLocation && [UserDefaultsUtils pushNotificationToken]) {
+            self.lastDetectedPoi = poiInCurrentLocation;
             [self sendLocationCoincidence];
         }
     }

@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="K17-ee-O4w"/>
-                        <barButtonItem title="Send Location Coincidence Handly" id="o33-DM-tdT">
+                        <barButtonItem title="Test Push Notifications Handly" id="o33-DM-tdT">
                             <connections>
                                 <action selector="sendLocationCoincidenceDidPress:" destination="-1" id="wmE-uN-IhO"/>
                             </connections>
