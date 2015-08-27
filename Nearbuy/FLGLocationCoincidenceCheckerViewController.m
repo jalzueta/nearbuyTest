@@ -25,20 +25,19 @@
 @implementation FLGLocationCoincidenceCheckerViewController
 
 #pragma mark - Life Cycle
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     if (!self.locationManager) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.locationManager requestWhenInUseAuthorization];
         }
+        [self startReceivingLocation];
     }
-    [self startReceivingLocation];
     
     Poi *poi1 = [Poi poiWithIdentifier:1
                                   name:@"Mercadona"
@@ -115,8 +114,17 @@
     self.poisSet = [PoisSet poiSetWithArrayOfPois:arrayOfPois];
 }
 
-#pragma mark - Utils
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    [self startReceivingLocation];
+//}
 
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    [self.locationManager stopUpdatingLocation];
+//}
+
+#pragma mark - Utils
 - (void) startReceivingLocation{
     [self.locationManager startUpdatingLocation];
     
@@ -162,9 +170,7 @@
     [client sendLocationCoincidenceForPoi:coincidencePoi];
 }
 
-
 #pragma mark - CLLocationManagerDelegate
-
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
     NSLog(@"Cambio de autorizacion: %d", status);
 }

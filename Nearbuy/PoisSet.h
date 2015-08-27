@@ -15,10 +15,12 @@
 @property (nonatomic, readonly) NSUInteger poisCount;
 @property (copy, nonatomic, readonly) NSMutableArray *annotations;
 
-+ (instancetype) poiSetWithArrayOfPois: (NSArray *) arrayOfPois;
++ (instancetype) poiSetWithArrayOfPois: (NSMutableArray *) arrayOfPois;
 
 - (Poi *) poiAtIndex:(NSUInteger) index;
 - (Poi *) poiWithIdentifier:(NSUInteger) identifier;
 - (Poi *) poiInCurrentLocation: (CLLocation *) currentLocation;
+- (void) addPoi: (Poi *) poi;
+- (void) updatePoi: (Poi *) poi;
 
 @end

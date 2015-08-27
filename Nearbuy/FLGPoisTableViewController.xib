@@ -67,6 +67,7 @@
                 <constraint firstAttribute="bottom" secondItem="BQ7-az-ePD" secondAttribute="bottom" id="sus-Pa-hiu"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="552" y="159"/>
         </view>
     </objects>
     <resources>

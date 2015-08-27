@@ -13,6 +13,8 @@
 
 @interface AppDelegate ()
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
 @end
 
 @implementation AppDelegate

@@ -11,11 +11,13 @@
 @interface Poi : NSObject
 
 @property (nonatomic, readonly) NSUInteger identifier;
-@property (copy, nonatomic, readonly) NSString *name;
-@property (copy, nonatomic, readonly) NSNumber *latitude;
-@property (copy, nonatomic, readonly) NSNumber *longitude;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSNumber *latitude;
+@property (copy, nonatomic) NSNumber *longitude;
+@property (copy, nonatomic, readonly) NSString *latitudeString;
+@property (copy, nonatomic, readonly) NSString *longitudeString;
 @property (copy, nonatomic, readonly) NSString *coordinateString;
-@property (copy, nonatomic, readonly) NSNumber *minDistance;
+@property (copy, nonatomic) NSNumber *minDistance;
 
 + (instancetype) poiWithIdentifier: (NSUInteger) identifier
                              name: (NSString *) name

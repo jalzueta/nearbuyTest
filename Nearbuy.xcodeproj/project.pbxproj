@@ -34,6 +34,8 @@
 		59ED38BA1B8E855F004C6F0A /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B11B8E855F004C6F0A /* Raleway-Regular.ttf */; };
 		59ED38BB1B8E855F004C6F0A /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B21B8E855F004C6F0A /* Raleway-SemiBold.ttf */; };
 		59ED38BC1B8E855F004C6F0A /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */; };
+		59ED38C01B8E8BD1004C6F0A /* FLGPoiDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */; };
+		59ED38C11B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,9 @@
 		59ED38B11B8E855F004C6F0A /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		59ED38B21B8E855F004C6F0A /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		59ED38BD1B8E8BD1004C6F0A /* FLGPoiDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoiDetailViewController.h; sourceTree = "<group>"; };
+		59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPoiDetailViewController.m; sourceTree = "<group>"; };
+		59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoiDetailViewController.xib; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +220,9 @@
 				59ED385E1B8DAE45004C6F0A /* FLGPoisTableViewController.h */,
 				59ED385F1B8DAE45004C6F0A /* FLGPoisTableViewController.m */,
 				59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */,
+				59ED38BD1B8E8BD1004C6F0A /* FLGPoiDetailViewController.h */,
+				59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */,
+				59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 				59ED38B41B8E855F004C6F0A /* Raleway-Bold.ttf in Resources */,
 				59ED38B81B8E855F004C6F0A /* Raleway-Light.ttf in Resources */,
 				59ED38B91B8E855F004C6F0A /* Raleway-Medium.ttf in Resources */,
+				59ED38C11B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib in Resources */,
 				59ED38B61B8E855F004C6F0A /* Raleway-ExtraLight.ttf in Resources */,
 				59ED38BC1B8E855F004C6F0A /* Raleway-Thin.ttf in Resources */,
 				59ED38BB1B8E855F004C6F0A /* Raleway-SemiBold.ttf in Resources */,
@@ -427,6 +436,7 @@
 			files = (
 				59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */,
 				59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */,
+				59ED38C01B8E8BD1004C6F0A /* FLGPoiDetailViewController.m in Sources */,
 				59ED386C1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m in Sources */,
 				59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */,
 				59ED387A1B8E678A004C6F0A /* MyLocation.m in Sources */,

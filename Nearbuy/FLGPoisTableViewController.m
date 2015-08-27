@@ -11,10 +11,12 @@
 #import "Poi.h"
 #import "FLGPoiTableViewCell.h"
 #import "UserDefaultsUtils.h"
+#import "FLGPoiDetailViewController.h"
 
 static NSString *const reuseIdentifier = @"cell";
 #define TABLE_SEGMENT 0
 #define MAP_SEGMENT 1
+#define NO_EDITING_VALUE -1
 
 @interface FLGPoisTableViewController ()
 
@@ -22,12 +24,13 @@ static NSString *const reuseIdentifier = @"cell";
 @property(weak, nonatomic) IBOutlet MKMapView *mapView;
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *testPushNotificationsButtonItem;
 
+@property(nonatomic) NSInteger editingRow;
+
 @end
 
 @implementation FLGPoisTableViewController
 
 #pragma mark - Life Cycle
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -39,7 +42,12 @@ static NSString *const reuseIdentifier = @"cell";
     self.mapView.delegate = self;
     self.mapView.zoomEnabled = YES;
     self.mapView.showsUserLocation = YES;
-    [self.mapView addAnnotations:self.poisSet.annotations];
+    [self loadAnnotations];
+    
+    UIBarButtonItem *addPoiBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                        target:self
+                                                                                        action:@selector(addNewPoi:)];
+    self.navigationItem.rightBarButtonItem = addPoiBarButtonItem;
     
     [self.testPushNotificationsButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                   [UIColor orangeColor], NSForegroundColorAttributeName,
@@ -54,7 +62,6 @@ static NSString *const reuseIdentifier = @"cell";
 
 
 #pragma mark - Actions
-
 - (IBAction)testPushNotificationsDidPress:(id)sender{
     if ([UserDefaultsUtils pushNotificationToken]) {
         [self sendLocationCoincidenceWithPoi:[Poi poiWithIdentifier:0
@@ -84,7 +91,6 @@ static NSString *const reuseIdentifier = @"cell";
 }
 
 #pragma mark - TableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.poisSet.poisCount;
 }
@@ -97,21 +103,60 @@ static NSString *const reuseIdentifier = @"cell";
     return cell;
 }
 
--(void) registerNib{
-    
-    UINib *nib = [UINib nibWithNibName:@"FLGPoiTableViewCell"
-                         bundle:[NSBundle mainBundle]];
-    [self.tableView registerNib:nib
-         forCellReuseIdentifier:[FLGPoiTableViewCell cellId]];
+#pragma mark - TableViewDelegate
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.editingRow = indexPath.row;
+    Poi* poi = [self.poisSet poiAtIndex:self.editingRow];
+    FLGPoiDetailViewController *poiDetailViewController = [[FLGPoiDetailViewController alloc] initWithPoi:poi];
+    poiDetailViewController.delegate = self;
+    [self.navigationController pushViewController:poiDetailViewController
+                                         animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath
+                                  animated:YES];
 }
 
 #pragma mark - Map
-
 - (void)currentLocationUpdatedWithLocation:(CLLocation *)currentLocation{
+    [super currentLocationUpdatedWithLocation:currentLocation];
     CLLocationDistance regionRadius = 300;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, regionRadius * 2, regionRadius * 2);
     [self.mapView setRegion:region
                    animated:YES];
+}
+
+#pragma mark - Utils
+-(void) registerNib{
+    UINib *nib = [UINib nibWithNibName:@"FLGPoiTableViewCell"
+                                bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:nib
+         forCellReuseIdentifier:[FLGPoiTableViewCell cellId]];
+}
+
+- (void) loadAnnotations{
+    NSMutableArray * annotationsToRemove = [self.mapView.annotations mutableCopy];
+    [annotationsToRemove removeObject:self.mapView.userLocation];
+    [self.mapView removeAnnotations:annotationsToRemove];
+    [self.mapView addAnnotations:self.poisSet.annotations];
+}
+
+- (void) addNewPoi:(id) sender{
+    self.editingRow = NO_EDITING_VALUE;
+    FLGPoiDetailViewController *poiDetailViewController = [[FLGPoiDetailViewController alloc] initForNewPoi];
+    poiDetailViewController.delegate = self;
+    [self.navigationController pushViewController:poiDetailViewController
+                                         animated:YES];
+}
+
+#pragma mark - PoiDetailViewControllerDelegate
+- (void)poiDetailViewController:(FLGPoiDetailViewController *)poiDetailViewController didPressedSavePoi:(Poi *)poi{
+    if (self.editingRow == NO_EDITING_VALUE) {
+        [self.poisSet addPoi:poi];
+    }
+    else{
+        [self.poisSet updatePoi:poi];
+    }
+    [self.tableView reloadData];
+    [self loadAnnotations];
 }
 
 @end

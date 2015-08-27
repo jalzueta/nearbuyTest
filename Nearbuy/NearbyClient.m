@@ -19,6 +19,7 @@
 
 @implementation NearbyClient
 
+#pragma mark - Init
 - (instancetype)init
 {
     self = [super init];
@@ -29,6 +30,7 @@
     return self;
 }
 
+#pragma mark - Requests
 - (void) sendLocationCoincidenceForPoi: (Poi *) poi{
     NSDictionary *parameters = @{
                                  @"latitude" : poi.latitude,

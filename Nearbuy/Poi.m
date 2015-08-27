@@ -38,7 +38,21 @@
 }
 
 - (NSString *)coordinateString{
-    return [NSString stringWithFormat:@"(%@, %@)", self.latitude, self.longitude];
+    return [NSString stringWithFormat:@"(%@, %@)", self.latitudeString, self.longitudeString];
 }
 
+- (NSString *) latitudeString{
+    return [self stringWithSixDecimalsFormattedNumber:self.latitude];
+}
+
+- (NSString *) longitudeString{
+    return [self stringWithSixDecimalsFormattedNumber:self.longitude];
+}
+
+- (NSString *) stringWithSixDecimalsFormattedNumber: (NSNumber *)number{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.maximumFractionDigits = 6;
+    return [formatter stringFromNumber:number];
+}
 @end

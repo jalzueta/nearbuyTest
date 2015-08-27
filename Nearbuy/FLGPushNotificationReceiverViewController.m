@@ -16,7 +16,6 @@
 @implementation FLGPushNotificationReceiverViewController
 
 #pragma mark - Life Cycle
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupNotifications];
