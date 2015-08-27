@@ -70,22 +70,11 @@
 #pragma mark - Appearance
 
 - (void) setAppAppearance{
-    [self printAllFontNames];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                           [UIColor orangeColor], NSForegroundColorAttributeName,
                                                           [UIFont fontWithName:@"Raleway-SemiBold" size:20.0], NSFontAttributeName, nil]];
-    
-//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigation_bar"] forBarMetrics:UIBarMetricsDefault];
-}
-
-- (void) printAllFontNames {
-    for (NSString *familyName in [UIFont familyNames]) {
-        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
-            NSLog(@"%@", fontName);
-        }
-    }
 }
 
 #pragma mark - Push Notifications
