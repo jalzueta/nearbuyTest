@@ -11,6 +11,7 @@
 
 @interface FLGPoiTableViewCell ()
 
+@property (weak, nonatomic) IBOutlet UILabel *identifierLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *coordinateLabel;
 
@@ -23,6 +24,7 @@
 }
 
 - (void) configureWithPoi: (Poi *)poi{
+    self.identifierLabel.text = poi.identifierString;
     self.nameLabel.text = poi.name;
     self.coordinateLabel.text = poi.coordinateString;
 }

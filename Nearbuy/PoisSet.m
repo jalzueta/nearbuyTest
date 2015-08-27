@@ -185,7 +185,7 @@
             nextPoiIdentifier = poi.identifier;
         }
     }
-    return nextPoiIdentifier;
+    return nextPoiIdentifier++;
 }
 
 @end

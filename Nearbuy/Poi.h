@@ -15,6 +15,7 @@
 @property (copy, nonatomic) NSNumber *latitude;
 @property (copy, nonatomic) NSNumber *longitude;
 @property (copy, nonatomic) NSNumber *minDistance;
+@property (copy, nonatomic, readonly) NSString *identifierString;
 @property (copy, nonatomic, readonly) NSString *latitudeString;
 @property (copy, nonatomic, readonly) NSString *longitudeString;
 @property (copy, nonatomic, readonly) NSString *coordinateString;

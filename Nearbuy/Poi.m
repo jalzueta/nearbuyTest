@@ -38,8 +38,8 @@
     return self;
 }
 
-- (NSString *)coordinateString{
-    return [NSString stringWithFormat:@"(%@, %@)", self.latitudeString, self.longitudeString];
+- (NSString *)identifierString{
+    return [NSString stringWithFormat:@"%lu", self.identifier];
 }
 
 - (NSString *) latitudeString{
@@ -54,9 +54,13 @@
     return [self.minDistance flg_stringWithNumberOfFractionDigits:0];
 }
 
+- (NSString *)coordinateString{
+    return [NSString stringWithFormat:@"(%@, %@)", self.latitudeString, self.longitudeString];
+}
+
 - (BOOL) isEqualToPoi: (Poi *) poi{
     if (poi) {
-        return ((self.name = poi.name) && ([self.latitude isEqualToNumber:poi.latitude]) && ([self.longitude isEqualToNumber:poi.longitude]));
+        return ((self.identifier == poi.identifier) && (self.name == poi.name) && ([self.latitude isEqualToNumber:poi.latitude]) && ([self.longitude isEqualToNumber:poi.longitude]));
     }
     return NO;
 }
