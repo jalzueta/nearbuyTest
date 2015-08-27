@@ -12,6 +12,7 @@
 #import "FLGPoiTableViewCell.h"
 #import "UserDefaultsUtils.h"
 #import "FLGPoiDetailViewController.h"
+#import "MyLocation.h"
 
 static NSString *const reuseIdentifier = @"cell";
 #define TABLE_SEGMENT 0
@@ -122,6 +123,20 @@ static NSString *const reuseIdentifier = @"cell";
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, regionRadius * 2, regionRadius * 2);
     [self.mapView setRegion:region
                    animated:YES];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    if ([annotation isKindOfClass:[MyLocation class]]) {
+        MyLocation *myLocation = (MyLocation *)annotation;
+        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MyCustomAnnotation"];
+        if (annotationView == nil) {
+            annotationView = myLocation.annotationView;
+        }else{
+            annotationView.annotation = annotation;
+        }
+        return annotationView;
+    }
+    return nil;
 }
 
 #pragma mark - Utils

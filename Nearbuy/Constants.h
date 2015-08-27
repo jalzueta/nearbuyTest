@@ -26,6 +26,9 @@
 #define SCREEN_WIDTH    [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT   [[UIScreen mainScreen] bounds].size.height
 
+#pragma mark - Fonts
+#define MAP_ANNOTATIONS_IDENTIFIER_FONT [UIFont fontWithName:@"Raleway-light" size:13.0]
+
 #pragma mark - Colors
 #define RGBA(r,g,b,a)				[UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 #define RGB(r,g,b)					RGBA(r, g, b, 1.0f)
@@ -33,3 +36,4 @@
 #define HSB(h,s,b)					HSBA(h, s, b, 1.0f)
 
 #define KB_ACCESORY_VIEW_BUTTONS_TINT_COLOR     RGB(255,255,255)
+#define DARK_ORANGE_COLOR     HSB(25,97,75)

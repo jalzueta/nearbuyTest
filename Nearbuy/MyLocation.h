@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+@class Poi;
 
 @interface MyLocation : NSObject<MKAnnotation>
 
 - (instancetype) initWithTitle: (NSString *) title
                       subtitle: (NSString *)subtitle
-                    coordinate: (CLLocationCoordinate2D) coordinate;
+                    coordinate: (CLLocationCoordinate2D) coordinate
+                           poi: (Poi *) poi;
+
+- (MKAnnotationView *)annotationView;
 
 @end

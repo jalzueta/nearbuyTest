@@ -120,7 +120,8 @@
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([poi.latitude doubleValue], [poi.longitude doubleValue]);
         MyLocation *annotation = [[MyLocation alloc]initWithTitle:poi.name
                                                          subtitle:poi.coordinateString
-                                                       coordinate:coordinate];
+                                                       coordinate:coordinate
+                                                              poi:poi];
         [_annotations addObject:annotation];
     }
     return _annotations;
