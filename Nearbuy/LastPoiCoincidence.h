@@ -12,6 +12,7 @@
 @interface LastPoiCoincidence : NSObject
 
 @property(strong, nonatomic) Poi *poi;
+@property(nonatomic, readonly) NSUInteger identifier;
 
 + (LastPoiCoincidence *) sharedInstance;
 

@@ -11,7 +11,7 @@
 
 @protocol PoiDetailViewControllerDelegate;
 
-@interface FLGPoiDetailViewController : FLGLocationCoincidenceCheckerViewController
+@interface FLGPoiDetailViewController : FLGLocationCoincidenceCheckerViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) id<PoiDetailViewControllerDelegate> delegate;
 

@@ -20,3 +20,16 @@
 #define PUSH_NOTIFICATION_CUSTOM_DATA_PARSE_KEY @"custom_data"
 #define PUSH_NOTIFICATION_TYPE_PARSE_KEY @"type"
 #define PUSH_NOTIFICATION_ID_PARSE_KEY @"id"
+
+#pragma mark - Screen Size
+#define SCREEN_BOUNDS   [[UIScreen mainScreen] bounds]
+#define SCREEN_WIDTH    [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT   [[UIScreen mainScreen] bounds].size.height
+
+#pragma mark - Colors
+#define RGBA(r,g,b,a)				[UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r,g,b)					RGBA(r, g, b, 1.0f)
+#define HSBA(h,s,b,a)               [UIColor colorWithHue:h/360.0 saturation:s/100.0 brightness:b/100.0 alpha:a/1.0]
+#define HSB(h,s,b)					HSBA(h, s, b, 1.0f)
+
+#define KB_ACCESORY_VIEW_BUTTONS_TINT_COLOR     RGB(255,255,255)

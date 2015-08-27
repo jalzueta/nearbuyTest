@@ -14,10 +14,10 @@
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSNumber *latitude;
 @property (copy, nonatomic) NSNumber *longitude;
+@property (copy, nonatomic) NSNumber *minDistance;
 @property (copy, nonatomic, readonly) NSString *latitudeString;
 @property (copy, nonatomic, readonly) NSString *longitudeString;
 @property (copy, nonatomic, readonly) NSString *coordinateString;
-@property (copy, nonatomic) NSNumber *minDistance;
 
 + (instancetype) poiWithIdentifier: (NSUInteger) identifier
                              name: (NSString *) name

@@ -7,6 +7,7 @@
 //
 
 #import "LastPoiCoincidence.h"
+#import "Poi.h"
 
 @implementation LastPoiCoincidence
 
@@ -18,6 +19,10 @@
         }
     }
     return inst;
+}
+
+- (NSUInteger)identifier{
+    return self.poi.identifier;
 }
 
 @end
