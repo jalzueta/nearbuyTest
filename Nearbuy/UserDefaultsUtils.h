@@ -13,4 +13,7 @@
 + (void) savePushNotificationToken: (NSData *) pushNotificationToken;
 + (NSString *) pushNotificationToken;
 
++ (void) saveLastPoiCoincidenceIdentifier: (NSUInteger) lastPoiCoincidenceIdentifier;
++ (NSUInteger) lastPoiCoincidenceIdentifier;
+
 @end

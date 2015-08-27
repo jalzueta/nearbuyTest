@@ -10,10 +10,16 @@
 #import "Constants.h"
 #import "UserDefaultsUtils.h"
 #import "FLGPoisTableViewController.h"
+#import "PoisSet.h"
+#import "Poi.h"
+#import "LastPoiCoincidence.h"
+#import "NearbyClient.h"
 
 @interface AppDelegate ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
+@property (strong, nonatomic) PoisSet *poisSet;
 
 @end
 
@@ -22,6 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // Push notifications init
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         // iOS 8
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
@@ -31,9 +38,17 @@
         // iOS 7
         [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
     }
+    
+    // Push notifications Badge reset
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
+    // Singleton init
+    NSUInteger lastPoiCoincidenceIdentifier = [UserDefaultsUtils lastPoiCoincidenceIdentifier];
+    if (lastPoiCoincidenceIdentifier != NO_LAST_POI_COINCIDENCE_IDENTIFIER_DEF_VALUE) {
+        [LastPoiCoincidence sharedInstance].poi = [[PoisSet poiSetWithTrickValues] poiWithIdentifier:lastPoiCoincidenceIdentifier];
+    }
     
+    // Build window
     FLGPoisTableViewController *poisTableViewController = [[FLGPoisTableViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:poisTableViewController];
     
@@ -55,6 +70,9 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    // Singleton save in NSUserDefaults
+    [UserDefaultsUtils saveLastPoiCoincidenceIdentifier:[LastPoiCoincidence sharedInstance].poi.identifier];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -80,7 +98,6 @@
 }
 
 #pragma mark - Push Notifications
-
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
     NSLog(@"My token (1) is: %@", devToken);
     [UserDefaultsUtils savePushNotificationToken:devToken];

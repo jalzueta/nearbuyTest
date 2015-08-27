@@ -8,6 +8,8 @@
 
 #pragma mark - Push NSUserDefaults
 #define PUSH_NOTIFICATION_TOKEN_DEF_KEY @"pushNotificationToken"
+#define LAST_POI_COINCIDENCE_IDENTIFIER_DEF_KEY @"lastPoiCoincidenceIdentifier"
+#define NO_LAST_POI_COINCIDENCE_IDENTIFIER_DEF_VALUE -(1)
 
 #pragma mark - Push Notifications
 #define PUSH_NOTIFICATION_RECEIVED @"pushNotificationReceived"

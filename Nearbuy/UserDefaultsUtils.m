@@ -27,4 +27,19 @@
     return pushNotificationTokenString;
 }
 
++ (void) saveLastPoiCoincidenceIdentifier: (NSUInteger) lastPoiCoincidenceIdentifier{
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:@(lastPoiCoincidenceIdentifier) forKey:LAST_POI_COINCIDENCE_IDENTIFIER_DEF_KEY];
+    [def synchronize];
+}
+
++ (NSUInteger) lastPoiCoincidenceIdentifier {
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    NSNumber *lastPoiCoincidenceIdentifier = [def objectForKey:LAST_POI_COINCIDENCE_IDENTIFIER_DEF_KEY];
+    if (!lastPoiCoincidenceIdentifier) {
+        [self saveLastPoiCoincidenceIdentifier:NO_LAST_POI_COINCIDENCE_IDENTIFIER_DEF_VALUE];
+    }
+    return (NSUInteger)[[def objectForKey:LAST_POI_COINCIDENCE_IDENTIFIER_DEF_KEY] integerValue];
+}
+
 @end

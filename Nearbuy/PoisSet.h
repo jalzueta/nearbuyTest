@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) NSUInteger poisCount;
 @property (copy, nonatomic, readonly) NSMutableArray *annotations;
 
++ (instancetype) poiSetWithTrickValues;
 + (instancetype) poiSetWithArrayOfPois: (NSMutableArray *) arrayOfPois;
 
 - (Poi *) poiAtIndex:(NSUInteger) index;
