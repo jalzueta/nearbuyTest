@@ -24,7 +24,8 @@
 {
     self = [super init];
     if (self) {
-        NSURL *baseURL = [NSURL URLWithString:@"http://www.fillingapps.com/apps/tests/nearbuy/api"];
+//        NSURL *baseURL = [NSURL URLWithString:@"http://www.fillingapps.com/apps/tests/nearbuy/api"];
+        NSURL *baseURL = [NSURL URLWithString:@"http://www.protectfive.com/javi"];
         
         _requestManager = [[AFHTTPRequestOperationManager alloc]
                            initWithBaseURL:baseURL];
@@ -46,8 +47,8 @@
                                  @"poiName" : poi.name
                                  };
     
-    //[self GET:@"coincidence_get_dev.php" parameters:parameters];
-    [self POST:@"coincidence_post_dev.php" parameters:parameters];
+    [self GET:@"coincidence_get_dev.php" parameters:parameters];
+//    [self POST:@"coincidence_post.php" parameters:parameters];
 }
 
 - (void)  GET:(NSString *) path

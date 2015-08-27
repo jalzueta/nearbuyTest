@@ -32,9 +32,10 @@
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+//        self.locationManager.distanceFilter = 1;
         
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-            [self.locationManager requestWhenInUseAuthorization];
+            [self.locationManager requestAlwaysAuthorization];
         }
         [self startReceivingLocation];
     }
@@ -193,8 +194,15 @@
 }
 
 - (void) currentLocationUpdatedWithLocation: (CLLocation *) currentLocation{
-    self.currentLocation = currentLocation;
-    [self checkLocationCoincidenceForLocation:self.currentLocation];
+    if (UIApplication.sharedApplication.applicationState == UIApplicationStateActive){
+        self.currentLocation = currentLocation;
+        [self checkLocationCoincidenceForLocation:self.currentLocation];
+    }
+    else {
+        NSLog(@"App is backgrounded. New location is %@", currentLocation);
+        self.currentLocation = currentLocation;
+        [self checkLocationCoincidenceForLocation:self.currentLocation];
+    }
 }
 
 - (void) checkLocationCoincidenceForLocation: (CLLocation *) currentLocation{
