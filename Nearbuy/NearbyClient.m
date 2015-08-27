@@ -24,8 +24,15 @@
 {
     self = [super init];
     if (self) {
+        NSURL *baseURL = [NSURL URLWithString:@"http://www.fillingapps.com/apps/tests/nearbuy/api"];
+        
         _requestManager = [[AFHTTPRequestOperationManager alloc]
-                           initWithBaseURL:[NSURL URLWithString:@"http://www.fillingapps.com/apps/tests/nearbuy/api"]];
+                           initWithBaseURL:baseURL];
+        [_requestManager.requestSerializer setValue:@"text/html"
+                                 forHTTPHeaderField:@"Accept"];
+        
+        _requestManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        _requestManager.responseSerializer.acceptableContentTypes = [_requestManager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     }
     return self;
 }

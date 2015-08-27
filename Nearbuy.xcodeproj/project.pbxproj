@@ -50,7 +50,7 @@
 
 /* Begin PBXFileReference section */
 		48AF2F2923D1EC95F3E82FFA /* libPods-Nearbuy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nearbuy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59ED38311B8D1637004C6F0A /* Nearbuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nearbuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59ED38311B8D1637004C6F0A /* NearbuyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbuyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ED38351B8D1638004C6F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59ED38361B8D1638004C6F0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59ED38381B8D1638004C6F0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		59ED38321B8D1637004C6F0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				59ED38311B8D1637004C6F0A /* Nearbuy.app */,
+				59ED38311B8D1637004C6F0A /* NearbuyTest.app */,
 				59ED38441B8D1639004C6F0A /* NearbuyTests.xctest */,
 			);
 			name = Products;
@@ -302,7 +302,7 @@
 			);
 			name = Nearbuy;
 			productName = Nearbuy;
-			productReference = 59ED38311B8D1637004C6F0A /* Nearbuy.app */;
+			productReference = 59ED38311B8D1637004C6F0A /* NearbuyTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 		59ED38431B8D1639004C6F0A /* NearbuyTests */ = {
@@ -334,6 +334,7 @@
 				TargetAttributes = {
 					59ED38301B8D1636004C6F0A = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = H28D9YK49Q;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -567,13 +568,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Javier Alzueta Pellicer (WP72ZHSJRN)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Javier Alzueta Pellicer (WP72ZHSJRN)";
 				INFOPLIST_FILE = Nearbuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a8e50033-b4cf-42e2-aca0-b8a657c6ea7f";
+				PRODUCT_NAME = NearbuyTest;
+				PROVISIONING_PROFILE = "b1b1af9a-fd94-44b2-a2c6-ed619fcb4f5e";
 			};
 			name = Debug;
 		};
@@ -583,10 +584,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Nearbuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NearbuyTest;
 			};
 			name = Release;
 		};
