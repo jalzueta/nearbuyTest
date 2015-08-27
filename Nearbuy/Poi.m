@@ -7,6 +7,7 @@
 //
 
 #import "Poi.h"
+#import "NSNumber+FLGNumberUtils.h"
 
 @implementation Poi
 
@@ -42,18 +43,15 @@
 }
 
 - (NSString *) latitudeString{
-    return [self stringWithSixDecimalsFormattedNumber:self.latitude];
+    return [self.latitude flg_stringWithNumberOfFractionDigits:6];
 }
 
 - (NSString *) longitudeString{
-    return [self stringWithSixDecimalsFormattedNumber:self.longitude];
+    return [self.longitude flg_stringWithNumberOfFractionDigits:6];
 }
 
-- (NSString *) stringWithSixDecimalsFormattedNumber: (NSNumber *)number{
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    formatter.maximumFractionDigits = 6;
-    return [formatter stringFromNumber:number];
+- (NSString *)minDistanceString{
+    return [self.minDistance flg_stringWithNumberOfFractionDigits:0];
 }
 
 - (BOOL) isEqualToPoi: (Poi *) poi{

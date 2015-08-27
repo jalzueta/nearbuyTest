@@ -18,6 +18,7 @@
 @property (copy, nonatomic, readonly) NSString *latitudeString;
 @property (copy, nonatomic, readonly) NSString *longitudeString;
 @property (copy, nonatomic, readonly) NSString *coordinateString;
+@property (copy, nonatomic, readonly) NSString *minDistanceString;
 
 + (instancetype) poiWithIdentifier: (NSUInteger) identifier
                              name: (NSString *) name

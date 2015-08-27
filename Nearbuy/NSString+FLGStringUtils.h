@@ -10,7 +10,7 @@
 
 @interface NSString (FLGStringUtils)
 
-- (BOOL)isEqualIgnoreCaseToString:(NSString *)iString;
-- (NSNumber *) numberWithString;
+- (BOOL)flg_isEqualIgnoreCaseToString:(NSString *)iString;
+- (NSNumber *) flg_numberWithString;
 
 @end

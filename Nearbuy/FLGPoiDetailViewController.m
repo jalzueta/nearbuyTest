@@ -75,6 +75,7 @@
 
 - (IBAction)getMyLocationDidPressed:(id)sender {
     if (self.currentLocation) {
+        [self loadPoiWithScreenValues];
         self.poi.latitude = @(self.currentLocation.coordinate.latitude);
         self.poi.longitude = @(self.currentLocation.coordinate.longitude);
         [self populateScreen];
@@ -86,6 +87,11 @@
 
 #pragma mark - Utils
 - (void) configTextFields{
+    self.poiNameTextField.delegate = self;
+    self.poiLatitudeTextField.delegate = self;
+    self.poiLongitudeTextField.delegate = self;
+    self.poiMinDistanceTextField.delegate = self;
+
     self.poiNameTextField.inputAccessoryView = self.firstItemAccesoryKBView;
     self.poiLatitudeTextField.inputAccessoryView = self.middleItemAccesoryKBView;
     self.poiLongitudeTextField.inputAccessoryView = self.middleItemAccesoryKBView;
@@ -93,22 +99,17 @@
 }
 
 - (void) populateScreen{
-    self.poiNameTextField.delegate = self;
-    self.poiLatitudeTextField.delegate = self;
-    self.poiLongitudeTextField.delegate = self;
-    self.poiMinDistanceTextField.delegate = self;
-    
     self.poiNameTextField.text = self.poi.name;
     self.poiLatitudeTextField.text = self.poi.latitudeString;
     self.poiLongitudeTextField.text = self.poi.longitudeString;
-    self.poiMinDistanceTextField.text = [NSString stringWithFormat:@"%@", self.poi.minDistance];
+    self.poiMinDistanceTextField.text = self.poi.minDistanceString;
 }
 
 - (void) loadPoiWithScreenValues{
     self.poi.name = self.poiNameTextField.text;
-    self.poi.latitude = [self.poiLatitudeTextField.text numberWithString];
-    self.poi.longitude = [self.poiLongitudeTextField.text numberWithString];
-    self.poi.minDistance = [self.poiMinDistanceTextField.text numberWithString];
+    self.poi.latitude = [self.poiLatitudeTextField.text flg_numberWithString];
+    self.poi.longitude = [self.poiLongitudeTextField.text flg_numberWithString];
+    self.poi.minDistance = [self.poiMinDistanceTextField.text flg_numberWithString];
 }
 
 - (void) hideKeyboard{
@@ -117,9 +118,28 @@
 
 - (void) savePoiAndReturn{
     [self loadPoiWithScreenValues];
-    [self.delegate poiDetailViewController:self
-                         didPressedSavePoi:self.poi];
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self allDataAssigned]) {
+        [self.delegate poiDetailViewController:self
+                             didPressedSavePoi:self.poi];
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        UIAlertController *missedPoiDataAlertController = [UIAlertController alertControllerWithTitle:@"Missing Poi data"
+                                                                                              message:@"Please, fullfill all fields before saving the POI"
+                                                                                       preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {}];
+        
+        [missedPoiDataAlertController addAction: okAction];
+        
+        [self presentViewController:missedPoiDataAlertController
+                           animated:YES
+                         completion:nil];
+    }
+}
+
+- (BOOL) allDataAssigned{
+    return (![self.poi.name isEqual:nil] && ![self.poi.name isEqual:@""] && ![self.poi.latitude isEqual:nil] && ![self.poi.longitude isEqual:nil] && ![self.poi.minDistance isEqual:nil]);
 }
 
 #pragma mark - TextFieldDelegate
@@ -129,7 +149,7 @@
 }
 
 
-#pragma mark - TextView accesory view
+#pragma mark - TextFields accesory view
 - (void) createItemAccesoryKBViews{
     self.firstItemAccesoryKBView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
     self.firstItemAccesoryKBView.items = [NSArray arrayWithObjects:[self nextBtn], [self flexBtn], [self doneBtn], nil];

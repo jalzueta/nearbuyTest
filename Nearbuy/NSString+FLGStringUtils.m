@@ -10,11 +10,11 @@
 
 @implementation NSString (FLGStringUtils)
 
-- (BOOL)isEqualIgnoreCaseToString:(NSString *)iString {
+- (BOOL) flg_isEqualIgnoreCaseToString:(NSString *)iString {
     return ([self caseInsensitiveCompare:iString] == NSOrderedSame);
 }
 
-- (NSNumber *) numberWithString {
+- (NSNumber *) flg_numberWithString {
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     f.numberStyle = NSNumberFormatterDecimalStyle;
     return [f numberFromString:self];
