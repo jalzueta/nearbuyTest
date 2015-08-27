@@ -77,7 +77,7 @@
             if (distance < minDistance) {
                 detectedPoi = poi;
             }
-            NSLog(@"Distance to %@: %f", poi.name, [currentLocation distanceFromLocation:location]);
+//            NSLog(@"Distance to %@: %f", poi.name, [currentLocation distanceFromLocation:location]);
         }
     }
     return detectedPoi;

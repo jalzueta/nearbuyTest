@@ -55,4 +55,11 @@
     formatter.maximumFractionDigits = 6;
     return [formatter stringFromNumber:number];
 }
+
+- (BOOL) isEqualToPoi: (Poi *) poi{
+    if (poi) {
+        return ((self.name = poi.name) && ([self.latitude isEqualToNumber:poi.latitude]) && ([self.longitude isEqualToNumber:poi.longitude]));
+    }
+    return NO;
+}
 @end

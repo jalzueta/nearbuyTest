@@ -12,13 +12,13 @@
 #import "Poi.h"
 #import "PoisSet.h"
 #import "UserDefaultsUtils.h"
+#import "LastPoiCoincidence.h"
 
 @interface FLGLocationCoincidenceCheckerViewController ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *currentLocation;
 @property (strong, nonatomic) PoisSet *poisSet;
-@property (strong, nonatomic) Poi *lastDetectedPoi;
 
 @end
 
@@ -199,11 +199,14 @@
 
 - (void) checkLocationCoincidenceForLocation: (CLLocation *) currentLocation{
     Poi *poiInCurrentLocation = [self.poisSet poiInCurrentLocation:currentLocation];
-    if (poiInCurrentLocation != self.lastDetectedPoi) {
-        NSLog(@"Poi detectado: %@", poiInCurrentLocation.name);
-        if (poiInCurrentLocation && [UserDefaultsUtils pushNotificationToken]) {
-            self.lastDetectedPoi = poiInCurrentLocation;
-            [self sendLocationCoincidenceWithPoi:self.lastDetectedPoi];
+    if (poiInCurrentLocation) {
+        if (![poiInCurrentLocation isEqualToPoi: [LastPoiCoincidence sharedInstance].poi]) {
+            NSLog(@"Poi detectado: %@", poiInCurrentLocation.name);
+            NSLog(@"LastPoi: %@", [LastPoiCoincidence sharedInstance].poi.name);
+            if ([UserDefaultsUtils pushNotificationToken]) {
+                [LastPoiCoincidence sharedInstance].poi = poiInCurrentLocation;
+                [self sendLocationCoincidenceWithPoi:[LastPoiCoincidence sharedInstance].poi];
+            }
         }
     }
 }

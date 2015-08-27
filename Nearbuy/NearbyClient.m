@@ -46,8 +46,8 @@
                                  @"poiName" : poi.name
                                  };
     
-    //[self GET:@"coincidence_get.php" parameters:parameters];
-    [self POST:@"coincidence_post.php" parameters:parameters];
+    //[self GET:@"coincidence_get_dev.php" parameters:parameters];
+    [self POST:@"coincidence_post_dev.php" parameters:parameters];
 }
 
 - (void)  GET:(NSString *) path

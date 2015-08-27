@@ -36,6 +36,7 @@
 		59ED38BC1B8E855F004C6F0A /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */; };
 		59ED38C01B8E8BD1004C6F0A /* FLGPoiDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */; };
 		59ED38C11B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */; };
+		59ED38C41B8F5141004C6F0A /* LastPoiCoincidence.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38C31B8F5141004C6F0A /* LastPoiCoincidence.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		59ED38BD1B8E8BD1004C6F0A /* FLGPoiDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoiDetailViewController.h; sourceTree = "<group>"; };
 		59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPoiDetailViewController.m; sourceTree = "<group>"; };
 		59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoiDetailViewController.xib; sourceTree = "<group>"; };
+		59ED38C21B8F5141004C6F0A /* LastPoiCoincidence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastPoiCoincidence.h; sourceTree = "<group>"; };
+		59ED38C31B8F5141004C6F0A /* LastPoiCoincidence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastPoiCoincidence.m; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +239,8 @@
 				59ED386E1B8DFBC2004C6F0A /* PoisSet.m */,
 				59ED38781B8E678A004C6F0A /* MyLocation.h */,
 				59ED38791B8E678A004C6F0A /* MyLocation.m */,
+				59ED38C21B8F5141004C6F0A /* LastPoiCoincidence.h */,
+				59ED38C31B8F5141004C6F0A /* LastPoiCoincidence.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				59ED387A1B8E678A004C6F0A /* MyLocation.m in Sources */,
 				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
 				59ED38681B8DCC02004C6F0A /* Poi.m in Sources */,
+				59ED38C41B8F5141004C6F0A /* LastPoiCoincidence.m in Sources */,
 				59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */,
 				59ED38371B8D1638004C6F0A /* main.m in Sources */,
 				59ED385C1B8D93DA004C6F0A /* UserDefaultsUtils.m in Sources */,

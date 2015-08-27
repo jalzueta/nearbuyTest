@@ -25,4 +25,6 @@
                         longitude: (NSNumber *) longitude
                       minDistance: (NSNumber *) minDistance;
 
+- (BOOL) isEqualToPoi: (Poi *) poi;
+
 @end
