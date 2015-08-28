@@ -13,6 +13,7 @@
 #import "UserDefaultsUtils.h"
 #import "FLGPoiDetailViewController.h"
 #import "MyLocation.h"
+#import "Constants.h"
 
 static NSString *const reuseIdentifier = @"cell";
 #define TABLE_SEGMENT 0
@@ -116,6 +117,23 @@ static NSString *const reuseIdentifier = @"cell";
                                   animated:YES];
 }
 
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableViewIn commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.poisSet removePoiAtIndex: indexPath.row];
+        [self reloadData];
+        self.tableView.editing = NO;
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
 #pragma mark - Map
 - (void)currentLocationUpdatedWithLocation:(CLLocation *)currentLocation{
     [super currentLocationUpdatedWithLocation:currentLocation];
@@ -133,6 +151,12 @@ static NSString *const reuseIdentifier = @"cell";
             annotationView = myLocation.annotationView;
         }else{
             annotationView.annotation = annotation;
+            for (UIView *view in annotationView.subviews) {
+                if ([view isKindOfClass:[UILabel class]]) {
+                    ((UILabel *)view).text = myLocation.poi.identifierString;
+                    break;
+                }
+            }
         }
         return annotationView;
     }
@@ -145,6 +169,11 @@ static NSString *const reuseIdentifier = @"cell";
                                 bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib
          forCellReuseIdentifier:[FLGPoiTableViewCell cellId]];
+}
+
+- (void) reloadData{
+    [self.tableView reloadData];
+    [self loadAnnotations];
 }
 
 - (void) loadAnnotations{
@@ -170,8 +199,7 @@ static NSString *const reuseIdentifier = @"cell";
     else{
         [self.poisSet updatePoi:poi];
     }
-    [self.tableView reloadData];
-    [self loadAnnotations];
+    [self reloadData];
 }
 
 @end

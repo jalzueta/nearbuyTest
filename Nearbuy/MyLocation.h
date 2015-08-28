@@ -12,10 +12,15 @@
 
 @interface MyLocation : NSObject<MKAnnotation>
 
+@property (strong, nonatomic, readonly) UILabel *identifierLabel;
+
+@property (strong, nonatomic, readonly) Poi *poi;
+
 - (instancetype) initWithTitle: (NSString *) title
                       subtitle: (NSString *)subtitle
-                    coordinate: (CLLocationCoordinate2D) coordinate
-                           poi: (Poi *) poi;
+                    coordinate: (CLLocationCoordinate2D) coordinate;
+
+- (instancetype) initWithPoi: (Poi *) poi;
 
 - (MKAnnotationView *)annotationView;
 

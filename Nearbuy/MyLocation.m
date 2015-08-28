@@ -10,22 +10,24 @@
 #import "Constants.h"
 #import "Poi.h"
 
-@interface MyLocation ()
-
-@property (strong, nonatomic, readonly) Poi *poi;
-
-@end
-
 @implementation MyLocation
 
 - (instancetype) initWithTitle: (NSString *) title
                       subtitle: (NSString *)subtitle
-                    coordinate: (CLLocationCoordinate2D) coordinate
-                           poi: (Poi *) poi{
+                    coordinate: (CLLocationCoordinate2D) coordinate{
     if (self = [super init]) {
         _title = title;
         _subtitle = subtitle;
         _coordinate = coordinate;
+    }
+    return self;
+}
+
+- (instancetype) initWithPoi: (Poi *) poi{
+    if (self = [super init]) {
+        _title = poi.name;
+        _subtitle = poi.coordinateString;
+        _coordinate = CLLocationCoordinate2DMake([poi.latitude doubleValue], [poi.longitude doubleValue]);
         _poi = poi;
     }
     return self;
@@ -42,6 +44,7 @@
     annotationView.enabled = YES;
     annotationView.canShowCallout = YES;
     annotationView.image = [UIImage imageNamed:@"gps_map_icon"];
+    
     UILabel *identifierLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 1, 30, 30)];
     identifierLabel.text = self.poi.identifierString;
     identifierLabel.textAlignment = NSTextAlignmentCenter;

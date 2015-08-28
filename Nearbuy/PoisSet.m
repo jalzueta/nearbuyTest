@@ -117,11 +117,7 @@
 - (NSMutableArray *)annotations{
     [_annotations removeAllObjects];
     for (Poi *poi in self.arrayOfPois) {
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([poi.latitude doubleValue], [poi.longitude doubleValue]);
-        MyLocation *annotation = [[MyLocation alloc]initWithTitle:poi.name
-                                                         subtitle:poi.coordinateString
-                                                       coordinate:coordinate
-                                                              poi:poi];
+        MyLocation *annotation = [[MyLocation alloc]initWithPoi:poi];
         [_annotations addObject:annotation];
     }
     return _annotations;
@@ -187,6 +183,12 @@
         }
     }
     return nextPoiIdentifier++;
+}
+
+- (void) removePoiAtIndex: (NSUInteger) index{
+    if (self.arrayOfPois.count > index) {
+        [self.arrayOfPois removeObjectAtIndex:index];
+    }
 }
 
 @end

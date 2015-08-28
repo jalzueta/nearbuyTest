@@ -23,5 +23,6 @@
 - (Poi *) poiInCurrentLocation: (CLLocation *) currentLocation;
 - (void) addPoi: (Poi *) poi;
 - (void) updatePoi: (Poi *) poi;
+- (void) removePoiAtIndex: (NSUInteger) index;
 
 @end
