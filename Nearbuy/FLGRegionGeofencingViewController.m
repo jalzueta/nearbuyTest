@@ -133,10 +133,13 @@
 - (void)locationManager:(CLLocationManager *)manager
       didDetermineState:(CLRegionState)state
               forRegion:(CLRegion *)region {
-    NSLog(@"didDetermineState: %ld forRegion: %@", (long)state, region.identifier);
+//    NSLog(@"didDetermineState: %ld forRegion: %@", (long)state, region.identifier);
     if (state == CLRegionStateInside) {
         Poi *poiForRegion = [self.poisSet poiWithIdentifier:[region.identifier integerValue]];
         [self sendLocationCoincidenceWithPoi:poiForRegion];
+        //TODO: set "shouldLaunchNotification: NO"
+    }else{
+        //TODO: set "shouldLaunchNotification: YES"
     }
 }
 
