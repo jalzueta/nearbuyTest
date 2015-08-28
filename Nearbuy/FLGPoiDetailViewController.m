@@ -123,16 +123,16 @@
                              didPressedSavePoi:self.poi];
         [self.navigationController popViewControllerAnimated:YES];
     }else{
-        UIAlertController *missedPoiDataAlertController = [UIAlertController alertControllerWithTitle:@"Missing Poi data"
-                                                                                              message:@"Please, fullfill all fields before saving the POI"
+        UIAlertController *missingPoiDataAlertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"MissingPoiDataTitle", nil)
+                                                                                              message:NSLocalizedString(@"MissingPoiDataMessage", nil)
                                                                                        preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok"
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction *action) {}];
         
-        [missedPoiDataAlertController addAction: okAction];
+        [missingPoiDataAlertController addAction: okAction];
         
-        [self presentViewController:missedPoiDataAlertController
+        [self presentViewController:missingPoiDataAlertController
                            animated:YES
                          completion:nil];
     }

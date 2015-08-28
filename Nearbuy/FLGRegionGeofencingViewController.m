@@ -12,7 +12,6 @@
 #import "Poi.h"
 #import "PoisSet.h"
 #import "UserDefaultsUtils.h"
-#import "LastPoiCoincidence.h"
 
 @interface FLGRegionGeofencingViewController ()
 
@@ -31,8 +30,7 @@
     if (!self.locationManager) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-//        self.locationManager.distanceFilter = 3;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.locationManager requestAlwaysAuthorization];
@@ -40,26 +38,12 @@
         [self startReceivingLocation];
     }
     self.poisSet = [PoisSet poiSetWithTrickValues];
-    for (CLRegion *region in self.poisSet.regions) {
-        [self.locationManager startMonitoringForRegion:region];
-    }
+    [self reloadRegionsObservation];
 }
-
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    [self startReceivingLocation];
-//}
-
-//- (void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//    [self.locationManager stopUpdatingLocation];
-//}
 
 #pragma mark - Utils
 - (void) startReceivingLocation{
     [self.locationManager startUpdatingLocation];
-    
-    UIAlertView *locationNotAllowed;
     
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     switch (status) {
@@ -75,13 +59,15 @@
             break;
         case kCLAuthorizationStatusRestricted:
             NSLog(@"kCLAuthorizationStatusRestricted");
-            locationNotAllowed = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Location not allowed title", nil) message:NSLocalizedString(@"kCLAuthorizationStatusRestricted message", nil) delegate:self cancelButtonTitle: NSLocalizedString(@"Location not allowed close button", nil) otherButtonTitles: nil];
-            [locationNotAllowed show];
+            [self showAlertControllerWithTitle:NSLocalizedString(@"ErrorTitle", nil)
+                                       message:NSLocalizedString(@"kCLAuthorizationStatusRestrictedMessage", nil)
+                                    buttonText:NSLocalizedString(@"Close", nil)];
             break;
         case kCLAuthorizationStatusDenied:
             NSLog(@"kCLAuthorizationStatusDenied");
-            locationNotAllowed = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Location not allowed title", nil) message:NSLocalizedString(@"kCLAuthorizationStatusDenied message", nil) delegate:self cancelButtonTitle: NSLocalizedString(@"Location not allowed close button", nil) otherButtonTitles: nil];
-            [locationNotAllowed show];
+            [self showAlertControllerWithTitle:NSLocalizedString(@"ErrorTitle", nil)
+                                       message:NSLocalizedString(@"kCLAuthorizationStatusDeniedMessage", nil)
+                                    buttonText:NSLocalizedString(@"Close", nil)];
             break;
         case kCLAuthorizationStatusAuthorizedAlways:
             NSLog(@"kCLAuthorizationStatusAuthorizedAlways");
@@ -96,9 +82,33 @@
     }
 }
 
+- (void) showAlertControllerWithTitle: (NSString *) title
+                              message: (NSString *) message
+                           buttonText: (NSString *) buttonText{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:buttonText
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action) {}];
+    
+    [alertController addAction: closeAction];
+    
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
+}
+
 - (void) sendLocationCoincidenceWithPoi: (Poi *) coincidencePoi {
     NearbyClient *client = [[NearbyClient alloc] init];
     [client sendLocationCoincidenceForPoi:coincidencePoi];
+}
+
+- (void) reloadRegionsObservation{
+    for (CLRegion *region in self.poisSet.regions) {
+        [self.locationManager startMonitoringForRegion:region];
+        [self.locationManager requestStateForRegion:region];
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -109,34 +119,40 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                               initWithTitle:@"Error" message:@"Failed to get your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
+    [self showAlertControllerWithTitle:NSLocalizedString(@"ErrorTitle", nil)
+                               message:NSLocalizedString(@"LocationManagerFailMessage", nil)
+                            buttonText:NSLocalizedString(@"Ok", nil)];
+}
+
+- (void) locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
+//    NSLog(@"didStartMonitoringForRegion: %@", region.identifier);
 }
 
 - (void)locationManager:(CLLocationManager *)manager
       didDetermineState:(CLRegionState)state
               forRegion:(CLRegion *)region {
-    
+    NSLog(@"didDetermineState: %ld forRegion: %@", (long)state, region.identifier);
+    if (state == CLRegionStateInside) {
+        Poi *poiForRegion = [self.poisSet poiWithIdentifier:[region.identifier integerValue]];
+        [self sendLocationCoincidenceWithPoi:poiForRegion];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager
          didEnterRegion:(CLRegion *)region {
-    Poi *poiForRegion = [self.poisSet poiWithIdentifier:[UserDefaultsUtils lastPoiCoincidenceIdentifier]];
+    Poi *poiForRegion = [self.poisSet poiWithIdentifier:[region.identifier integerValue]];
     if ([UserDefaultsUtils pushNotificationToken]) {
-        [UserDefaultsUtils saveLastPoiCoincidenceIdentifier:[region.identifier integerValue]];
         poiForRegion.shouldLaunchPushNotification = NO;
-        [LastPoiCoincidence sharedInstance].poi = poiForRegion;
-        [self sendLocationCoincidenceWithPoi:[LastPoiCoincidence sharedInstance].poi];
+        [self sendLocationCoincidenceWithPoi:poiForRegion];
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager
           didExitRegion:(CLRegion *)region {
-    
-}
-- (void)locationManager:(CLLocationManager *)manager
-didStartMonitoringForRegion:(CLRegion *)region {
-    NSLog(@"didStartMonitoringForRegion: %@", region.identifier);
+    Poi *poiForRegion = [self.poisSet poiWithIdentifier:[region.identifier integerValue]];
+    poiForRegion.shouldLaunchPushNotification = YES;
 }
 
 // Before iOS 8
@@ -151,25 +167,6 @@ didStartMonitoringForRegion:(CLRegion *)region {
 
 - (void) currentLocationUpdatedWithLocation: (CLLocation *) currentLocation{
     self.currentLocation = currentLocation;
-    [self checkLocationCoincidenceForLocation:self.currentLocation];
-}
-//
-- (void) checkLocationCoincidenceForLocation: (CLLocation *) currentLocation{
-    if (UIApplication.sharedApplication.applicationState == UIApplicationStateBackground){
-        NSLog(@"App is backgrounded. New location is %@", currentLocation);
-    }
-    Poi *poiInCurrentLocation = [self.poisSet poiInCurrentLocation:currentLocation];
-    if (poiInCurrentLocation) {
-        if (![poiInCurrentLocation isEqualToPoi: [LastPoiCoincidence sharedInstance].poi]) {
-            NSLog(@"Poi detectado: %@", poiInCurrentLocation.name);
-            NSLog(@"LastPoi: %@", [LastPoiCoincidence sharedInstance].poi.name);
-            if ([UserDefaultsUtils pushNotificationToken]) {
-                [UserDefaultsUtils saveLastPoiCoincidenceIdentifier:poiInCurrentLocation.identifier];
-                [LastPoiCoincidence sharedInstance].poi = [self.poisSet poiWithIdentifier:[UserDefaultsUtils lastPoiCoincidenceIdentifier]];
-                [self sendLocationCoincidenceWithPoi:[LastPoiCoincidence sharedInstance].poi];
-            }
-        }
-    }
 }
 
 @end

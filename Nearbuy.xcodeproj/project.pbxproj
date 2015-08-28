@@ -19,7 +19,6 @@
 		59ED38621B8DAE45004C6F0A /* FLGPoisTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */; };
 		59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */; };
 		59ED38681B8DCC02004C6F0A /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38671B8DCC02004C6F0A /* Poi.m */; };
-		59ED386C1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED386B1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m */; };
 		59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED386E1B8DFBC2004C6F0A /* PoisSet.m */; };
 		59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38721B8E0883004C6F0A /* FLGPoiTableViewCell.m */; };
 		59ED38751B8E0883004C6F0A /* FLGPoiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */; };
@@ -36,10 +35,10 @@
 		59ED38BC1B8E855F004C6F0A /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */; };
 		59ED38C01B8E8BD1004C6F0A /* FLGPoiDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */; };
 		59ED38C11B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */; };
-		59ED38C41B8F5141004C6F0A /* LastPoiCoincidence.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38C31B8F5141004C6F0A /* LastPoiCoincidence.m */; };
 		59ED38CA1B8FBB28004C6F0A /* NSString+FLGStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38C91B8FBB28004C6F0A /* NSString+FLGStringUtils.m */; };
 		59ED38CD1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38CC1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m */; };
 		59ED38D01B90A001004C6F0A /* FLGRegionGeofencingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */; };
+		59ED38D31B91006E004C6F0A /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38D51B91006E004C6F0A /* Localized.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +75,6 @@
 		59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPushNotificationReceiverViewController.m; sourceTree = "<group>"; };
 		59ED38661B8DCC02004C6F0A /* Poi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
 		59ED38671B8DCC02004C6F0A /* Poi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poi.m; sourceTree = "<group>"; };
-		59ED386A1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGLocationCoincidenceCheckerViewController.h; sourceTree = "<group>"; };
-		59ED386B1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGLocationCoincidenceCheckerViewController.m; sourceTree = "<group>"; };
 		59ED386D1B8DFBC2004C6F0A /* PoisSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoisSet.h; sourceTree = "<group>"; };
 		59ED386E1B8DFBC2004C6F0A /* PoisSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoisSet.m; sourceTree = "<group>"; };
 		59ED38711B8E0883004C6F0A /* FLGPoiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoiTableViewCell.h; sourceTree = "<group>"; };
@@ -98,14 +95,13 @@
 		59ED38BD1B8E8BD1004C6F0A /* FLGPoiDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoiDetailViewController.h; sourceTree = "<group>"; };
 		59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPoiDetailViewController.m; sourceTree = "<group>"; };
 		59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoiDetailViewController.xib; sourceTree = "<group>"; };
-		59ED38C21B8F5141004C6F0A /* LastPoiCoincidence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastPoiCoincidence.h; sourceTree = "<group>"; };
-		59ED38C31B8F5141004C6F0A /* LastPoiCoincidence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastPoiCoincidence.m; sourceTree = "<group>"; };
 		59ED38C81B8FBB28004C6F0A /* NSString+FLGStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FLGStringUtils.h"; sourceTree = "<group>"; };
 		59ED38C91B8FBB28004C6F0A /* NSString+FLGStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLGStringUtils.m"; sourceTree = "<group>"; };
 		59ED38CB1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+FLGNumberUtils.h"; sourceTree = "<group>"; };
 		59ED38CC1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+FLGNumberUtils.m"; sourceTree = "<group>"; };
 		59ED38CE1B90A001004C6F0A /* FLGRegionGeofencingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGRegionGeofencingViewController.h; sourceTree = "<group>"; };
 		59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGRegionGeofencingViewController.m; sourceTree = "<group>"; };
+		59ED38D41B91006E004C6F0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,8 +227,6 @@
 			children = (
 				59ED38631B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.h */,
 				59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */,
-				59ED386A1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.h */,
-				59ED386B1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m */,
 				59ED38CE1B90A001004C6F0A /* FLGRegionGeofencingViewController.h */,
 				59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */,
 				59ED385E1B8DAE45004C6F0A /* FLGPoisTableViewController.h */,
@@ -254,8 +248,6 @@
 				59ED386E1B8DFBC2004C6F0A /* PoisSet.m */,
 				59ED38781B8E678A004C6F0A /* MyLocation.h */,
 				59ED38791B8E678A004C6F0A /* MyLocation.m */,
-				59ED38C21B8F5141004C6F0A /* LastPoiCoincidence.h */,
-				59ED38C31B8F5141004C6F0A /* LastPoiCoincidence.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -274,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				59ED387C1B8E80F4004C6F0A /* Fonts */,
+				59ED38D51B91006E004C6F0A /* Localized.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -403,6 +396,7 @@
 				59ED38B61B8E855F004C6F0A /* Raleway-ExtraLight.ttf in Resources */,
 				59ED38BC1B8E855F004C6F0A /* Raleway-Thin.ttf in Resources */,
 				59ED38BB1B8E855F004C6F0A /* Raleway-SemiBold.ttf in Resources */,
+				59ED38D31B91006E004C6F0A /* Localized.strings in Resources */,
 				59ED38BA1B8E855F004C6F0A /* Raleway-Regular.ttf in Resources */,
 				59ED38621B8DAE45004C6F0A /* FLGPoisTableViewController.xib in Resources */,
 			);
@@ -459,14 +453,12 @@
 				59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */,
 				59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */,
 				59ED38C01B8E8BD1004C6F0A /* FLGPoiDetailViewController.m in Sources */,
-				59ED386C1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m in Sources */,
 				59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */,
 				59ED38CA1B8FBB28004C6F0A /* NSString+FLGStringUtils.m in Sources */,
 				59ED38D01B90A001004C6F0A /* FLGRegionGeofencingViewController.m in Sources */,
 				59ED387A1B8E678A004C6F0A /* MyLocation.m in Sources */,
 				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
 				59ED38681B8DCC02004C6F0A /* Poi.m in Sources */,
-				59ED38C41B8F5141004C6F0A /* LastPoiCoincidence.m in Sources */,
 				59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */,
 				59ED38371B8D1638004C6F0A /* main.m in Sources */,
 				59ED385C1B8D93DA004C6F0A /* UserDefaultsUtils.m in Sources */,
@@ -499,6 +491,14 @@
 				59ED383E1B8D1639004C6F0A /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		59ED38D51B91006E004C6F0A /* Localized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59ED38D41B91006E004C6F0A /* en */,
+			);
+			name = Localized.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

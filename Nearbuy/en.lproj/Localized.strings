@@ -1,0 +1,21 @@
+/* 
+  Localized.strings
+  Nearbuy
+
+  Created by Javi Alzueta on 28/8/15.
+  Copyright (c) 2015 JavierAlzueta. All rights reserved.
+*/
+
+// Positioning alert texts
+"ErrorTitle" = "Error!";
+"kCLAuthorizationStatusRestrictedMessage" = "Sorry, Location is restricted and iQRs can't access to it.";
+"kCLAuthorizationStatusDeniedMessage" = "Location is not allowed. Please, modify Location permissions in Settings > Privacy > Location";
+
+"MissingPoiDataTitle" = "Missing Poi data";
+"MissingPoiDataMessage" = "Please, fullfill all fields before saving the POI";
+
+"LocationManagerFailMessage" = "Failed to get your Location";
+
+// Buttons
+"Close" = "Close";
+"Ok" = "Ok";

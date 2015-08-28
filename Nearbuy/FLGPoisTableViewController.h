@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 JavierAlzueta. All rights reserved.
 //
 
-#import "FLGLocationCoincidenceCheckerViewController.h"
 #import "FLGRegionGeofencingViewController.h"
 #import <MapKit/MapKit.h>
 #import "FLGPoiDetailViewController.h"

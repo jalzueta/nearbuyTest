@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 JavierAlzueta. All rights reserved.
 //
 
-#import "FLGLocationCoincidenceCheckerViewController.h"
+#import "FLGRegionGeofencingViewController.h"
 @class Poi;
 
 @protocol PoiDetailViewControllerDelegate;
 
-@interface FLGPoiDetailViewController : FLGLocationCoincidenceCheckerViewController<UITextFieldDelegate>
+@interface FLGPoiDetailViewController : FLGRegionGeofencingViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) id<PoiDetailViewControllerDelegate> delegate;
 

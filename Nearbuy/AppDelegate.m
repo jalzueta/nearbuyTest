@@ -12,7 +12,6 @@
 #import "FLGPoisTableViewController.h"
 #import "PoisSet.h"
 #import "Poi.h"
-#import "LastPoiCoincidence.h"
 #import "NearbyClient.h"
 
 @interface AppDelegate ()
@@ -33,7 +32,6 @@
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-        //        self.locationManager.distanceFilter = 3;
         
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.locationManager requestAlwaysAuthorization];
@@ -56,14 +54,7 @@
         // iOS 7
         [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
     }
-    
     [self resetPushNotificationsBadge];
-    
-    // Singleton init
-    NSUInteger lastPoiCoincidenceIdentifier = [UserDefaultsUtils lastPoiCoincidenceIdentifier];
-    if (lastPoiCoincidenceIdentifier != NO_LAST_POI_COINCIDENCE_IDENTIFIER_DEF_VALUE) {
-        [LastPoiCoincidence sharedInstance].poi = [[PoisSet poiSetWithTrickValues] poiWithIdentifier:lastPoiCoincidenceIdentifier];
-    }
     
     // Build window
     FLGPoisTableViewController *poisTableViewController = [[FLGPoisTableViewController alloc]init];
@@ -87,9 +78,6 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    
-    // Singleton save in NSUserDefaults
-    [UserDefaultsUtils saveLastPoiCoincidenceIdentifier:[LastPoiCoincidence sharedInstance].poi.identifier];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -167,9 +155,7 @@
 - (void)locationManager:(CLLocationManager *)manager
          didEnterRegion:(CLRegion *)region {
     if ([UserDefaultsUtils pushNotificationToken]) {
-        [UserDefaultsUtils saveLastPoiCoincidenceIdentifier:[region.identifier integerValue]];
-        [LastPoiCoincidence sharedInstance].poi = [self.poisSet poiWithIdentifier:[UserDefaultsUtils lastPoiCoincidenceIdentifier]];
-        [self sendLocationCoincidenceWithPoi:[LastPoiCoincidence sharedInstance].poi];
+        [self sendLocationCoincidenceWithPoi:[self.poisSet poiWithIdentifier:[region.identifier integerValue]]];
     }
 }
 

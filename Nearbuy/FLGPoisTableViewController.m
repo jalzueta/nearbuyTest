@@ -118,7 +118,6 @@ static NSString *const reuseIdentifier = @"cell";
                                   animated:YES];
 }
 
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
@@ -137,7 +136,6 @@ static NSString *const reuseIdentifier = @"cell";
 
 #pragma mark - Map
 - (void)currentLocationUpdatedWithLocation:(CLLocation *)currentLocation{
-    [super currentLocationUpdatedWithLocation:currentLocation];
     [self centerMapInLocation: currentLocation];
 }
 
@@ -218,6 +216,7 @@ static NSString *const reuseIdentifier = @"cell";
         [self.poisSet updatePoi:poi];
     }
     [self reloadData];
+    [self reloadRegionsObservation];
 }
 
 @end

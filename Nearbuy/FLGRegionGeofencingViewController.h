@@ -17,6 +17,6 @@
 @property (strong, nonatomic, readonly) PoisSet *poisSet;
 
 - (void) sendLocationCoincidenceWithPoi: (Poi *) coincidencePoi;
-- (void) currentLocationUpdatedWithLocation: (CLLocation *) currentLocation;
+- (void) reloadRegionsObservation;
 
 @end
