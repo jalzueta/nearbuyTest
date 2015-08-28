@@ -12,5 +12,6 @@
 @interface NearbyClient : NSObject
 
 - (void) sendLocationCoincidenceForPoi: (Poi *) poi;
+- (void) fetchRegionsWithSuccessBlock:(void (^)(id json))successBlock;
 
 @end

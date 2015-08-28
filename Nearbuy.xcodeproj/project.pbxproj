@@ -40,6 +40,7 @@
 		59ED38D01B90A001004C6F0A /* FLGRegionGeofencingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */; };
 		59ED38D31B91006E004C6F0A /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38D51B91006E004C6F0A /* Localized.strings */; };
 		59ED38D91B91044A004C6F0A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38D71B91044A004C6F0A /* Model.xcdatamodeld */; };
+		59ED38E81B91083B004C6F0A /* ManagedRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38E71B91083B004C6F0A /* ManagedRegion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGRegionGeofencingViewController.m; sourceTree = "<group>"; };
 		59ED38D41B91006E004C6F0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		59ED38D81B91044A004C6F0A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		59ED38E61B91083B004C6F0A /* ManagedRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedRegion.h; sourceTree = "<group>"; };
+		59ED38E71B91083B004C6F0A /* ManagedRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedRegion.m; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -293,6 +296,8 @@
 		59ED38D61B910423004C6F0A /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				59ED38E61B91083B004C6F0A /* ManagedRegion.h */,
+				59ED38E71B91083B004C6F0A /* ManagedRegion.m */,
 				59ED38D71B91044A004C6F0A /* Model.xcdatamodeld */,
 			);
 			name = "Core Data";
@@ -472,6 +477,7 @@
 				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
 				59ED38681B8DCC02004C6F0A /* Poi.m in Sources */,
 				59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */,
+				59ED38E81B91083B004C6F0A /* ManagedRegion.m in Sources */,
 				59ED38371B8D1638004C6F0A /* main.m in Sources */,
 				59ED385C1B8D93DA004C6F0A /* UserDefaultsUtils.m in Sources */,
 				59ED38581B8D9017004C6F0A /* NearbyClient.m in Sources */,

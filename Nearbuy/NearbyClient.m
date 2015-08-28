@@ -14,6 +14,7 @@
 @interface NearbyClient ()
 
 @property (strong, nonatomic) AFHTTPRequestOperationManager *requestManager;
+@property (strong, nonatomic) AFHTTPRequestOperationManager *requestManager2;
 
 @end
 
@@ -26,6 +27,7 @@
     if (self) {
 //        NSURL *baseURL = [NSURL URLWithString:@"http://www.fillingapps.com/apps/tests/nearbuy/api"];
         NSURL *baseURL = [NSURL URLWithString:@"http://www.protectfive.com/javi"];
+        NSURL *regionsBaseURL = [NSURL URLWithString:@"http://www.fillingapps.com/apps/tests/nearbuy/api"];
         
         _requestManager = [[AFHTTPRequestOperationManager alloc]
                            initWithBaseURL:baseURL];
@@ -34,6 +36,15 @@
         
         _requestManager.responseSerializer = [AFHTTPResponseSerializer serializer];
         _requestManager.responseSerializer.acceptableContentTypes = [_requestManager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+        
+        
+        _requestManager2 = [[AFHTTPRequestOperationManager alloc]
+                           initWithBaseURL:regionsBaseURL];
+//        [_requestManager2.requestSerializer setValue:@"text/html"
+//                                 forHTTPHeaderField:@"Accept"];
+//        
+//        _requestManager2.responseSerializer = [AFHTTPResponseSerializer serializer];
+//        _requestManager2.responseSerializer.acceptableContentTypes = [_requestManager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     }
     return self;
 }
@@ -51,6 +62,10 @@
 //    [self POST:@"coincidence_post.php" parameters:parameters];
 }
 
+- (void) fetchRegionsWithSuccessBlock:(void (^)(id json))successBlock{
+    [self GET:@"regions_json.php" parameters:nil withSuccessBlock:successBlock];
+}
+
 - (void)  GET:(NSString *) path
    parameters:(NSDictionary *) parameters{
     [self.requestManager GET:path
@@ -61,6 +76,19 @@
                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                          NSLog(@"GET pushNotificationId ERROR: %@", error);
                      }];
+}
+
+- (void) GET:(NSString *) path
+  parameters:(NSDictionary *) parameters
+withSuccessBlock:(void (^)(NSArray *json))successBlock{
+    [self.requestManager2 GET:path
+                   parameters:parameters
+                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                          successBlock(responseObject);
+                      }
+                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                          
+                      }];
 }
 
 - (void) POST:(NSString *) path

@@ -27,7 +27,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //----------------------------------
+    // Push notifications init
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        // iOS 8
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        [application registerForRemoteNotifications];
+    }
+    else {
+        // iOS 7
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
+    }
+    [self resetPushNotificationsBadge];
+    
+    // Geofencing when app closed
     if (!self.locationManager) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
@@ -42,19 +54,14 @@
     for (CLRegion *region in self.poisSet.regions) {
         [self.locationManager startMonitoringForRegion:region];
     }
-    //----------------------------------
     
-    // Push notifications init
-    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        // iOS 8
-        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-        [application registerForRemoteNotifications];
-    }
-    else {
-        // iOS 7
-        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
-    }
-    [self resetPushNotificationsBadge];
+    // First time app starts
+    NearbyClient *client = [[NearbyClient alloc] init];
+    [client fetchRegionsWithSuccessBlock:^(id json) {
+        if ([json isKindOfClass:[NSArray class]]){
+            
+        }
+    }];
     
     // Build window
     FLGPoisTableViewController *poisTableViewController = [[FLGPoisTableViewController alloc]init];
