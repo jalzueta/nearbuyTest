@@ -15,6 +15,8 @@
 
 @property(copy, nonatomic, readonly) NSMutableArray *arrayOfPois;
 @property(copy, nonatomic) NSMutableArray *annotations;
+@property(copy, nonatomic) NSMutableArray *regions;
+@property(copy, nonatomic) NSMutableArray *overlays;
 
 @end
 
@@ -32,6 +34,8 @@
     if (self = [super init]) {
         _arrayOfPois = arrayOfPois;
         _annotations = [NSMutableArray new];
+        _regions = [NSMutableArray new];
+        _overlays = [NSMutableArray new];
     }
     return self;
 }
@@ -47,7 +51,7 @@
                                   name:@"Casa"
                               latitude:@(42.794820)
                              longitude:@(-1.616424)
-                           minDistance:@50];
+                           minDistance:@100];
     
     Poi *poi3 = [Poi poiWithIdentifier:3
                                   name:@"La Hacienda"
@@ -77,7 +81,7 @@
                                   name:@"Irulegui"
                               latitude:@(42.792406)
                              longitude:@(-1.614967)
-                           minDistance:@50];
+                           minDistance:@150];
     
     Poi *poi8 = [Poi poiWithIdentifier:8
                                   name:@"Farmacia Maria"
@@ -122,6 +126,30 @@
     }
     return _annotations;
 }
+
+- (NSMutableArray *)regions{
+    [_regions removeAllObjects];
+    for (Poi *poi in self.arrayOfPois) {
+        CLRegion *region = [[CLCircularRegion alloc] initWithCenter:poi.center
+                                                             radius:[poi.minDistance doubleValue]
+                                                         identifier:poi.identifierString];
+        region.notifyOnEntry = YES;
+        region.notifyOnExit = YES;
+        [_regions addObject:region];
+    }
+    return _regions;
+}
+
+- (NSMutableArray *)overlays{
+    [_overlays removeAllObjects];
+    for (Poi *poi in self.arrayOfPois) {
+        MKCircle *circle = [MKCircle circleWithCenterCoordinate:poi.center
+                                                         radius:[poi.minDistance doubleValue]];
+        [_overlays addObject:circle];
+    }
+    return _overlays;
+}
+
 
 - (Poi *) poiAtIndex:(NSUInteger) index{
     if (index < self.arrayOfPois.count) {
@@ -182,7 +210,7 @@
             nextPoiIdentifier = poi.identifier;
         }
     }
-    return nextPoiIdentifier++;
+    return ++nextPoiIdentifier;
 }
 
 - (void) removePoiAtIndex: (NSUInteger) index{

@@ -14,6 +14,8 @@
 
 @property (nonatomic, readonly) NSUInteger poisCount;
 @property (copy, nonatomic, readonly) NSMutableArray *annotations;
+@property (copy, nonatomic, readonly) NSMutableArray *regions;
+@property (copy, nonatomic, readonly) NSMutableArray *overlays;
 
 + (instancetype) poiSetWithTrickValues;
 + (instancetype) poiSetWithArrayOfPois: (NSMutableArray *) arrayOfPois;
@@ -23,6 +25,7 @@
 - (Poi *) poiInCurrentLocation: (CLLocation *) currentLocation;
 - (void) addPoi: (Poi *) poi;
 - (void) updatePoi: (Poi *) poi;
+- (NSUInteger)nextPoiIdentifier;
 - (void) removePoiAtIndex: (NSUInteger) index;
 
 @end

@@ -28,6 +28,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //----------------------------------
+    if (!self.locationManager) {
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        //        self.locationManager.distanceFilter = 3;
+        
+        if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [self.locationManager requestAlwaysAuthorization];
+        }
+        [self.locationManager startUpdatingLocation];
+    }
+    self.poisSet = [PoisSet poiSetWithTrickValues];
+    for (CLRegion *region in self.poisSet.regions) {
+        [self.locationManager startMonitoringForRegion:region];
+    }
+    //----------------------------------
+    
     // Push notifications init
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         // iOS 8
@@ -143,6 +161,21 @@
 
 - (void) resetPushNotificationsBadge{
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager
+         didEnterRegion:(CLRegion *)region {
+    if ([UserDefaultsUtils pushNotificationToken]) {
+        [UserDefaultsUtils saveLastPoiCoincidenceIdentifier:[region.identifier integerValue]];
+        [LastPoiCoincidence sharedInstance].poi = [self.poisSet poiWithIdentifier:[UserDefaultsUtils lastPoiCoincidenceIdentifier]];
+        [self sendLocationCoincidenceWithPoi:[LastPoiCoincidence sharedInstance].poi];
+    }
+}
+
+- (void) sendLocationCoincidenceWithPoi: (Poi *) coincidencePoi {
+    NearbyClient *client = [[NearbyClient alloc] init];
+    [client sendLocationCoincidenceForPoi:coincidencePoi];
 }
 
 @end

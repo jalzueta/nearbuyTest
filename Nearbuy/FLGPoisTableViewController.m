@@ -45,6 +45,7 @@ static NSString *const reuseIdentifier = @"cell";
     self.mapView.zoomEnabled = YES;
     self.mapView.showsUserLocation = YES;
     [self loadAnnotations];
+    [self loadOverlays];
     
     UIBarButtonItem *addPoiBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                         target:self
@@ -137,10 +138,7 @@ static NSString *const reuseIdentifier = @"cell";
 #pragma mark - Map
 - (void)currentLocationUpdatedWithLocation:(CLLocation *)currentLocation{
     [super currentLocationUpdatedWithLocation:currentLocation];
-    CLLocationDistance regionRadius = 300;
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, regionRadius * 2, regionRadius * 2);
-    [self.mapView setRegion:region
-                   animated:YES];
+    [self centerMapInLocation: currentLocation];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
@@ -163,6 +161,12 @@ static NSString *const reuseIdentifier = @"cell";
     return nil;
 }
 
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    MKCircleRenderer *renderer = [[MKCircleRenderer alloc]initWithCircle:overlay];
+    renderer.fillColor = MAP_OVERLAY_COLOR;
+    return renderer;
+}
+
 #pragma mark - Utils
 -(void) registerNib{
     UINib *nib = [UINib nibWithNibName:@"FLGPoiTableViewCell"
@@ -174,6 +178,7 @@ static NSString *const reuseIdentifier = @"cell";
 - (void) reloadData{
     [self.tableView reloadData];
     [self loadAnnotations];
+    [self loadOverlays];
 }
 
 - (void) loadAnnotations{
@@ -183,12 +188,25 @@ static NSString *const reuseIdentifier = @"cell";
     [self.mapView addAnnotations:self.poisSet.annotations];
 }
 
+- (void) loadOverlays{
+    NSMutableArray * overlaysToRemove = [self.mapView.overlays mutableCopy];
+    [self.mapView removeOverlays:overlaysToRemove];
+    [self.mapView addOverlays:self.poisSet.overlays];
+}
+
 - (void) addNewPoi:(id) sender{
     self.editingRow = NO_EDITING_VALUE;
     FLGPoiDetailViewController *poiDetailViewController = [[FLGPoiDetailViewController alloc] initForNewPoi];
     poiDetailViewController.delegate = self;
     [self.navigationController pushViewController:poiDetailViewController
                                          animated:YES];
+}
+
+- (void) centerMapInLocation:(CLLocation *)currentLocation{
+    CLLocationDistance regionRadius = 300;
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, regionRadius * 2, regionRadius * 2);
+    [self.mapView setRegion:region
+                   animated:YES];
 }
 
 #pragma mark - PoiDetailViewControllerDelegate

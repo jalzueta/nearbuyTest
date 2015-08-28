@@ -1,12 +1,12 @@
 //
-//  FLGLocationCoincidenceCheckerViewController.m
+//  FLGRegionGeofencingViewController.m
 //  Nearbuy
 //
 //  Created by Javi Alzueta on 26/8/15.
 //  Copyright (c) 2015 JavierAlzueta. All rights reserved.
 //
 
-#import "FLGLocationCoincidenceCheckerViewController.h"
+#import "FLGRegionGeofencingViewController.h"
 #import "Constants.h"
 #import "NearbyClient.h"
 #import "Poi.h"
@@ -14,7 +14,7 @@
 #import "UserDefaultsUtils.h"
 #import "LastPoiCoincidence.h"
 
-@interface FLGLocationCoincidenceCheckerViewController ()
+@interface FLGRegionGeofencingViewController ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *currentLocation;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation FLGLocationCoincidenceCheckerViewController
+@implementation FLGRegionGeofencingViewController
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
@@ -32,6 +32,7 @@
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+//        self.locationManager.distanceFilter = 3;
         
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.locationManager requestAlwaysAuthorization];
@@ -39,6 +40,9 @@
         [self startReceivingLocation];
     }
     self.poisSet = [PoisSet poiSetWithTrickValues];
+    for (CLRegion *region in self.poisSet.regions) {
+        [self.locationManager startMonitoringForRegion:region];
+    }
 }
 
 //- (void)viewWillAppear:(BOOL)animated{
@@ -109,6 +113,32 @@
     [errorAlert show];
 }
 
+- (void)locationManager:(CLLocationManager *)manager
+      didDetermineState:(CLRegionState)state
+              forRegion:(CLRegion *)region {
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+         didEnterRegion:(CLRegion *)region {
+    Poi *poiForRegion = [self.poisSet poiWithIdentifier:[UserDefaultsUtils lastPoiCoincidenceIdentifier]];
+    if ([UserDefaultsUtils pushNotificationToken]) {
+        [UserDefaultsUtils saveLastPoiCoincidenceIdentifier:[region.identifier integerValue]];
+        poiForRegion.shouldLaunchPushNotification = NO;
+        [LastPoiCoincidence sharedInstance].poi = poiForRegion;
+        [self sendLocationCoincidenceWithPoi:[LastPoiCoincidence sharedInstance].poi];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+          didExitRegion:(CLRegion *)region {
+    
+}
+- (void)locationManager:(CLLocationManager *)manager
+didStartMonitoringForRegion:(CLRegion *)region {
+    NSLog(@"didStartMonitoringForRegion: %@", region.identifier);
+}
+
 // Before iOS 8
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     [self currentLocationUpdatedWithLocation:newLocation];
@@ -120,15 +150,10 @@
 }
 
 - (void) currentLocationUpdatedWithLocation: (CLLocation *) currentLocation{
-    // Change distance filter after launching the first time
-    self.locationManager.distanceFilter = 5;
     self.currentLocation = currentLocation;
     [self checkLocationCoincidenceForLocation:self.currentLocation];
-//    if (UIApplication.sharedApplication.applicationState == UIApplicationStateBackground){
-//        NSLog(@"App is backgrounded. New location is %@", currentLocation);
-//    }
 }
-
+//
 - (void) checkLocationCoincidenceForLocation: (CLLocation *) currentLocation{
     if (UIApplication.sharedApplication.applicationState == UIApplicationStateBackground){
         NSLog(@"App is backgrounded. New location is %@", currentLocation);

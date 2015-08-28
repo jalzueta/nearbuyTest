@@ -39,6 +39,7 @@
 		59ED38C41B8F5141004C6F0A /* LastPoiCoincidence.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38C31B8F5141004C6F0A /* LastPoiCoincidence.m */; };
 		59ED38CA1B8FBB28004C6F0A /* NSString+FLGStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38C91B8FBB28004C6F0A /* NSString+FLGStringUtils.m */; };
 		59ED38CD1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38CC1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m */; };
+		59ED38D01B90A001004C6F0A /* FLGRegionGeofencingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		59ED38C91B8FBB28004C6F0A /* NSString+FLGStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLGStringUtils.m"; sourceTree = "<group>"; };
 		59ED38CB1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+FLGNumberUtils.h"; sourceTree = "<group>"; };
 		59ED38CC1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+FLGNumberUtils.m"; sourceTree = "<group>"; };
+		59ED38CE1B90A001004C6F0A /* FLGRegionGeofencingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGRegionGeofencingViewController.h; sourceTree = "<group>"; };
+		59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGRegionGeofencingViewController.m; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,6 +233,8 @@
 				59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */,
 				59ED386A1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.h */,
 				59ED386B1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m */,
+				59ED38CE1B90A001004C6F0A /* FLGRegionGeofencingViewController.h */,
+				59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */,
 				59ED385E1B8DAE45004C6F0A /* FLGPoisTableViewController.h */,
 				59ED385F1B8DAE45004C6F0A /* FLGPoisTableViewController.m */,
 				59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */,
@@ -457,6 +462,7 @@
 				59ED386C1B8DF86A004C6F0A /* FLGLocationCoincidenceCheckerViewController.m in Sources */,
 				59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */,
 				59ED38CA1B8FBB28004C6F0A /* NSString+FLGStringUtils.m in Sources */,
+				59ED38D01B90A001004C6F0A /* FLGRegionGeofencingViewController.m in Sources */,
 				59ED387A1B8E678A004C6F0A /* MyLocation.m in Sources */,
 				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
 				59ED38681B8DCC02004C6F0A /* Poi.m in Sources */,

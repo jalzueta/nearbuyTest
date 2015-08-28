@@ -9,6 +9,12 @@
 #import "Poi.h"
 #import "NSNumber+FLGNumberUtils.h"
 
+@interface Poi ()
+
+@property (nonatomic) CLLocationCoordinate2D center;
+
+@end
+
 @implementation Poi
 
 + (instancetype) poiWithIdentifier: (NSUInteger) identifier
@@ -34,6 +40,7 @@
         _latitude = latitude;
         _longitude = longitude;
         _minDistance = minDistance;
+        _shouldLaunchPushNotification = YES;
     }
     return self;
 }
@@ -56,6 +63,10 @@
 
 - (NSString *)coordinateString{
     return [NSString stringWithFormat:@"(%@, %@)", self.latitudeString, self.longitudeString];
+}
+
+- (CLLocationCoordinate2D) center{
+    return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
 }
 
 - (BOOL) isEqualToPoi: (Poi *) poi{

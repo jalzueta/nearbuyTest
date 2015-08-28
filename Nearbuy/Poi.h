@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import CoreLocation;
 
 @interface Poi : NSObject
 
@@ -20,6 +21,8 @@
 @property (copy, nonatomic, readonly) NSString *longitudeString;
 @property (copy, nonatomic, readonly) NSString *coordinateString;
 @property (copy, nonatomic, readonly) NSString *minDistanceString;
+@property (nonatomic, readonly) CLLocationCoordinate2D center;
+@property (nonatomic) BOOL shouldLaunchPushNotification;
 
 + (instancetype) poiWithIdentifier: (NSUInteger) identifier
                              name: (NSString *) name

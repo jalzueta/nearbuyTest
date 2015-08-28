@@ -7,9 +7,10 @@
 //
 
 #import "FLGLocationCoincidenceCheckerViewController.h"
+#import "FLGRegionGeofencingViewController.h"
 #import <MapKit/MapKit.h>
 #import "FLGPoiDetailViewController.h"
 
-@interface FLGPoisTableViewController : FLGLocationCoincidenceCheckerViewController<UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, PoiDetailViewControllerDelegate>
+@interface FLGPoisTableViewController : FLGRegionGeofencingViewController<UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, PoiDetailViewControllerDelegate>
 
 @end
