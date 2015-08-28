@@ -39,8 +39,7 @@
         [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
     }
     
-    // Push notifications Badge reset
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    [self resetPushNotificationsBadge];
     
     // Singleton init
     NSUInteger lastPoiCoincidenceIdentifier = [UserDefaultsUtils lastPoiCoincidenceIdentifier];
@@ -81,6 +80,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self resetPushNotificationsBadge];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -139,6 +139,10 @@
 
 - (NSNumber *) getPushNotificationIdFromUserInfoDictionary: (NSDictionary *) notificationDict{
     return [[notificationDict objectForKey:PUSH_NOTIFICATION_CUSTOM_DATA_PARSE_KEY] objectForKey:PUSH_NOTIFICATION_ID_PARSE_KEY];
+}
+
+- (void) resetPushNotificationsBadge{
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 @end
