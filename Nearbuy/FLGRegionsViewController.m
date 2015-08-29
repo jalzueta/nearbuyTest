@@ -96,6 +96,15 @@ static NSString *const reuseIdentifier = @"cell";
                      }];
 }
 
+
+- (void) addNewPoi:(id) sender{
+    self.editingRow = NO_EDITING_VALUE;
+    FLGRegionDetailViewController *regionDetailViewController = [[FLGRegionDetailViewController alloc] initForNewRegion];
+    regionDetailViewController.delegate = self;
+    [self.navigationController pushViewController:regionDetailViewController
+                                         animated:YES];
+}
+
 #pragma mark - TableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.mapRegions.numberOfRegions;
@@ -128,8 +137,8 @@ static NSString *const reuseIdentifier = @"cell";
 - (void)tableView:(UITableView *)tableViewIn commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.mapRegions removeRegionAtIndex: indexPath.row];
-        [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
-        [self reloadData];
+//        [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+//        [self reloadData];
         self.tableView.editing = NO;
     }
 }
@@ -194,14 +203,6 @@ static NSString *const reuseIdentifier = @"cell";
     NSMutableArray * overlaysToRemove = [self.mapView.overlays mutableCopy];
     [self.mapView removeOverlays:overlaysToRemove];
     [self.mapView addOverlays:self.mapRegions.overlays];
-}
-
-- (void) addNewPoi:(id) sender{
-    self.editingRow = NO_EDITING_VALUE;
-    FLGRegionDetailViewController *regionDetailViewController = [[FLGRegionDetailViewController alloc] initForNewRegion];
-    regionDetailViewController.delegate = self;
-    [self.navigationController pushViewController:regionDetailViewController
-                                         animated:YES];
 }
 
 - (void) centerMapInLocation:(CLLocation *)currentLocation{

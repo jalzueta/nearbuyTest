@@ -13,6 +13,7 @@
 #import "FLGRegion.h"
 #import "FLGMapRegions.h"
 #import "NSString+FLGStringUtils.h"
+#import "FLGSettingsViewController.h"
 
 @interface FLGRegionGeofencingViewController ()
 
@@ -40,14 +41,7 @@
         [self startReceivingLocation];
     }
     
-    // Load Regions from NSUserDefaults
-    if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
-        self.mapRegions = [FLGMapRegions mapRegionsWithTrickValues];
-        [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
-    }else{
-        self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
-    }
-    [self reloadRegionsObservation];
+    
     
     // First time app star
 //    if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
@@ -71,6 +65,37 @@
 //        self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
 //        [self reloadRegionsObservation];
 //    }
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    UIButton *settingsButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    [settingsButton setBackgroundImage:[UIImage imageNamed:@"settings"] forState:UIControlStateNormal];
+    //    [settingsButton setBackgroundImage:[UIImage imageNamed:@"btn_nav_info_on"] forState:UIControlStateHighlighted];
+    [settingsButton addTarget:self
+                       action:@selector(launchSettings:)
+             forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *settingsPoiBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView: settingsButton];
+    self.navigationItem.leftBarButtonItem = settingsPoiBarButtonItem;
+    
+    // Load Regions from NSUserDefaults
+    if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
+        self.mapRegions = [FLGMapRegions mapRegionsWithTrickValues];
+        [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    }else{
+        self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
+    }
+    [self reloadRegionsObservation];
+}
+
+#pragma mark - Actions
+- (void) launchSettings:(id) sender{
+    FLGSettingsViewController *settingsViewcontroller = [[FLGSettingsViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:settingsViewcontroller];
+    [self presentViewController:nav
+                       animated:YES
+                     completion:nil];
 }
 
 #pragma mark - Utils

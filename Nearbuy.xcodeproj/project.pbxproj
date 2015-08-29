@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		429164934E001DA9E7351771 /* libPods-Nearbuy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF2F2923D1EC95F3E82FFA /* libPods-Nearbuy.a */; };
 		59E2F31B1B91ABDC0040EBD9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */; };
+		59E2F3211B91BC040040EBD9 /* FLGSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E2F31F1B91BC040040EBD9 /* FLGSettingsViewController.m */; };
+		59E2F3221B91BC040040EBD9 /* FLGSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E2F3201B91BC040040EBD9 /* FLGSettingsViewController.xib */; };
 		59ED38371B8D1638004C6F0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38361B8D1638004C6F0A /* main.m */; };
 		59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38391B8D1638004C6F0A /* AppDelegate.m */; };
 		59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383B1B8D1639004C6F0A /* Images.xcassets */; };
@@ -53,6 +55,9 @@
 
 /* Begin PBXFileReference section */
 		48AF2F2923D1EC95F3E82FFA /* libPods-Nearbuy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nearbuy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59E2F31E1B91BC040040EBD9 /* FLGSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGSettingsViewController.h; sourceTree = "<group>"; };
+		59E2F31F1B91BC040040EBD9 /* FLGSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGSettingsViewController.m; sourceTree = "<group>"; };
+		59E2F3201B91BC040040EBD9 /* FLGSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGSettingsViewController.xib; sourceTree = "<group>"; };
 		59ED38311B8D1637004C6F0A /* NearbuyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbuyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ED38351B8D1638004C6F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59ED38361B8D1638004C6F0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -235,6 +240,9 @@
 				59ED38BD1B8E8BD1004C6F0A /* FLGRegionDetailViewController.h */,
 				59ED38BE1B8E8BD1004C6F0A /* FLGRegionDetailViewController.m */,
 				59ED38BF1B8E8BD1004C6F0A /* FLGRegionDetailViewController.xib */,
+				59E2F31E1B91BC040040EBD9 /* FLGSettingsViewController.h */,
+				59E2F31F1B91BC040040EBD9 /* FLGSettingsViewController.m */,
+				59E2F3201B91BC040040EBD9 /* FLGSettingsViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -391,6 +399,7 @@
 				59ED38B71B8E855F004C6F0A /* Raleway-Heavy.ttf in Resources */,
 				59ED38B41B8E855F004C6F0A /* Raleway-Bold.ttf in Resources */,
 				59ED38B81B8E855F004C6F0A /* Raleway-Light.ttf in Resources */,
+				59E2F3221B91BC040040EBD9 /* FLGSettingsViewController.xib in Resources */,
 				59ED38B91B8E855F004C6F0A /* Raleway-Medium.ttf in Resources */,
 				59ED38C11B8E8BD1004C6F0A /* FLGRegionDetailViewController.xib in Resources */,
 				59ED38B61B8E855F004C6F0A /* Raleway-ExtraLight.ttf in Resources */,
@@ -451,6 +460,7 @@
 			files = (
 				59ED38CD1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m in Sources */,
 				59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */,
+				59E2F3211B91BC040040EBD9 /* FLGSettingsViewController.m in Sources */,
 				59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */,
 				59ED38C01B8E8BD1004C6F0A /* FLGRegionDetailViewController.m in Sources */,
 				59ED38CA1B8FBB28004C6F0A /* NSString+FLGStringUtils.m in Sources */,
