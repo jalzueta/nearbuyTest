@@ -22,8 +22,8 @@
 @property (copy, nonatomic, readonly) NSString *latitudeString;
 @property (copy, nonatomic, readonly) NSString *longitudeString;
 @property (copy, nonatomic, readonly) NSString *radiusString;
-@property (copy, nonatomic, readonly) NSString *coordinateString;
 @property (nonatomic, readonly) CLLocationCoordinate2D center;
+@property (copy, nonatomic, readonly) NSString *centerString;
 
 + (instancetype) regionWithIdentifier: (NSNumber *) identifier
                                  name: (NSString *) name

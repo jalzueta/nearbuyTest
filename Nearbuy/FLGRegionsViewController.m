@@ -184,7 +184,7 @@ static NSString *const reuseIdentifier = @"cell";
 
 #pragma mark - Utils
 -(void) registerNib{
-    UINib *nib = [UINib nibWithNibName:@"FLGPoiTableViewCell"
+    UINib *nib = [UINib nibWithNibName:@"FLGRegionTableViewCell"
                                 bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib
          forCellReuseIdentifier:[FLGRegionTableViewCell cellId]];

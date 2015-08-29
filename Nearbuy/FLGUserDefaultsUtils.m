@@ -53,7 +53,10 @@
 
 + (NSMutableArray *) regions{
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    return [[NSKeyedUnarchiver unarchiveObjectWithData:[def objectForKey:REGIONS_DATA_DEF_KEY]] mutableCopy];
+    if ([[def dictionaryRepresentation].allKeys containsObject:REGIONS_DATA_DEF_KEY]) {
+        return [[NSKeyedUnarchiver unarchiveObjectWithData:[def objectForKey:REGIONS_DATA_DEF_KEY]] mutableCopy];
+    }
+    return nil;
 }
 
 @end

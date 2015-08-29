@@ -15,6 +15,7 @@
 
 @interface FLGMapRegions ()
 
+@property(copy, nonatomic, readonly) NSMutableArray *regions;
 @property(copy, nonatomic) NSMutableArray *annotations;
 @property(copy, nonatomic) NSMutableArray *clRegions;
 @property(copy, nonatomic) NSMutableArray *overlays;
@@ -98,7 +99,11 @@
 }
 
 - (void) updateRegion: (FLGRegion *) region{
-    //TODO
+    FLGRegion *regionToUpdate = [self regionWithIdentifier:region.identifier];
+    regionToUpdate.name = region.name;
+    regionToUpdate.latitude = region.latitude;
+    regionToUpdate.longitude = region.longitude;
+    regionToUpdate.radius = region.radius;
 }
 
 - (NSNumber *) nextRegionIdentifier{

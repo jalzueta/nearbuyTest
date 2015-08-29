@@ -26,7 +26,7 @@
 - (instancetype) initWithRegion: (FLGRegion *) region{
     if (self = [super init]) {
         _title = region.name;
-        _subtitle = region.coordinateString;
+        _subtitle = @"";
         _coordinate = CLLocationCoordinate2DMake([region.latitude doubleValue], [region.longitude doubleValue]);
         _region = region;
     }

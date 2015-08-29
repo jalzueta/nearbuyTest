@@ -26,7 +26,7 @@
 - (void) configureWithRegion: (FLGRegion *)region{
     self.identifierLabel.text = region.identifierString;
     self.nameLabel.text = region.name;
-    self.coordinateLabel.text = region.coordinateString;
+//    self.coordinateLabel.text = region.centerString;
 }
 
 - (void) prepareForReuse{

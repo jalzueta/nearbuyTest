@@ -66,30 +66,30 @@
 
 #pragma mark - getters
 - (NSString *)identifierString{
-    return [NSString stringWithFormat:@"%@", self.identifier];
+    return [NSString stringWithFormat:@"%@", _identifier];
 }
 
 - (NSString *) latitudeString{
     if (self.latitude) {
-        return [self.latitude flg_stringWithNumberOfFractionDigits:6];
+        return [_latitude flg_stringWithNumberOfFractionDigits:6];
     }
     return @"";
 }
 
 - (NSString *) longitudeString{
-    return [self.longitude flg_stringWithNumberOfFractionDigits:6];
+    return [_longitude flg_stringWithNumberOfFractionDigits:6];
 }
 
 - (NSString *)radiusString{
-    return [self.radius flg_stringWithNumberOfFractionDigits:0];
+    return [_radius flg_stringWithNumberOfFractionDigits:0];
 }
 
-- (NSString *)coordinateString{
+- (NSString *)centerString{
     return [NSString stringWithFormat:@"(%@, %@)", self.latitudeString, self.longitudeString];
 }
 
 - (CLLocationCoordinate2D) center{
-    return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
+    return CLLocationCoordinate2DMake([_latitude doubleValue], [_longitude doubleValue]);
 }
 
 @end

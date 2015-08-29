@@ -127,9 +127,9 @@
 }
 
 - (void) reloadRegionsObservation{
-    for (CLRegion *region in self.mapRegions.regions) {
-        [self.locationManager startMonitoringForRegion:region];
-        [self.locationManager requestStateForRegion:region];
+    for (CLRegion *clRegion in self.mapRegions.clRegions) {
+        [self.locationManager startMonitoringForRegion:clRegion];
+        [self.locationManager requestStateForRegion:clRegion];
     }
 }
 
@@ -165,7 +165,7 @@
     }else{
         flgRegion.shouldLaunchNotification = YES;
     }
-    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    //TODO: [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -175,14 +175,14 @@
         flgRegion.shouldLaunchNotification = NO;
         [self sendUserEntranceInRegion:flgRegion];
     }
-    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    //TODO: [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
           didExitRegion:(CLRegion *)region {
     FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
     flgRegion.shouldLaunchNotification = YES;
-    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    //TODO: [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 // Before iOS 8

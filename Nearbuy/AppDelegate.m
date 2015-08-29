@@ -51,9 +51,11 @@
         }
         [self.locationManager startUpdatingLocation];
     }
-    self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
-    for (CLRegion *clRegion in self.mapRegions.regions) {
-        [self.locationManager startMonitoringForRegion:clRegion];
+    if ([FLGUserDefaultsUtils regions]) {
+        self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
+        for (CLRegion *clRegion in self.mapRegions.clRegions) {
+            [self.locationManager startMonitoringForRegion:clRegion];
+        }
     }
     
     // Build window
@@ -159,7 +161,7 @@
         flgRegion.shouldLaunchNotification = NO;
         [self sendUserEntranceInRegion:flgRegion];
     }
-    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    //TODO: [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void) sendUserEntranceInRegion: (FLGRegion *) region {

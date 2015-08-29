@@ -11,7 +11,7 @@
 
 @interface FLGMapRegions : NSObject
 
-@property(copy, nonatomic, readonly) NSMutableArray *regions;
+//@property(copy, nonatomic, readonly) NSMutableArray *regions;
 @property (nonatomic, readonly) NSUInteger numberOfRegions;
 @property (copy, nonatomic, readonly) NSMutableArray *annotations;
 @property (copy, nonatomic, readonly) NSMutableArray *clRegions;
