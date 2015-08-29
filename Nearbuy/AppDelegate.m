@@ -51,13 +51,17 @@
         }
         [self.locationManager startUpdatingLocation];
     }
-    if ([FLGUserDefaultsUtils regions]) {
-        self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
-        for (CLRegion *clRegion in self.mapRegions.clRegions) {
-            [self.locationManager startMonitoringForRegion:clRegion];
-        }
-    }
     
+    
+    if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
+        self.mapRegions = [FLGMapRegions mapRegionsWithTrickValues];
+        [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    }else{
+        self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
+    }
+    for (CLRegion *clRegion in self.mapRegions.clRegions) {
+        [self.locationManager startMonitoringForRegion:clRegion];
+    }
     // Build window
     FLGRegionsViewController *regionsViewController = [[FLGRegionsViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:regionsViewController];
@@ -161,7 +165,7 @@
         flgRegion.shouldLaunchNotification = NO;
         [self sendUserEntranceInRegion:flgRegion];
     }
-    //TODO: [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void) sendUserEntranceInRegion: (FLGRegion *) region {

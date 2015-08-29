@@ -6,10 +6,9 @@
 //  Copyright (c) 2015 JavierAlzueta. All rights reserved.
 //
 
-#import <Mantle/Mantle.h>
 @import CoreLocation;
 
-@interface FLGRegion : MTLModel<MTLJSONSerializing>
+@interface FLGRegion : NSObject<NSCoding>
 
 @property (copy, nonatomic) NSNumber *identifier;
 @property (copy, nonatomic) NSString *name;

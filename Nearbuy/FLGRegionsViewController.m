@@ -67,28 +67,14 @@ static NSString *const reuseIdentifier = @"cell";
                                                         forState:UIControlStateHighlighted];
 }
 
-- (void) setupNotifications{
-    [super setupNotifications];
-    
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc addObserver:self
-           selector:@selector(privateContextDidSave:)
-               name:NSManagedObjectContextDidSaveNotification
-             object:nil];
-}
-
-- (void) privateContextDidSave: (NSNotification *) notification{
-    [self reloadData];
-}
-
 #pragma mark - Actions
 - (IBAction)testPushNotificationsDidPress:(id)sender{
     if ([FLGUserDefaultsUtils pushNotificationToken]) {
         [self sendUserEntranceInRegion:[FLGRegion regionWithIdentifier:0
                                                                   name:@"Test"
-                                                              latitude:0
-                                                             longitude:0
-                                                                radius:0]];
+                                                              latitude:@0
+                                                             longitude:@0
+                                                                radius:@0]];
     }
 }
 
@@ -232,6 +218,7 @@ static NSString *const reuseIdentifier = @"cell";
     else{
         [self.mapRegions updateRegion:region];
     }
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
     [self reloadData];
     [self reloadRegionsObservation];
 }

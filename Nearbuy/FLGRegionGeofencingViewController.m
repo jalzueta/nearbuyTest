@@ -38,29 +38,36 @@
         }
         [self startReceivingLocation];
     }
-    
-    // First time app star
     if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
-        NearbyClient *client = [[NearbyClient alloc] init];
-        [client fetchRegionsWithSuccessBlock:^(id json) {
-            NSMutableArray *regions = [[NSMutableArray alloc] init];
-            if ([json isKindOfClass:[NSArray class]]){
-                for (NSDictionary *jsonDict in json) {
-                    FLGRegion *region = [[FLGRegion alloc] initWithDictionary:jsonDict
-                                                                        error:nil];
-                    [regions addObject:region];
-                }
-//                [FLGUserDefaultsUtils saveRegions:regions];
-//                self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
-                self.mapRegions = [FLGMapRegions mapRegionsWithRegions:regions];
-                [self reloadRegionsObservation];
-                [self reloadData];
-            }
-        }];
+        self.mapRegions = [FLGMapRegions mapRegionsWithTrickValues];
+        [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
     }else{
         self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
-        [self reloadRegionsObservation];
     }
+    [self reloadRegionsObservation];
+    
+    // First time app star
+//    if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
+//        NearbyClient *client = [[NearbyClient alloc] init];
+//        [client fetchRegionsWithSuccessBlock:^(id json) {
+//            NSMutableArray *regions = [[NSMutableArray alloc] init];
+//            if ([json isKindOfClass:[NSArray class]]){
+//                for (NSDictionary *jsonDict in json) {
+//                    FLGRegion *region = [[FLGRegion alloc] initWithDictionary:jsonDict
+//                                                                        error:nil];
+//                    [regions addObject:region];
+//                }
+//                [FLGUserDefaultsUtils saveRegions:regions];
+//                self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
+//                self.mapRegions = [FLGMapRegions mapRegionsWithRegions:regions];
+//                [self reloadRegionsObservation];
+//                [self reloadData];
+//            }
+//        }];
+//    }else{
+//        self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
+//        [self reloadRegionsObservation];
+//    }
 }
 
 #pragma mark - Utils
@@ -158,14 +165,14 @@
 - (void)locationManager:(CLLocationManager *)manager
       didDetermineState:(CLRegionState)state
               forRegion:(CLRegion *)region {
-    FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
+    FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[NSNumber numberWithInt:[region.identifier intValue]]];
     if (state == CLRegionStateInside) {
         [self sendUserEntranceInRegion:flgRegion];
         flgRegion.shouldLaunchNotification = NO;
     }else{
         flgRegion.shouldLaunchNotification = YES;
     }
-    //TODO: [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -175,14 +182,14 @@
         flgRegion.shouldLaunchNotification = NO;
         [self sendUserEntranceInRegion:flgRegion];
     }
-    //TODO: [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
           didExitRegion:(CLRegion *)region {
     FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
     flgRegion.shouldLaunchNotification = YES;
-    //TODO: [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 // Before iOS 8
