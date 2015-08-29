@@ -23,7 +23,7 @@
 @implementation FLGMapRegions
 
 + (instancetype) mapRegionsWithTrickValues{
-    return [[self alloc]initWithTrickValues];
+    return [[self alloc]initWithTrickDubaiValues];
 }
 
 + (instancetype) mapRegionsWithRegions: (NSMutableArray *)regions{
@@ -40,7 +40,7 @@
     return self;
 }
 
-- (instancetype) initWithTrickValues{
+- (instancetype) initWithTrickSpainValues{
     FLGRegion *region1 = [FLGRegion regionWithIdentifier:@1
                                                     name:@"Mercadona"
                                                 latitude:@(42.794589)
@@ -100,6 +100,80 @@
                                                  latitude:@(42.789294)
                                                 longitude:@(-1.617413)
                                                    radius:@50];
+    
+    return [self initWithRegions: [NSMutableArray arrayWithObjects:region1,
+                                   region2,
+                                   region3,
+                                   region4,
+                                   region5,
+                                   region6,
+                                   region7,
+                                   region8,
+                                   region9,
+                                   region10,
+                                   nil]];
+}
+
+- (instancetype) initWithTrickDubaiValues{
+    FLGRegion *region1 = [FLGRegion regionWithIdentifier:@1
+                                                    name:@"Grosvenor Tower"
+                                                latitude:@(25.187845)
+                                               longitude:@(55.269291)
+                                                  radius:@80];
+    
+    FLGRegion *region2 = [FLGRegion regionWithIdentifier:@2
+                                                    name:@"Blue Bay Tower"
+                                                latitude:@(25.187086)
+                                               longitude:@(55.271328)
+                                                  radius:@90];
+    
+    FLGRegion *region3 = [FLGRegion regionWithIdentifier:@3
+                                                    name:@"Lake Central Tower"
+                                                latitude:@(25.186199)
+                                               longitude:@(55.272521)
+                                                  radius:@100];
+    
+    FLGRegion *region4 = [FLGRegion regionWithIdentifier:@4
+                                                    name:@"Bay Avenue Park"
+                                                latitude:@(25.190825)
+                                               longitude:@(55.268204)
+                                                  radius:@150];
+    
+    FLGRegion *region5 = [FLGRegion regionWithIdentifier:@5
+                                                    name:@"The Executive Tower"
+                                                latitude:@(25.190835)
+                                               longitude:@(55.265262)
+                                                  radius:@80];
+    
+    FLGRegion *region6 = [FLGRegion regionWithIdentifier:@6
+                                                    name:@"Vision Tower"
+                                                latitude:@(25.187896)
+                                               longitude:@(55.263849)
+                                                  radius:@90];
+    
+    FLGRegion *region7 = [FLGRegion regionWithIdentifier:@7
+                                                    name:@"Signature Tower 2"
+                                                latitude:@(25.185148)
+                                               longitude:@(55.267413)
+                                                  radius:@90];
+    
+    FLGRegion *region8 = [FLGRegion regionWithIdentifier:@8
+                                                    name:@"Burlington Tower"
+                                                latitude:@(25.185711)
+                                               longitude:@(55.265146)
+                                                  radius:@100];
+    
+    FLGRegion *region9 = [FLGRegion regionWithIdentifier:@9
+                                                    name:@"Clarence Tower 2"
+                                                latitude:@(25.190978)
+                                               longitude:@(55.271346)
+                                                  radius:@80];
+    
+    FLGRegion *region10 = [FLGRegion regionWithIdentifier:@10
+                                                     name:@"Boulevard Central Tower 2"
+                                                 latitude:@(25.191653)
+                                                longitude:@(55.273288)
+                                                   radius:@90];
     
     return [self initWithRegions: [NSMutableArray arrayWithObjects:region1,
                                    region2,
