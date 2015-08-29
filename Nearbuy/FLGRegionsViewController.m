@@ -40,7 +40,7 @@ static NSString *const reuseIdentifier = @"cell";
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.title = @"Nearbuy Technical Test";
+    self.title = @"Nearbuy Test";
     [self registerNib];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
