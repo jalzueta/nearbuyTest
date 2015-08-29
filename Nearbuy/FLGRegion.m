@@ -93,4 +93,8 @@
     return self;
 }
 
+- (NSString*) description{
+    return [NSString stringWithFormat:@"<%@ %p>\n   identifier %@,\n   name %@,\n   latitude %@,\n   longitude %@,\n   radius %@,\n   shouldLaunchNotification %d", [self class], self, self.identifier, self.name, self.latitude, self.longitude, self.radius, self.shouldLaunchNotification];
+}
+
 @end
