@@ -19,21 +19,25 @@ These are some screenshots:
 
 - *POI Regions TableView:*
 
+<p align="center">
 ![ScreenShot](http:/www.fillingapps.com/apps/tests/nearbuy/screenshots/IMG_5641.PNG)
 
 
 - *POI Regions MapView:*
 
-![ScreenShot](http:/www.fillingapps.com/apps/tests/nearbuy/screenshots/IMG_5633.PNG)
+<p align="center">
+![alt tag](http:/www.fillingapps.com/apps/tests/nearbuy/screenshots/IMG_5633.PNG)
 
 
 - *POI Regions Detail View:*
 
+<p align="center">
 ![alt tag](http:/www.fillingapps.com/apps/tests/nearbuy/screenshots/IMG_5637.PNG)
 
 
 - *Permission settings:*
 
+<p align="center">
 ![alt tag](http:/www.fillingapps.com/apps/tests/nearbuy/screenshots/IMG_5635.PNG)
 
 
