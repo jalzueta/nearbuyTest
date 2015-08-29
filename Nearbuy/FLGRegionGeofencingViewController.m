@@ -41,7 +41,7 @@
         [self startReceivingLocation];
     }
     
-    // First time app star
+    // First time app starts
 //    if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
 //        NearbyClient *client = [[NearbyClient alloc] init];
 //        [client fetchRegionsWithSuccessBlock:^(id json) {
@@ -75,7 +75,7 @@
                        action:@selector(launchSettings:)
              forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *settingsPoiBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView: settingsButton];
-    self.navigationItem.leftBarButtonItem = settingsPoiBarButtonItem;
+    self.navigationItem.rightBarButtonItem = settingsPoiBarButtonItem;
     
     // Load Regions from NSUserDefaults
     if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
@@ -228,19 +228,6 @@
     FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
     flgRegion.shouldLaunchNotification = YES;
     [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
-    
-    UIAlertController *didExitRegionController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"didExitRegion: %@", flgRegion.name]
-                                                                                                message:[flgRegion description]
-                                                                                         preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:^(UIAlertAction *action) {}];
-    
-    [didExitRegionController addAction: okAction];
-    
-    [self presentViewController:didExitRegionController
-                       animated:YES
-                     completion:nil];
 }
 
 // Before iOS 8

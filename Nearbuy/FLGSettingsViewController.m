@@ -22,10 +22,10 @@
     
     self.title = @"Settings";
     
-    UIBarButtonItem *addPoiBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+    UIBarButtonItem *cancelBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                         target:self
                                                                                         action:@selector(cancelButtonDidPress:)];
-    self.navigationItem.leftBarButtonItem = addPoiBarButtonItem;
+    self.navigationItem.rightBarButtonItem = cancelBarButtonItem;
     
     self.backgroundLocationSwitch.on = [FLGUserDefaultsUtils pushNotificationReceptionInBackground];
     self.closedAppLocationSwitch.on = [FLGUserDefaultsUtils pushNotificationReceptionWhenAppIsClosed];

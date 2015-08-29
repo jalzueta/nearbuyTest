@@ -54,7 +54,9 @@ static NSString *const reuseIdentifier = @"cell";
     UIBarButtonItem *addPoiBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                         target:self
                                                                                         action:@selector(addNewPoi:)];
-    self.navigationItem.rightBarButtonItem = addPoiBarButtonItem;
+    
+    UIBarButtonItem *existingBarButtonItem = self.navigationItem.rightBarButtonItem;
+    self.navigationItem.rightBarButtonItems = @[existingBarButtonItem, addPoiBarButtonItem];
     
     [self.testPushNotificationsButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                   [UIColor orangeColor], NSForegroundColorAttributeName,
