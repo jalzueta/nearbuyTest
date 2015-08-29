@@ -12,10 +12,14 @@
 "kCLAuthorizationStatusDeniedMessage" = "Location is not allowed. Please, modify Location permissions in Settings > Privacy > Location";
 
 "MissingPoiDataTitle" = "Missing Poi data";
-"MissingPoiDataMessage" = "Please, fullfill all fields before saving the POI";
+"MissingPoiDataMessage" = "Please, fullfill all fields before saving the POI Region";
 
 "LocationManagerFailMessage" = "Failed to get your Location";
+
+"NumberOfRegionsLimitTitle" = "Forbidden Action";
+"NumberOfRegionsLimitMessage" = "The maximum number of POI Regions is 15. You should delete any of them before creating a new one.";
 
 // Buttons
 "Close" = "Close";
 "Ok" = "Ok";
+

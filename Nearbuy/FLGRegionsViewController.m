@@ -100,11 +100,26 @@ static NSString *const reuseIdentifier = @"cell";
 
 
 - (void) addNewPoi:(id) sender{
-    self.editingRow = NO_EDITING_VALUE;
-    FLGRegionDetailViewController *regionDetailViewController = [[FLGRegionDetailViewController alloc] initForNewRegion];
-    regionDetailViewController.delegate = self;
-    [self.navigationController pushViewController:regionDetailViewController
-                                         animated:YES];
+    if (self.mapRegions.numberOfRegions < 15) {
+        self.editingRow = NO_EDITING_VALUE;
+        FLGRegionDetailViewController *regionDetailViewController = [[FLGRegionDetailViewController alloc] initForNewRegion];
+        regionDetailViewController.delegate = self;
+        [self.navigationController pushViewController:regionDetailViewController
+                                             animated:YES];
+    }else{
+        UIAlertController *numberOfRegionsLimitAlertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"NumberOfRegionsLimitTitle", nil)
+                                                                                               message:NSLocalizedString(@"NumberOfRegionsLimitMessage", nil)
+                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {}];
+        
+        [numberOfRegionsLimitAlertController addAction: okAction];
+        
+        [self presentViewController:numberOfRegionsLimitAlertController
+                           animated:YES
+                         completion:nil];
+    }
 }
 
 #pragma mark - TableViewDataSource
