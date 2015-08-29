@@ -188,6 +188,15 @@ static NSString *const reuseIdentifier = @"cell";
 }
 
 - (void)locationManager:(CLLocationManager *)manager
+      didDetermineState:(CLRegionState)state
+              forRegion:(CLRegion *)region{
+    [super locationManager:manager
+         didDetermineState:state
+                 forRegion:region];
+    [self loadOverlays];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
          didEnterRegion:(CLRegion *)region {
     [super locationManager:manager
             didEnterRegion:region];
