@@ -8,6 +8,7 @@
 
 #import "FLGRegionTableViewCell.h"
 #import "FLGRegion.h"
+#import "Constants.h"
 
 @interface FLGRegionTableViewCell ()
 
@@ -27,6 +28,18 @@
     self.identifierLabel.text = region.identifierString;
     self.nameLabel.text = region.name;
     self.coordinateLabel.text = region.centerString;
+    
+    [self setAppearanceForRegion:region];
+}
+
+- (void) setAppearanceForRegion: (FLGRegion *) region{
+    UIColor *backgroundColor;
+    if (region.shouldLaunchNotification) {
+        backgroundColor = CELL_COLOR_OFF;
+    }else{
+        backgroundColor = CELL_COLOR_ON;
+    }
+    self.contentView.backgroundColor = backgroundColor;
 }
 
 - (void) prepareForReuse{

@@ -108,11 +108,13 @@ static NSString *const reuseIdentifier = @"cell";
 }
 
 #pragma mark - TableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section{
     return self.mapRegions.numberOfRegions;
 }
 
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *) tableView:(UITableView *)tableView
+          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FLGRegionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[FLGRegionTableViewCell cellId]];
     
     [cell configureWithRegion: [self.mapRegions regionAtIndex:indexPath.row]];
