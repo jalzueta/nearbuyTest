@@ -40,29 +40,6 @@
         }
         [self startReceivingLocation];
     }
-    
-    // First time app starts
-//    if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
-//        NearbyClient *client = [[NearbyClient alloc] init];
-//        [client fetchRegionsWithSuccessBlock:^(id json) {
-//            NSMutableArray *regions = [[NSMutableArray alloc] init];
-//            if ([json isKindOfClass:[NSArray class]]){
-//                for (NSDictionary *jsonDict in json) {
-//                    FLGRegion *region = [[FLGRegion alloc] initWithDictionary:jsonDict
-//                                                                        error:nil];
-//                    [regions addObject:region];
-//                }
-//                [FLGUserDefaultsUtils saveRegions:regions];
-//                self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
-//                self.mapRegions = [FLGMapRegions mapRegionsWithRegions:regions];
-//                [self reloadRegionsObservation];
-//                [self reloadData];
-//            }
-//        }];
-//    }else{
-//        self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
-//        [self reloadRegionsObservation];
-//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -77,8 +54,9 @@
     UIBarButtonItem *settingsPoiBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView: settingsButton];
     self.navigationItem.rightBarButtonItem = settingsPoiBarButtonItem;
     
-    // Load Regions from NSUserDefaults
+    // Load Regions from NSUserDefaults or WS
     if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
+        //TODO: download from WS
         self.mapRegions = [FLGMapRegions mapRegionsWithTrickValues];
         [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
     }else{

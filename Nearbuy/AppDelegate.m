@@ -56,8 +56,9 @@
         }
     }
     
-    // Load Regions from NSUserDefaults
+    // Load Regions from NSUserDefaults or WS
     if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
+        //TODO: download from WS
         self.mapRegions = [FLGMapRegions mapRegionsWithTrickValues];
         [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
     }else{
