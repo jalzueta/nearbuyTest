@@ -11,8 +11,6 @@
 #import "FLGRegion.h"
 #import "NSNumber+FLGNumberUtils.h"
 
-@import CoreLocation;
-
 @interface FLGMapRegions ()
 
 //@property(copy, nonatomic, readonly) NSMutableArray *regions;
@@ -201,6 +199,15 @@
     if (self.regions.count > index) {
         [self.regions removeObjectAtIndex:index];
     }
+}
+
+- (FLGRegion *) regionWithCoordinate: (CLLocationCoordinate2D)coordinate{
+    for (FLGRegion *r in self.regions) {
+        if (r.center.latitude == coordinate.latitude && r.center.longitude == coordinate.longitude) {
+            return r;
+        }
+    }
+    return nil;
 }
 
 @end

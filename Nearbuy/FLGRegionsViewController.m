@@ -137,8 +137,8 @@ static NSString *const reuseIdentifier = @"cell";
 - (void)tableView:(UITableView *)tableViewIn commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.mapRegions removeRegionAtIndex: indexPath.row];
-//        [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
-//        [self reloadData];
+        [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+        [self reloadData];
         self.tableView.editing = NO;
     }
 }
@@ -173,9 +173,30 @@ static NSString *const reuseIdentifier = @"cell";
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    MKCircle *circle = (MKCircle *)overlay;
+    UIColor *fillColor;
+    if (![self.mapRegions regionWithCoordinate:circle.coordinate].shouldLaunchNotification) {
+        fillColor = MAP_OVERLAY_COLOR_ON;
+    }else{
+        fillColor = MAP_OVERLAY_COLOR_OFF;
+    }
     MKCircleRenderer *renderer = [[MKCircleRenderer alloc]initWithCircle:overlay];
-    renderer.fillColor = MAP_OVERLAY_COLOR;
+    renderer.fillColor = fillColor;
     return renderer;
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+         didEnterRegion:(CLRegion *)region {
+    [super locationManager:manager
+            didEnterRegion:region];
+    [self reloadData];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+          didExitRegion:(CLRegion *)region {
+    [super locationManager:manager
+             didExitRegion:region];
+    [self reloadData];
 }
 
 #pragma mark - Utils

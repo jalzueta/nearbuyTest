@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class FLGRegion;
+@import CoreLocation;
 
 @interface FLGMapRegions : NSObject
 
@@ -26,5 +27,6 @@
 - (void) updateRegion: (FLGRegion *) region;
 - (NSNumber *) nextRegionIdentifier;
 - (void) removeRegionAtIndex: (NSUInteger) index;
+- (FLGRegion *) regionWithCoordinate: (CLLocationCoordinate2D)coordinate;
 
 @end

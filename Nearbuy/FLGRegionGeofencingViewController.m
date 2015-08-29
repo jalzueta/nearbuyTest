@@ -228,6 +228,19 @@
     FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
     flgRegion.shouldLaunchNotification = YES;
     [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+    
+    UIAlertController *didExitRegionController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"didExitRegion: %@", flgRegion.name]
+                                                                                                message:[flgRegion description]
+                                                                                         preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action) {}];
+    
+    [didExitRegionController addAction: okAction];
+    
+    [self presentViewController:didExitRegionController
+                       animated:YES
+                     completion:nil];
 }
 
 // Before iOS 8
