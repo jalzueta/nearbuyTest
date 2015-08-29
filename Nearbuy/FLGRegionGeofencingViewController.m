@@ -51,8 +51,13 @@
     [settingsButton addTarget:self
                        action:@selector(launchSettings:)
              forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *settingsPoiBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView: settingsButton];
-    self.navigationItem.rightBarButtonItem = settingsPoiBarButtonItem;
+    UIBarButtonItem *settingsBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView: settingsButton];
+    self.navigationItem.rightBarButtonItem = settingsBarButtonItem;
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
     
     // Load Regions from NSUserDefaults or WS
     if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
