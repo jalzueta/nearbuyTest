@@ -128,6 +128,7 @@ static NSString *const reuseIdentifier = @"cell";
 - (void)tableView:(UITableView *)tableViewIn commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.mapRegions removeRegionAtIndex: indexPath.row];
+        [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
         [self reloadData];
         self.tableView.editing = NO;
     }

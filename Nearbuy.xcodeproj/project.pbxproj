@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		429164934E001DA9E7351771 /* libPods-Nearbuy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF2F2923D1EC95F3E82FFA /* libPods-Nearbuy.a */; };
+		59E2F31B1B91ABDC0040EBD9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */; };
 		59ED38371B8D1638004C6F0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38361B8D1638004C6F0A /* main.m */; };
 		59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38391B8D1638004C6F0A /* AppDelegate.m */; };
 		59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383B1B8D1639004C6F0A /* Images.xcassets */; };
-		59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */; };
 		59ED384B1B8D1639004C6F0A /* NearbuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED384A1B8D1639004C6F0A /* NearbuyTests.m */; };
 		59ED38581B8D9017004C6F0A /* NearbyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38571B8D9017004C6F0A /* NearbyClient.m */; };
 		59ED385C1B8D93DA004C6F0A /* FLGUserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED385B1B8D93DA004C6F0A /* FLGUserDefaultsUtils.m */; };
@@ -384,9 +384,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E2F31B1B91ABDC0040EBD9 /* LaunchScreen.xib in Resources */,
 				59ED38B51B8E855F004C6F0A /* Raleway-ExtraBold.ttf in Resources */,
 				59ED38751B8E0883004C6F0A /* FLGRegionTableViewCell.xib in Resources */,
-				59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */,
 				59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */,
 				59ED38B71B8E855F004C6F0A /* Raleway-Heavy.ttf in Resources */,
 				59ED38B41B8E855F004C6F0A /* Raleway-Bold.ttf in Resources */,
@@ -592,9 +592,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUNDLE_LOADER = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Javier Alzueta Pellicer (WP72ZHSJRN)";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = Nearbuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -609,8 +610,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUNDLE_LOADER = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = Nearbuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -621,7 +623,7 @@
 		59ED38521B8D1639004C6F0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -640,7 +642,7 @@
 		59ED38531B8D1639004C6F0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

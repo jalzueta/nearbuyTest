@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Geofencing when app opened
     if (!self.locationManager) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
@@ -38,6 +39,8 @@
         }
         [self startReceivingLocation];
     }
+    
+    // Load Regions from NSUserDefaults
     if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
         self.mapRegions = [FLGMapRegions mapRegionsWithTrickValues];
         [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
@@ -134,6 +137,7 @@
 }
 
 - (void) reloadRegionsObservation{
+    NSLog(@"number of clRegions monitored: %lu", self.locationManager.monitoredRegions.count);
     for (CLRegion *clRegion in self.mapRegions.clRegions) {
         [self.locationManager startMonitoringForRegion:clRegion];
         [self.locationManager requestStateForRegion:clRegion];
@@ -167,8 +171,10 @@
               forRegion:(CLRegion *)region {
     FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[NSNumber numberWithInt:[region.identifier intValue]]];
     if (state == CLRegionStateInside) {
-        [self sendUserEntranceInRegion:flgRegion];
-        flgRegion.shouldLaunchNotification = NO;
+        if (flgRegion.shouldLaunchNotification) {
+            [self sendUserEntranceInRegion:flgRegion];
+            flgRegion.shouldLaunchNotification = NO;
+        }
     }else{
         flgRegion.shouldLaunchNotification = YES;
     }

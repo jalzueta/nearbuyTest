@@ -52,7 +52,7 @@
         [self.locationManager startUpdatingLocation];
     }
     
-    
+    // Load Regions from NSUserDefaults
     if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
         self.mapRegions = [FLGMapRegions mapRegionsWithTrickValues];
         [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
@@ -62,6 +62,7 @@
     for (CLRegion *clRegion in self.mapRegions.clRegions) {
         [self.locationManager startMonitoringForRegion:clRegion];
     }
+    
     // Build window
     FLGRegionsViewController *regionsViewController = [[FLGRegionsViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:regionsViewController];

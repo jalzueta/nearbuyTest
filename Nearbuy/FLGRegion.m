@@ -76,7 +76,7 @@
     [encoder encodeObject:_identifier forKey:@"identifier"];
     [encoder encodeObject:_name forKey:@"name"];
     [encoder encodeObject:_latitude forKey:@"latitude"];
-    [encoder encodeObject:_latitude forKey:@"longitude"];
+    [encoder encodeObject:_longitude forKey:@"longitude"];
     [encoder encodeObject:_radius forKey:@"radius"];
     [encoder encodeBool:_shouldLaunchNotification forKey:@"shouldLaunchNotification"];
 }
