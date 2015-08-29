@@ -8,15 +8,15 @@
 
 #import "FLGPushNotificationReceiverViewController.h"
 @import CoreLocation;
-@class PoisSet;
-@class Poi;
+@class FLGMapRegions;
+@class FLGRegion;
 
 @interface FLGRegionGeofencingViewController : FLGPushNotificationReceiverViewController<CLLocationManagerDelegate>
 
 @property (strong, nonatomic, readonly) CLLocation *currentLocation;
-@property (strong, nonatomic, readonly) PoisSet *poisSet;
+@property (strong, nonatomic, readonly) FLGMapRegions *mapRegions;
 
-- (void) sendLocationCoincidenceWithPoi: (Poi *) coincidencePoi;
+- (void) sendUserEntranceInRegion: (FLGRegion *) region;
 - (void) reloadRegionsObservation;
 
 @end

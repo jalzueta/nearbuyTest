@@ -17,4 +17,8 @@
     return [formatter stringFromNumber:self];
 }
 
+- (NSNumber *) flg_numberAddingConstantValue: (NSUInteger) constantValue{
+    return [NSNumber numberWithLong:[self longValue] + constantValue];
+}
+
 @end

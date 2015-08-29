@@ -8,17 +8,18 @@
 
 #import "AppDelegate.h"
 #import "Constants.h"
-#import "UserDefaultsUtils.h"
-#import "FLGPoisTableViewController.h"
-#import "PoisSet.h"
-#import "Poi.h"
+#import "FLGUserDefaultsUtils.h"
+#import "FLGRegionsViewController.h"
 #import "NearbyClient.h"
+#import "FLGMapRegions.h"
+#import "NSString+FLGStringUtils.h"
+#import "FLGRegion.h"
 
 @interface AppDelegate ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *currentLocation;
-@property (strong, nonatomic) PoisSet *poisSet;
+@property (strong, nonatomic) FLGMapRegions *mapRegions;
 
 @end
 
@@ -50,22 +51,14 @@
         }
         [self.locationManager startUpdatingLocation];
     }
-    self.poisSet = [PoisSet poiSetWithTrickValues];
-    for (CLRegion *region in self.poisSet.regions) {
-        [self.locationManager startMonitoringForRegion:region];
+    self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
+    for (CLRegion *clRegion in self.mapRegions.regions) {
+        [self.locationManager startMonitoringForRegion:clRegion];
     }
     
-    // First time app starts
-    NearbyClient *client = [[NearbyClient alloc] init];
-    [client fetchRegionsWithSuccessBlock:^(id json) {
-        if ([json isKindOfClass:[NSArray class]]){
-            
-        }
-    }];
-    
     // Build window
-    FLGPoisTableViewController *poisTableViewController = [[FLGPoisTableViewController alloc]init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:poisTableViewController];
+    FLGRegionsViewController *regionsViewController = [[FLGRegionsViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:regionsViewController];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -113,7 +106,7 @@
 #pragma mark - Push Notifications
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
     NSLog(@"My token (1) is: %@", devToken);
-    [UserDefaultsUtils savePushNotificationToken:devToken];
+    [FLGUserDefaultsUtils savePushNotificationToken:devToken];
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
@@ -161,14 +154,17 @@
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager
          didEnterRegion:(CLRegion *)region {
-    if ([UserDefaultsUtils pushNotificationToken]) {
-        [self sendLocationCoincidenceWithPoi:[self.poisSet poiWithIdentifier:[region.identifier integerValue]]];
+    if ([FLGUserDefaultsUtils pushNotificationToken]) {
+        FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
+        flgRegion.shouldLaunchNotification = NO;
+        [self sendUserEntranceInRegion:flgRegion];
     }
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
-- (void) sendLocationCoincidenceWithPoi: (Poi *) coincidencePoi {
+- (void) sendUserEntranceInRegion: (FLGRegion *) region {
     NearbyClient *client = [[NearbyClient alloc] init];
-    [client sendLocationCoincidenceForPoi:coincidencePoi];
+    [client sendUserEntranceInRegion:region];
 }
 
 @end

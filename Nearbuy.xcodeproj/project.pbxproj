@@ -14,14 +14,12 @@
 		59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED383D1B8D1639004C6F0A /* LaunchScreen.xib */; };
 		59ED384B1B8D1639004C6F0A /* NearbuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED384A1B8D1639004C6F0A /* NearbuyTests.m */; };
 		59ED38581B8D9017004C6F0A /* NearbyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38571B8D9017004C6F0A /* NearbyClient.m */; };
-		59ED385C1B8D93DA004C6F0A /* UserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED385B1B8D93DA004C6F0A /* UserDefaultsUtils.m */; };
-		59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED385F1B8DAE45004C6F0A /* FLGPoisTableViewController.m */; };
-		59ED38621B8DAE45004C6F0A /* FLGPoisTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */; };
+		59ED385C1B8D93DA004C6F0A /* FLGUserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED385B1B8D93DA004C6F0A /* FLGUserDefaultsUtils.m */; };
+		59ED38611B8DAE45004C6F0A /* FLGRegionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED385F1B8DAE45004C6F0A /* FLGRegionsViewController.m */; };
+		59ED38621B8DAE45004C6F0A /* FLGRegionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38601B8DAE45004C6F0A /* FLGRegionsViewController.xib */; };
 		59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */; };
-		59ED38681B8DCC02004C6F0A /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38671B8DCC02004C6F0A /* Poi.m */; };
-		59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED386E1B8DFBC2004C6F0A /* PoisSet.m */; };
-		59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38721B8E0883004C6F0A /* FLGPoiTableViewCell.m */; };
-		59ED38751B8E0883004C6F0A /* FLGPoiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */; };
+		59ED38741B8E0883004C6F0A /* FLGRegionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38721B8E0883004C6F0A /* FLGRegionTableViewCell.m */; };
+		59ED38751B8E0883004C6F0A /* FLGRegionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38731B8E0883004C6F0A /* FLGRegionTableViewCell.xib */; };
 		59ED38771B8E5CE8004C6F0A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ED38761B8E5CE8004C6F0A /* MapKit.framework */; };
 		59ED387A1B8E678A004C6F0A /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38791B8E678A004C6F0A /* MyLocation.m */; };
 		59ED38B41B8E855F004C6F0A /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38AB1B8E855F004C6F0A /* Raleway-Bold.ttf */; };
@@ -33,14 +31,14 @@
 		59ED38BA1B8E855F004C6F0A /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B11B8E855F004C6F0A /* Raleway-Regular.ttf */; };
 		59ED38BB1B8E855F004C6F0A /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B21B8E855F004C6F0A /* Raleway-SemiBold.ttf */; };
 		59ED38BC1B8E855F004C6F0A /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */; };
-		59ED38C01B8E8BD1004C6F0A /* FLGPoiDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */; };
-		59ED38C11B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */; };
+		59ED38C01B8E8BD1004C6F0A /* FLGRegionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38BE1B8E8BD1004C6F0A /* FLGRegionDetailViewController.m */; };
+		59ED38C11B8E8BD1004C6F0A /* FLGRegionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38BF1B8E8BD1004C6F0A /* FLGRegionDetailViewController.xib */; };
 		59ED38CA1B8FBB28004C6F0A /* NSString+FLGStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38C91B8FBB28004C6F0A /* NSString+FLGStringUtils.m */; };
 		59ED38CD1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38CC1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m */; };
 		59ED38D01B90A001004C6F0A /* FLGRegionGeofencingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */; };
 		59ED38D31B91006E004C6F0A /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59ED38D51B91006E004C6F0A /* Localized.strings */; };
-		59ED38D91B91044A004C6F0A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38D71B91044A004C6F0A /* Model.xcdatamodeld */; };
-		59ED38E81B91083B004C6F0A /* ManagedRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED38E71B91083B004C6F0A /* ManagedRegion.m */; };
+		59ED390D1B912BF4004C6F0A /* FLGRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED390C1B912BF4004C6F0A /* FLGRegion.m */; };
+		59ED39101B91378D004C6F0A /* FLGMapRegions.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED390F1B91378D004C6F0A /* FLGMapRegions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,20 +66,16 @@
 		59ED38541B8D8F58004C6F0A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		59ED38561B8D9017004C6F0A /* NearbyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyClient.h; sourceTree = "<group>"; };
 		59ED38571B8D9017004C6F0A /* NearbyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyClient.m; sourceTree = "<group>"; };
-		59ED385A1B8D93DA004C6F0A /* UserDefaultsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsUtils.h; sourceTree = "<group>"; };
-		59ED385B1B8D93DA004C6F0A /* UserDefaultsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsUtils.m; sourceTree = "<group>"; };
-		59ED385E1B8DAE45004C6F0A /* FLGPoisTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoisTableViewController.h; sourceTree = "<group>"; };
-		59ED385F1B8DAE45004C6F0A /* FLGPoisTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPoisTableViewController.m; sourceTree = "<group>"; };
-		59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoisTableViewController.xib; sourceTree = "<group>"; };
+		59ED385A1B8D93DA004C6F0A /* FLGUserDefaultsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGUserDefaultsUtils.h; sourceTree = "<group>"; };
+		59ED385B1B8D93DA004C6F0A /* FLGUserDefaultsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGUserDefaultsUtils.m; sourceTree = "<group>"; };
+		59ED385E1B8DAE45004C6F0A /* FLGRegionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGRegionsViewController.h; sourceTree = "<group>"; };
+		59ED385F1B8DAE45004C6F0A /* FLGRegionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGRegionsViewController.m; sourceTree = "<group>"; };
+		59ED38601B8DAE45004C6F0A /* FLGRegionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGRegionsViewController.xib; sourceTree = "<group>"; };
 		59ED38631B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPushNotificationReceiverViewController.h; sourceTree = "<group>"; };
 		59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPushNotificationReceiverViewController.m; sourceTree = "<group>"; };
-		59ED38661B8DCC02004C6F0A /* Poi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
-		59ED38671B8DCC02004C6F0A /* Poi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poi.m; sourceTree = "<group>"; };
-		59ED386D1B8DFBC2004C6F0A /* PoisSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoisSet.h; sourceTree = "<group>"; };
-		59ED386E1B8DFBC2004C6F0A /* PoisSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoisSet.m; sourceTree = "<group>"; };
-		59ED38711B8E0883004C6F0A /* FLGPoiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoiTableViewCell.h; sourceTree = "<group>"; };
-		59ED38721B8E0883004C6F0A /* FLGPoiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPoiTableViewCell.m; sourceTree = "<group>"; };
-		59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoiTableViewCell.xib; sourceTree = "<group>"; };
+		59ED38711B8E0883004C6F0A /* FLGRegionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGRegionTableViewCell.h; sourceTree = "<group>"; };
+		59ED38721B8E0883004C6F0A /* FLGRegionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGRegionTableViewCell.m; sourceTree = "<group>"; };
+		59ED38731B8E0883004C6F0A /* FLGRegionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGRegionTableViewCell.xib; sourceTree = "<group>"; };
 		59ED38761B8E5CE8004C6F0A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		59ED38781B8E678A004C6F0A /* MyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocation.h; sourceTree = "<group>"; };
 		59ED38791B8E678A004C6F0A /* MyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocation.m; sourceTree = "<group>"; };
@@ -94,9 +88,9 @@
 		59ED38B11B8E855F004C6F0A /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		59ED38B21B8E855F004C6F0A /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
-		59ED38BD1B8E8BD1004C6F0A /* FLGPoiDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGPoiDetailViewController.h; sourceTree = "<group>"; };
-		59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGPoiDetailViewController.m; sourceTree = "<group>"; };
-		59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGPoiDetailViewController.xib; sourceTree = "<group>"; };
+		59ED38BD1B8E8BD1004C6F0A /* FLGRegionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGRegionDetailViewController.h; sourceTree = "<group>"; };
+		59ED38BE1B8E8BD1004C6F0A /* FLGRegionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGRegionDetailViewController.m; sourceTree = "<group>"; };
+		59ED38BF1B8E8BD1004C6F0A /* FLGRegionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGRegionDetailViewController.xib; sourceTree = "<group>"; };
 		59ED38C81B8FBB28004C6F0A /* NSString+FLGStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FLGStringUtils.h"; sourceTree = "<group>"; };
 		59ED38C91B8FBB28004C6F0A /* NSString+FLGStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLGStringUtils.m"; sourceTree = "<group>"; };
 		59ED38CB1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+FLGNumberUtils.h"; sourceTree = "<group>"; };
@@ -104,9 +98,10 @@
 		59ED38CE1B90A001004C6F0A /* FLGRegionGeofencingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGRegionGeofencingViewController.h; sourceTree = "<group>"; };
 		59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGRegionGeofencingViewController.m; sourceTree = "<group>"; };
 		59ED38D41B91006E004C6F0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
-		59ED38D81B91044A004C6F0A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		59ED38E61B91083B004C6F0A /* ManagedRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedRegion.h; sourceTree = "<group>"; };
-		59ED38E71B91083B004C6F0A /* ManagedRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedRegion.m; sourceTree = "<group>"; };
+		59ED390B1B912BF4004C6F0A /* FLGRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGRegion.h; sourceTree = "<group>"; };
+		59ED390C1B912BF4004C6F0A /* FLGRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGRegion.m; sourceTree = "<group>"; };
+		59ED390E1B91378D004C6F0A /* FLGMapRegions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGMapRegions.h; sourceTree = "<group>"; };
+		59ED390F1B91378D004C6F0A /* FLGMapRegions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGMapRegions.m; sourceTree = "<group>"; };
 		ABB951BD06D88BD51640D8BD /* Pods-Nearbuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.debug.xcconfig"; sourceTree = "<group>"; };
 		AF24A032A6441A56CB650C0F /* Pods-Nearbuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearbuy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearbuy/Pods-Nearbuy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,8 +212,8 @@
 		59ED38591B8D93BA004C6F0A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				59ED385A1B8D93DA004C6F0A /* UserDefaultsUtils.h */,
-				59ED385B1B8D93DA004C6F0A /* UserDefaultsUtils.m */,
+				59ED385A1B8D93DA004C6F0A /* FLGUserDefaultsUtils.h */,
+				59ED385B1B8D93DA004C6F0A /* FLGUserDefaultsUtils.m */,
 				59ED38C81B8FBB28004C6F0A /* NSString+FLGStringUtils.h */,
 				59ED38C91B8FBB28004C6F0A /* NSString+FLGStringUtils.m */,
 				59ED38CB1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.h */,
@@ -234,12 +229,12 @@
 				59ED38641B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m */,
 				59ED38CE1B90A001004C6F0A /* FLGRegionGeofencingViewController.h */,
 				59ED38CF1B90A001004C6F0A /* FLGRegionGeofencingViewController.m */,
-				59ED385E1B8DAE45004C6F0A /* FLGPoisTableViewController.h */,
-				59ED385F1B8DAE45004C6F0A /* FLGPoisTableViewController.m */,
-				59ED38601B8DAE45004C6F0A /* FLGPoisTableViewController.xib */,
-				59ED38BD1B8E8BD1004C6F0A /* FLGPoiDetailViewController.h */,
-				59ED38BE1B8E8BD1004C6F0A /* FLGPoiDetailViewController.m */,
-				59ED38BF1B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib */,
+				59ED385E1B8DAE45004C6F0A /* FLGRegionsViewController.h */,
+				59ED385F1B8DAE45004C6F0A /* FLGRegionsViewController.m */,
+				59ED38601B8DAE45004C6F0A /* FLGRegionsViewController.xib */,
+				59ED38BD1B8E8BD1004C6F0A /* FLGRegionDetailViewController.h */,
+				59ED38BE1B8E8BD1004C6F0A /* FLGRegionDetailViewController.m */,
+				59ED38BF1B8E8BD1004C6F0A /* FLGRegionDetailViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -247,13 +242,12 @@
 		59ED38691B8DCC8E004C6F0A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				59ED38D61B910423004C6F0A /* Core Data */,
-				59ED38661B8DCC02004C6F0A /* Poi.h */,
-				59ED38671B8DCC02004C6F0A /* Poi.m */,
-				59ED386D1B8DFBC2004C6F0A /* PoisSet.h */,
-				59ED386E1B8DFBC2004C6F0A /* PoisSet.m */,
 				59ED38781B8E678A004C6F0A /* MyLocation.h */,
 				59ED38791B8E678A004C6F0A /* MyLocation.m */,
+				59ED390B1B912BF4004C6F0A /* FLGRegion.h */,
+				59ED390C1B912BF4004C6F0A /* FLGRegion.m */,
+				59ED390E1B91378D004C6F0A /* FLGMapRegions.h */,
+				59ED390F1B91378D004C6F0A /* FLGMapRegions.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -261,9 +255,9 @@
 		59ED38701B8E0869004C6F0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				59ED38711B8E0883004C6F0A /* FLGPoiTableViewCell.h */,
-				59ED38721B8E0883004C6F0A /* FLGPoiTableViewCell.m */,
-				59ED38731B8E0883004C6F0A /* FLGPoiTableViewCell.xib */,
+				59ED38711B8E0883004C6F0A /* FLGRegionTableViewCell.h */,
+				59ED38721B8E0883004C6F0A /* FLGRegionTableViewCell.m */,
+				59ED38731B8E0883004C6F0A /* FLGRegionTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -291,16 +285,6 @@
 				59ED38B31B8E855F004C6F0A /* Raleway-Thin.ttf */,
 			);
 			name = Fonts;
-			sourceTree = "<group>";
-		};
-		59ED38D61B910423004C6F0A /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-				59ED38E61B91083B004C6F0A /* ManagedRegion.h */,
-				59ED38E71B91083B004C6F0A /* ManagedRegion.m */,
-				59ED38D71B91044A004C6F0A /* Model.xcdatamodeld */,
-			);
-			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		BA6769658ABEBD8CE228C44F /* Pods */ = {
@@ -401,20 +385,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				59ED38B51B8E855F004C6F0A /* Raleway-ExtraBold.ttf in Resources */,
-				59ED38751B8E0883004C6F0A /* FLGPoiTableViewCell.xib in Resources */,
+				59ED38751B8E0883004C6F0A /* FLGRegionTableViewCell.xib in Resources */,
 				59ED383F1B8D1639004C6F0A /* LaunchScreen.xib in Resources */,
 				59ED383C1B8D1639004C6F0A /* Images.xcassets in Resources */,
 				59ED38B71B8E855F004C6F0A /* Raleway-Heavy.ttf in Resources */,
 				59ED38B41B8E855F004C6F0A /* Raleway-Bold.ttf in Resources */,
 				59ED38B81B8E855F004C6F0A /* Raleway-Light.ttf in Resources */,
 				59ED38B91B8E855F004C6F0A /* Raleway-Medium.ttf in Resources */,
-				59ED38C11B8E8BD1004C6F0A /* FLGPoiDetailViewController.xib in Resources */,
+				59ED38C11B8E8BD1004C6F0A /* FLGRegionDetailViewController.xib in Resources */,
 				59ED38B61B8E855F004C6F0A /* Raleway-ExtraLight.ttf in Resources */,
 				59ED38BC1B8E855F004C6F0A /* Raleway-Thin.ttf in Resources */,
 				59ED38BB1B8E855F004C6F0A /* Raleway-SemiBold.ttf in Resources */,
 				59ED38D31B91006E004C6F0A /* Localized.strings in Resources */,
 				59ED38BA1B8E855F004C6F0A /* Raleway-Regular.ttf in Resources */,
-				59ED38621B8DAE45004C6F0A /* FLGPoisTableViewController.xib in Resources */,
+				59ED38621B8DAE45004C6F0A /* FLGRegionsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,19 +451,17 @@
 			files = (
 				59ED38CD1B8FC48A004C6F0A /* NSNumber+FLGNumberUtils.m in Sources */,
 				59ED38651B8DB741004C6F0A /* FLGPushNotificationReceiverViewController.m in Sources */,
-				59ED38D91B91044A004C6F0A /* Model.xcdatamodeld in Sources */,
 				59ED383A1B8D1638004C6F0A /* AppDelegate.m in Sources */,
-				59ED38C01B8E8BD1004C6F0A /* FLGPoiDetailViewController.m in Sources */,
-				59ED386F1B8DFBC2004C6F0A /* PoisSet.m in Sources */,
+				59ED38C01B8E8BD1004C6F0A /* FLGRegionDetailViewController.m in Sources */,
 				59ED38CA1B8FBB28004C6F0A /* NSString+FLGStringUtils.m in Sources */,
+				59ED390D1B912BF4004C6F0A /* FLGRegion.m in Sources */,
 				59ED38D01B90A001004C6F0A /* FLGRegionGeofencingViewController.m in Sources */,
+				59ED39101B91378D004C6F0A /* FLGMapRegions.m in Sources */,
 				59ED387A1B8E678A004C6F0A /* MyLocation.m in Sources */,
-				59ED38611B8DAE45004C6F0A /* FLGPoisTableViewController.m in Sources */,
-				59ED38681B8DCC02004C6F0A /* Poi.m in Sources */,
-				59ED38741B8E0883004C6F0A /* FLGPoiTableViewCell.m in Sources */,
-				59ED38E81B91083B004C6F0A /* ManagedRegion.m in Sources */,
+				59ED38611B8DAE45004C6F0A /* FLGRegionsViewController.m in Sources */,
+				59ED38741B8E0883004C6F0A /* FLGRegionTableViewCell.m in Sources */,
 				59ED38371B8D1638004C6F0A /* main.m in Sources */,
-				59ED385C1B8D93DA004C6F0A /* UserDefaultsUtils.m in Sources */,
+				59ED385C1B8D93DA004C6F0A /* FLGUserDefaultsUtils.m in Sources */,
 				59ED38581B8D9017004C6F0A /* NearbyClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +594,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Javier Alzueta Pellicer (WP72ZHSJRN)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Nearbuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -627,6 +610,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Nearbuy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -699,19 +683,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		59ED38D71B91044A004C6F0A /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				59ED38D81B91044A004C6F0A /* Model.xcdatamodel */,
-			);
-			currentVersion = 59ED38D81B91044A004C6F0A /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 59ED38291B8D1636004C6F0A /* Project object */;
 }

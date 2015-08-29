@@ -8,19 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-@class Poi;
+@class FLGRegion;
 
 @interface MyLocation : NSObject<MKAnnotation>
 
 @property (strong, nonatomic, readonly) UILabel *identifierLabel;
 
-@property (strong, nonatomic, readonly) Poi *poi;
+@property (strong, nonatomic, readonly) FLGRegion *region;
 
 - (instancetype) initWithTitle: (NSString *) title
                       subtitle: (NSString *)subtitle
                     coordinate: (CLLocationCoordinate2D) coordinate;
 
-- (instancetype) initWithPoi: (Poi *) poi;
+- (instancetype) initWithRegion: (FLGRegion *) region;
 
 - (MKAnnotationView *)annotationView;
 

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+        </mutableArray>
+        <mutableArray key="Raleway-Medium.ttf">
+            <string>Raleway-Medium</string>
+        </mutableArray>
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway</string>
+            <string>Raleway</string>
+            <string>Raleway</string>
+            <string>Raleway</string>
+            <string>Raleway</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLGRegionDetailViewController">
+            <connections>
+                <outlet property="poiLatitudeTextField" destination="1Z2-Zb-W7a" id="hZf-sK-z5I"/>
+                <outlet property="poiLongitudeTextField" destination="bdL-ho-AkS" id="igb-zf-c9r"/>
+                <outlet property="poiNameTextField" destination="Vxi-h9-Dta" id="ZWJ-zF-uOV"/>
+                <outlet property="poiRadiusTextField" destination="QwE-fZ-RnM" id="1AB-QE-JJI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="UIControl">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="POI name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vxi-h9-Dta">
+                    <rect key="frame" x="15" y="25" width="570" height="30"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-pq-wi7">
+                    <rect key="frame" x="15" y="75" width="60" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="TgN-cq-85N"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Z2-Zb-W7a">
+                    <rect key="frame" x="103" y="69" width="374" height="30"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bdL-ho-AkS">
+                    <rect key="frame" x="103" y="107" width="374" height="30"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQN-8G-qZ9">
+                    <rect key="frame" x="15" y="113" width="73" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73" id="V5A-U5-yTT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QwE-fZ-RnM">
+                    <rect key="frame" x="104" y="145" width="373" height="30"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius (m):" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="tVk-Me-8a7">
+                    <rect key="frame" x="15" y="142" width="81" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="81" id="czN-KZ-rQy"/>
+                        <constraint firstAttribute="height" constant="36" id="yiV-19-JVR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wp-fZ-39h">
+                    <rect key="frame" x="250" y="201" width="100" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="7Ae-5m-kCi"/>
+                        <constraint firstAttribute="width" constant="100" id="txh-uc-A6c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="17"/>
+                    <state key="normal" title="Save Poi">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="savePoiDidPressed:" destination="-1" eventType="touchUpInside" id="iog-oi-pFN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivs-Ot-Qd1">
+                    <rect key="frame" x="485" y="88" width="100" height="68"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="bQ7-c4-R6r"/>
+                        <constraint firstAttribute="height" constant="68" id="owz-p8-vt6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="14"/>
+                    <state key="normal" title="My location">
+                        <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="getMyLocationDidPressed:" destination="-1" eventType="touchUpInside" id="dIU-5n-gNN"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1Wp-fZ-39h" firstAttribute="top" secondItem="QwE-fZ-RnM" secondAttribute="bottom" constant="26" id="4bO-xN-AZj"/>
+                <constraint firstItem="Ivs-Ot-Qd1" firstAttribute="top" secondItem="Vxi-h9-Dta" secondAttribute="bottom" constant="33" id="7jB-dS-BlA"/>
+                <constraint firstItem="Vxi-h9-Dta" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="CJB-Pc-vps"/>
+                <constraint firstItem="ZUc-pq-wi7" firstAttribute="top" secondItem="Vxi-h9-Dta" secondAttribute="bottom" constant="20" id="DIa-X5-78D"/>
+                <constraint firstItem="CQN-8G-qZ9" firstAttribute="leading" secondItem="ZUc-pq-wi7" secondAttribute="leading" id="DTU-R5-XGA"/>
+                <constraint firstItem="bdL-ho-AkS" firstAttribute="leading" secondItem="CQN-8G-qZ9" secondAttribute="trailing" constant="15" id="FfS-rM-smg"/>
+                <constraint firstItem="tVk-Me-8a7" firstAttribute="leading" secondItem="CQN-8G-qZ9" secondAttribute="leading" id="FwN-dx-nvT"/>
+                <constraint firstItem="Vxi-h9-Dta" firstAttribute="trailing" secondItem="Ivs-Ot-Qd1" secondAttribute="trailing" id="I2x-Sv-HKc"/>
+                <constraint firstItem="1Z2-Zb-W7a" firstAttribute="top" secondItem="Vxi-h9-Dta" secondAttribute="bottom" constant="14" id="K9T-jR-q9v"/>
+                <constraint firstItem="Vxi-h9-Dta" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="Liv-JZ-krG"/>
+                <constraint firstItem="Vxi-h9-Dta" firstAttribute="leading" secondItem="ZUc-pq-wi7" secondAttribute="leading" id="MLb-TO-Liy"/>
+                <constraint firstAttribute="trailing" secondItem="Vxi-h9-Dta" secondAttribute="trailing" constant="15" id="NAF-xx-Fay"/>
+                <constraint firstItem="QwE-fZ-RnM" firstAttribute="trailing" secondItem="Ivs-Ot-Qd1" secondAttribute="trailing" constant="-108" id="OMi-Wo-ncw"/>
+                <constraint firstItem="1Wp-fZ-39h" firstAttribute="centerX" secondItem="Vxi-h9-Dta" secondAttribute="centerX" id="VwL-lJ-KVj"/>
+                <constraint firstItem="Ivs-Ot-Qd1" firstAttribute="leading" secondItem="bdL-ho-AkS" secondAttribute="trailing" constant="8" id="Y42-UU-PD6"/>
+                <constraint firstItem="tVk-Me-8a7" firstAttribute="centerY" secondItem="QwE-fZ-RnM" secondAttribute="centerY" id="clx-Dl-2Sz"/>
+                <constraint firstItem="QwE-fZ-RnM" firstAttribute="top" secondItem="bdL-ho-AkS" secondAttribute="bottom" constant="8" id="d9j-Vf-zFQ"/>
+                <constraint firstItem="QwE-fZ-RnM" firstAttribute="trailing" secondItem="bdL-ho-AkS" secondAttribute="trailing" id="imA-hN-sAB"/>
+                <constraint firstItem="1Z2-Zb-W7a" firstAttribute="leading" secondItem="ZUc-pq-wi7" secondAttribute="trailing" constant="28" id="lga-Dv-C7f"/>
+                <constraint firstItem="QwE-fZ-RnM" firstAttribute="leading" secondItem="tVk-Me-8a7" secondAttribute="trailing" constant="8" symbolic="YES" id="nA1-AM-vVw"/>
+                <constraint firstItem="bdL-ho-AkS" firstAttribute="top" secondItem="1Z2-Zb-W7a" secondAttribute="bottom" constant="8" id="qJn-hE-Q5I"/>
+                <constraint firstItem="CQN-8G-qZ9" firstAttribute="top" secondItem="ZUc-pq-wi7" secondAttribute="bottom" constant="20" id="qb9-Vc-q4k"/>
+                <constraint firstItem="Ivs-Ot-Qd1" firstAttribute="leading" secondItem="1Z2-Zb-W7a" secondAttribute="trailing" constant="8" id="wxu-ma-TA6"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="imA-hN-sAB"/>
+                </mask>
+            </variation>
+            <connections>
+                <action selector="backgroundViewDidPressed:" destination="-1" eventType="touchUpInside" id="mvR-RR-ZbK"/>
+            </connections>
+        </view>
+    </objects>
+</document>

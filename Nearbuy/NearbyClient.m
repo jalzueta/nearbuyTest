@@ -8,8 +8,8 @@
 
 #import "NearbyClient.h"
 #import <AFNetworking/AFNetworking.h>
-#import "UserDefaultsUtils.h"
-#import "Poi.h"
+#import "FLGUserDefaultsUtils.h"
+#import "FLGRegion.h"
 
 @interface NearbyClient ()
 
@@ -40,22 +40,17 @@
         
         _requestManager2 = [[AFHTTPRequestOperationManager alloc]
                            initWithBaseURL:regionsBaseURL];
-//        [_requestManager2.requestSerializer setValue:@"text/html"
-//                                 forHTTPHeaderField:@"Accept"];
-//        
-//        _requestManager2.responseSerializer = [AFHTTPResponseSerializer serializer];
-//        _requestManager2.responseSerializer.acceptableContentTypes = [_requestManager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     }
     return self;
 }
 
 #pragma mark - Requests
-- (void) sendLocationCoincidenceForPoi: (Poi *) poi{
+- (void) sendUserEntranceInRegion: (FLGRegion *) region{
     NSDictionary *parameters = @{
-                                 @"latitude" : poi.latitude,
-                                 @"longitude" : poi.longitude,
-                                 @"pushNotificationToken" : [UserDefaultsUtils pushNotificationToken],
-                                 @"poiName" : poi.name
+                                 @"latitude" : region.latitude,
+                                 @"longitude" : region.longitude,
+                                 @"pushNotificationToken" : [FLGUserDefaultsUtils pushNotificationToken],
+                                 @"poiName" : region.name
                                  };
     
     [self GET:@"coincidence_get_dev.php" parameters:parameters];

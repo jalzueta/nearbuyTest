@@ -11,5 +11,6 @@
 @interface NSNumber (FLGNumberUtils)
 
 - (NSString *) flg_stringWithNumberOfFractionDigits: (NSUInteger) numberOfFractionDigits;
+- (NSNumber *) flg_numberAddingConstantValue: (NSUInteger) constantValue;
 
 @end

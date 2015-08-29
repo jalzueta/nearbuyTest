@@ -10,4 +10,6 @@
 
 @interface FLGPushNotificationReceiverViewController : UIViewController
 
+- (void) setupNotifications;
+
 @end

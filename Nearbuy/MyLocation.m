@@ -8,7 +8,7 @@
 
 #import "MyLocation.h"
 #import "Constants.h"
-#import "Poi.h"
+#import "FLGRegion.h"
 
 @implementation MyLocation
 
@@ -23,12 +23,12 @@
     return self;
 }
 
-- (instancetype) initWithPoi: (Poi *) poi{
+- (instancetype) initWithRegion: (FLGRegion *) region{
     if (self = [super init]) {
-        _title = poi.name;
-        _subtitle = poi.coordinateString;
-        _coordinate = CLLocationCoordinate2DMake([poi.latitude doubleValue], [poi.longitude doubleValue]);
-        _poi = poi;
+        _title = region.name;
+        _subtitle = region.coordinateString;
+        _coordinate = CLLocationCoordinate2DMake([region.latitude doubleValue], [region.longitude doubleValue]);
+        _region = region;
     }
     return self;
 }
@@ -46,7 +46,7 @@
     annotationView.image = [UIImage imageNamed:@"gps_map_icon"];
     
     UILabel *identifierLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 1, 30, 30)];
-    identifierLabel.text = self.poi.identifierString;
+    identifierLabel.text = self.region.identifierString;
     identifierLabel.textAlignment = NSTextAlignmentCenter;
     identifierLabel.font = MAP_ANNOTATIONS_IDENTIFIER_FONT;
     identifierLabel.textColor = DARK_ORANGE_COLOR;

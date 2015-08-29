@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Poi;
+@class FLGRegion;
 
 @interface NearbyClient : NSObject
 
-- (void) sendLocationCoincidenceForPoi: (Poi *) poi;
+- (void) sendUserEntranceInRegion: (FLGRegion *) region;
 - (void) fetchRegionsWithSuccessBlock:(void (^)(id json))successBlock;
 
 @end

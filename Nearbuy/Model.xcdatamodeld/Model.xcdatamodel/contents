@@ -26,7 +26,11 @@
                 <entry key="JSONKeyPath" value="name"/>
             </userInfo>
         </attribute>
-        <attribute name="radius" attributeType="Double" syncable="YES"/>
+        <attribute name="radius" attributeType="Double" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="radius"/>
+            </userInfo>
+        </attribute>
         <attribute name="shouldLaunchNotification" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
     </entity>
     <elements>

@@ -3,6 +3,7 @@
 
 target 'Nearbuy' do
     pod 'AFNetworking'
+    pod 'Mantle'
 end
 
 target 'NearbuyTests' do

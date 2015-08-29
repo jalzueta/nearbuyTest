@@ -9,15 +9,16 @@
 #import "FLGRegionGeofencingViewController.h"
 #import "Constants.h"
 #import "NearbyClient.h"
-#import "Poi.h"
-#import "PoisSet.h"
-#import "UserDefaultsUtils.h"
+#import "FLGUserDefaultsUtils.h"
+#import "FLGRegion.h"
+#import "FLGMapRegions.h"
+#import "NSString+FLGStringUtils.h"
 
 @interface FLGRegionGeofencingViewController ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *currentLocation;
-@property (strong, nonatomic) PoisSet *poisSet;
+@property (strong, nonatomic) FLGMapRegions *mapRegions;
 
 @end
 
@@ -37,8 +38,29 @@
         }
         [self startReceivingLocation];
     }
-    self.poisSet = [PoisSet poiSetWithTrickValues];
-    [self reloadRegionsObservation];
+    
+    // First time app star
+    if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
+        NearbyClient *client = [[NearbyClient alloc] init];
+        [client fetchRegionsWithSuccessBlock:^(id json) {
+            NSMutableArray *regions = [[NSMutableArray alloc] init];
+            if ([json isKindOfClass:[NSArray class]]){
+                for (NSDictionary *jsonDict in json) {
+                    FLGRegion *region = [[FLGRegion alloc] initWithDictionary:jsonDict
+                                                                        error:nil];
+                    [regions addObject:region];
+                }
+//                [FLGUserDefaultsUtils saveRegions:regions];
+//                self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
+                self.mapRegions = [FLGMapRegions mapRegionsWithRegions:regions];
+                [self reloadRegionsObservation];
+                [self reloadData];
+            }
+        }];
+    }else{
+        self.mapRegions = [FLGMapRegions mapRegionsWithRegions:[FLGUserDefaultsUtils regions]];
+        [self reloadRegionsObservation];
+    }
 }
 
 #pragma mark - Utils
@@ -99,16 +121,19 @@
                      completion:nil];
 }
 
-- (void) sendLocationCoincidenceWithPoi: (Poi *) coincidencePoi {
+- (void) sendUserEntranceInRegion: (FLGRegion *) region {
     NearbyClient *client = [[NearbyClient alloc] init];
-    [client sendLocationCoincidenceForPoi:coincidencePoi];
+    [client sendUserEntranceInRegion:region];
 }
 
 - (void) reloadRegionsObservation{
-    for (CLRegion *region in self.poisSet.regions) {
+    for (CLRegion *region in self.mapRegions.regions) {
         [self.locationManager startMonitoringForRegion:region];
         [self.locationManager requestStateForRegion:region];
     }
+}
+
+- (void) reloadData{
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -133,29 +158,31 @@
 - (void)locationManager:(CLLocationManager *)manager
       didDetermineState:(CLRegionState)state
               forRegion:(CLRegion *)region {
-//    NSLog(@"didDetermineState: %ld forRegion: %@", (long)state, region.identifier);
+    FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
     if (state == CLRegionStateInside) {
-        Poi *poiForRegion = [self.poisSet poiWithIdentifier:[region.identifier integerValue]];
-        [self sendLocationCoincidenceWithPoi:poiForRegion];
-        //TODO: set "shouldLaunchNotification: NO"
+        [self sendUserEntranceInRegion:flgRegion];
+        flgRegion.shouldLaunchNotification = NO;
     }else{
-        //TODO: set "shouldLaunchNotification: YES"
+        flgRegion.shouldLaunchNotification = YES;
     }
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
          didEnterRegion:(CLRegion *)region {
-    Poi *poiForRegion = [self.poisSet poiWithIdentifier:[region.identifier integerValue]];
-    if ([UserDefaultsUtils pushNotificationToken]) {
-        poiForRegion.shouldLaunchPushNotification = NO;
-        [self sendLocationCoincidenceWithPoi:poiForRegion];
+    if ([FLGUserDefaultsUtils pushNotificationToken]) {
+        FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
+        flgRegion.shouldLaunchNotification = NO;
+        [self sendUserEntranceInRegion:flgRegion];
     }
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
           didExitRegion:(CLRegion *)region {
-    Poi *poiForRegion = [self.poisSet poiWithIdentifier:[region.identifier integerValue]];
-    poiForRegion.shouldLaunchPushNotification = YES;
+    FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
+    flgRegion.shouldLaunchNotification = YES;
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 // Before iOS 8
