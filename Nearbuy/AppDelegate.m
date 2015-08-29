@@ -112,7 +112,7 @@
 
 #pragma mark - Push Notifications
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
-    NSLog(@"My token (1) is: %@", devToken);
+//    NSLog(@"My token is: %@", devToken);
     [FLGUserDefaultsUtils savePushNotificationToken:devToken];
 }
 
@@ -121,7 +121,7 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    NSLog(@"application didReceiveRemoteNotification: %@", userInfo);
+//    NSLog(@"application didReceiveRemoteNotification: %@", userInfo);
     NSString *pushNotificationTitle = [self getPushNotificationTitleFromUserInfoDictionary:userInfo];
     NSString *pushNotificationBody = [self getPushNotificationBodyFromUserInfoDictionary:userInfo];
     NSString *pushNotificationType = [self getPushNotificationTypeFromUserInfoDictionary:userInfo];

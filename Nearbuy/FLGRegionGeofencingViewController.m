@@ -162,7 +162,7 @@
 }
 
 - (void) reloadRegionsObservation{
-    NSLog(@"number of clRegions monitored: %lu", self.locationManager.monitoredRegions.count);
+//    NSLog(@"number of clRegions monitored: %lu", self.locationManager.monitoredRegions.count);
     for (CLRegion *clRegion in self.mapRegions.clRegions) {
         [self.locationManager startMonitoringForRegion:clRegion];
         [self.locationManager requestStateForRegion:clRegion];
@@ -174,11 +174,11 @@
 
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
-    NSLog(@"Cambio de autorizacion: %d", status);
+//    NSLog(@"Cambio de autorizacion: %d", status);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"didFailWithError: %@", error);
+//    NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
                                initWithTitle:@"Error" message:@"Failed to get your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];

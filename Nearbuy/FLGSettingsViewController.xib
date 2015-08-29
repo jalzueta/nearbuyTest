@@ -4,6 +4,15 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+        </mutableArray>
+        <mutableArray key="Raleway-Medium.ttf">
+            <string>Raleway-Medium</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLGSettingsViewController">
             <connections>
@@ -15,17 +24,97 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYR-DD-pGi">
-                    <rect key="frame" x="42" y="129" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywI-KP-I0E">
+                    <rect key="frame" x="0.0" y="88" width="600" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpc-uN-58A">
+                            <rect key="frame" x="130" y="0.0" width="340" height="60"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activate bacground location service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMl-No-dNB">
+                                    <rect key="frame" x="5" y="15" width="262" height="30"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
+                                    <color key="textColor" red="0.75111120939999998" green="0.3205677569" blue="0.019752500579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2NB-jO-BPk">
+                                    <rect key="frame" x="290" y="15" width="51" height="31"/>
+                                </switch>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="340" id="96q-vQ-JII"/>
+                                <constraint firstAttribute="height" constant="60" id="9Vq-JH-296"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="zpc-uN-58A" firstAttribute="top" secondItem="ywI-KP-I0E" secondAttribute="top" id="JUG-V6-HmU"/>
+                        <constraint firstAttribute="height" constant="60" id="vHQ-gl-ldn"/>
+                        <constraint firstAttribute="centerX" secondItem="zpc-uN-58A" secondAttribute="centerX" id="xCk-bb-xob"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uA6-8T-aJ2">
+                    <rect key="frame" x="0.0" y="171" width="600" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bny-J0-gp6">
+                            <rect key="frame" x="130" y="0.0" width="340" height="60"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activate location when app is closed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRN-nB-tkk">
+                                    <rect key="frame" x="5" y="15" width="275" height="30"/>
+                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
+                                    <color key="textColor" red="0.75111120939999998" green="0.3205677569" blue="0.019752500579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="riH-hq-2LI">
+                                    <rect key="frame" x="290" y="15" width="51" height="31"/>
+                                </switch>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="340" id="9qn-c3-vgK"/>
+                                <constraint firstAttribute="height" constant="60" id="g19-jG-mmx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Ndf-du-DnW"/>
+                        <constraint firstItem="Bny-J0-gp6" firstAttribute="top" secondItem="uA6-8T-aJ2" secondAttribute="top" id="kO0-V5-C93"/>
+                        <constraint firstAttribute="centerX" secondItem="Bny-J0-gp6" secondAttribute="centerX" id="zjB-nh-EjU"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJL-F8-ZtB">
+                    <rect key="frame" x="250" y="269" width="100" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="FB9-JD-ve0"/>
+                        <constraint firstAttribute="width" constant="100" id="VM3-cL-Zcm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="17"/>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="saveSettingsDidPress:" destination="-1" eventType="touchUpInside" id="IJw-Am-EA1"/>
-                    </connections>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ywI-KP-I0E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EEZ-1s-PPo"/>
+                <constraint firstItem="uA6-8T-aJ2" firstAttribute="top" secondItem="ywI-KP-I0E" secondAttribute="bottom" constant="23" id="Ei4-gp-OSx"/>
+                <constraint firstItem="ywI-KP-I0E" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="JhE-pq-Eci"/>
+                <constraint firstItem="uA6-8T-aJ2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SeE-40-7GK"/>
+                <constraint firstAttribute="trailing" secondItem="uA6-8T-aJ2" secondAttribute="trailing" id="VZN-CH-w7g"/>
+                <constraint firstItem="kJL-F8-ZtB" firstAttribute="top" secondItem="uA6-8T-aJ2" secondAttribute="bottom" constant="38" id="kVc-H0-deA"/>
+                <constraint firstAttribute="trailing" secondItem="ywI-KP-I0E" secondAttribute="trailing" id="uRx-38-0Lg"/>
+                <constraint firstAttribute="centerX" secondItem="kJL-F8-ZtB" secondAttribute="centerX" id="w3v-qc-Z9s"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
     </objects>
 </document>
