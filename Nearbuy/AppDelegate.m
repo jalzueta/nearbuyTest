@@ -49,7 +49,11 @@
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.locationManager requestAlwaysAuthorization];
         }
-        [self.locationManager startUpdatingLocation];
+        
+        // Check for user permissions
+        if ([FLGUserDefaultsUtils pushNotificationReceptionWhenAppIsClosed]) {
+            [self.locationManager startUpdatingLocation];
+        }
     }
     
     // Load Regions from NSUserDefaults

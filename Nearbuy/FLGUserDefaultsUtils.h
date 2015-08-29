@@ -19,4 +19,10 @@
 + (void) saveRegions: (NSArray *) regions;
 + (NSMutableArray *) regions;
 
++ (void) savePushNotificationReceptionInBackground: (BOOL) pushNotificationReceptionInBackground;
++ (BOOL) pushNotificationReceptionInBackground;
+
++ (void) savePushNotificationReceptionWhenAppIsClosed: (BOOL) pushNotificationReceptionWhenAppIsClosed;
++ (BOOL) pushNotificationReceptionWhenAppIsClosed;
+
 @end

@@ -16,6 +16,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLGSettingsViewController">
             <connections>
+                <outlet property="backgroundLocationSwitch" destination="2NB-jO-BPk" id="ZHj-Il-jEB"/>
+                <outlet property="closedAppLocationSwitch" destination="riH-hq-2LI" id="zIl-mW-oVD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,60 +30,70 @@
                     <rect key="frame" x="0.0" y="88" width="600" height="60"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpc-uN-58A">
-                            <rect key="frame" x="130" y="0.0" width="340" height="60"/>
+                            <rect key="frame" x="131" y="0.0" width="339" height="60"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activate bacground location service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMl-No-dNB">
-                                    <rect key="frame" x="5" y="15" width="262" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMl-No-dNB">
+                                    <rect key="frame" x="20" y="9" width="242" height="42"/>
+                                    <string key="text">Activate notifications 
+reception in background</string>
                                     <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
                                     <color key="textColor" red="0.75111120939999998" green="0.3205677569" blue="0.019752500579999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2NB-jO-BPk">
-                                    <rect key="frame" x="290" y="15" width="51" height="31"/>
+                                    <rect key="frame" x="270" y="15" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="backgroudLocationSwitchValueChanged:" destination="-1" eventType="valueChanged" id="1tO-rr-gTb"/>
+                                    </connections>
                                 </switch>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="340" id="96q-vQ-JII"/>
-                                <constraint firstAttribute="height" constant="60" id="9Vq-JH-296"/>
+                                <constraint firstAttribute="height" constant="60" id="BGZ-KB-GQF"/>
+                                <constraint firstAttribute="width" constant="339" id="Hii-oJ-Kur"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="zpc-uN-58A" firstAttribute="top" secondItem="ywI-KP-I0E" secondAttribute="top" id="JUG-V6-HmU"/>
-                        <constraint firstAttribute="height" constant="60" id="vHQ-gl-ldn"/>
-                        <constraint firstAttribute="centerX" secondItem="zpc-uN-58A" secondAttribute="centerX" id="xCk-bb-xob"/>
+                        <constraint firstItem="zpc-uN-58A" firstAttribute="top" secondItem="ywI-KP-I0E" secondAttribute="top" id="QCN-1r-hxN"/>
+                        <constraint firstAttribute="height" constant="60" id="Sfa-AD-NhN"/>
+                        <constraint firstAttribute="centerX" secondItem="zpc-uN-58A" secondAttribute="centerX" id="dvg-W9-IaL"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uA6-8T-aJ2">
                     <rect key="frame" x="0.0" y="171" width="600" height="60"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bny-J0-gp6">
-                            <rect key="frame" x="130" y="0.0" width="340" height="60"/>
+                            <rect key="frame" x="131" y="0.0" width="339" height="60"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activate location when app is closed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRN-nB-tkk">
-                                    <rect key="frame" x="5" y="15" width="275" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRN-nB-tkk">
+                                    <rect key="frame" x="20" y="11" width="236" height="40"/>
+                                    <string key="text">Activate notifications reception
+when  app is closed</string>
                                     <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
                                     <color key="textColor" red="0.75111120939999998" green="0.3205677569" blue="0.019752500579999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="riH-hq-2LI">
-                                    <rect key="frame" x="290" y="15" width="51" height="31"/>
+                                    <rect key="frame" x="270" y="15" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="closedAppLocationSwitchValueChanged:" destination="-1" eventType="valueChanged" id="CD6-Fx-2Ej"/>
+                                    </connections>
                                 </switch>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="340" id="9qn-c3-vgK"/>
-                                <constraint firstAttribute="height" constant="60" id="g19-jG-mmx"/>
+                                <constraint firstAttribute="width" constant="339" id="Axc-y6-Mpb"/>
+                                <constraint firstAttribute="height" constant="60" id="YL4-Tf-XHA"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="Ndf-du-DnW"/>
-                        <constraint firstItem="Bny-J0-gp6" firstAttribute="top" secondItem="uA6-8T-aJ2" secondAttribute="top" id="kO0-V5-C93"/>
-                        <constraint firstAttribute="centerX" secondItem="Bny-J0-gp6" secondAttribute="centerX" id="zjB-nh-EjU"/>
+                        <constraint firstItem="Bny-J0-gp6" firstAttribute="top" secondItem="uA6-8T-aJ2" secondAttribute="top" id="XEM-sP-rja"/>
+                        <constraint firstAttribute="centerX" secondItem="Bny-J0-gp6" secondAttribute="centerX" id="h9j-hp-nzc"/>
+                        <constraint firstAttribute="height" constant="60" id="sXA-5A-gf0"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJL-F8-ZtB">
@@ -89,7 +101,9 @@
                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="FB9-JD-ve0"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="IzB-ss-xGK"/>
                         <constraint firstAttribute="width" constant="100" id="VM3-cL-Zcm"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wWN-Kg-G3q"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="17"/>
                     <state key="normal" title="Save">
@@ -101,18 +115,21 @@
                             <integer key="value" value="22"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="saveSettingsDidPress:" destination="-1" eventType="touchUpInside" id="u0Z-1Q-Dyc"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="ywI-KP-I0E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EEZ-1s-PPo"/>
-                <constraint firstItem="uA6-8T-aJ2" firstAttribute="top" secondItem="ywI-KP-I0E" secondAttribute="bottom" constant="23" id="Ei4-gp-OSx"/>
-                <constraint firstItem="ywI-KP-I0E" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="JhE-pq-Eci"/>
-                <constraint firstItem="uA6-8T-aJ2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SeE-40-7GK"/>
-                <constraint firstAttribute="trailing" secondItem="uA6-8T-aJ2" secondAttribute="trailing" id="VZN-CH-w7g"/>
-                <constraint firstItem="kJL-F8-ZtB" firstAttribute="top" secondItem="uA6-8T-aJ2" secondAttribute="bottom" constant="38" id="kVc-H0-deA"/>
-                <constraint firstAttribute="trailing" secondItem="ywI-KP-I0E" secondAttribute="trailing" id="uRx-38-0Lg"/>
-                <constraint firstAttribute="centerX" secondItem="kJL-F8-ZtB" secondAttribute="centerX" id="w3v-qc-Z9s"/>
+                <constraint firstItem="ywI-KP-I0E" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="4yo-Ik-SyM"/>
+                <constraint firstAttribute="centerX" secondItem="kJL-F8-ZtB" secondAttribute="centerX" id="C0O-1s-2qi"/>
+                <constraint firstItem="uA6-8T-aJ2" firstAttribute="top" secondItem="ywI-KP-I0E" secondAttribute="bottom" constant="23" id="Ot1-38-phf"/>
+                <constraint firstItem="uA6-8T-aJ2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PQg-e8-GPs"/>
+                <constraint firstAttribute="trailing" secondItem="uA6-8T-aJ2" secondAttribute="trailing" id="Sbf-LJ-ZT8"/>
+                <constraint firstItem="kJL-F8-ZtB" firstAttribute="top" secondItem="uA6-8T-aJ2" secondAttribute="bottom" constant="38" id="UJq-hD-v3m"/>
+                <constraint firstItem="ywI-KP-I0E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Yvd-lB-79H"/>
+                <constraint firstAttribute="trailing" secondItem="ywI-KP-I0E" secondAttribute="trailing" id="ddq-Rv-EJG"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>

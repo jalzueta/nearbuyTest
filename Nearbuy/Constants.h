@@ -6,13 +6,14 @@
 //  Copyright (c) 2015 JavierAlzueta. All rights reserved.
 //
 
-#pragma mark - Push NSUserDefaults
-
+#pragma mark - NSUserDefaults
 #define INITIAL_REGIONS_DOWNLOADED_DEF_KEY @"initialRegionsDownloaded"
 #define PUSH_NOTIFICATION_TOKEN_DEF_KEY @"pushNotificationToken"
 #define LAST_POI_COINCIDENCE_IDENTIFIER_DEF_KEY @"lastPoiCoincidenceIdentifier"
 #define NO_LAST_POI_COINCIDENCE_IDENTIFIER_DEF_VALUE -(1)
 #define REGIONS_DATA_DEF_KEY @"regionsData"
+#define PUSH_NOTIFICATION_RECEPTION_IN_BACKGROUND_DEF_KEY @"pushNotificationReceptionInBackground"
+#define PUSH_NOTIFICATION_RECEPTION_WHEN_APP_IS_CLOSED_DEF_KEY @"pushNotificationReceptionWhenAppIsClosed"
 
 #pragma mark - Push Notifications
 #define PUSH_NOTIFICATION_RECEIVED @"pushNotificationReceived"

@@ -7,17 +7,15 @@
 //
 
 #import "FLGSettingsViewController.h"
+#import "FLGUserDefaultsUtils.h"
 
 @interface FLGSettingsViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *backgroundLocationSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *closedAppLocationSwitch;
 
 @end
 
 @implementation FLGSettingsViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -28,10 +26,21 @@
                                                                                         target:self
                                                                                         action:@selector(cancelButtonDidPress:)];
     self.navigationItem.leftBarButtonItem = addPoiBarButtonItem;
+    
+    self.backgroundLocationSwitch.on = [FLGUserDefaultsUtils pushNotificationReceptionInBackground];
+    self.closedAppLocationSwitch.on = [FLGUserDefaultsUtils pushNotificationReceptionWhenAppIsClosed];
 }
 
 #pragma mark - Actions
+- (IBAction)backgroudLocationSwitchValueChanged:(id)sender {
+}
+
+- (IBAction)closedAppLocationSwitchValueChanged:(id)sender {
+}
+
 - (IBAction)saveSettingsDidPress:(id)sender {
+    [FLGUserDefaultsUtils savePushNotificationReceptionInBackground:self.backgroundLocationSwitch.isOn];
+    [FLGUserDefaultsUtils savePushNotificationReceptionWhenAppIsClosed:self.closedAppLocationSwitch.isOn];
     [self dismiss];
 }
 

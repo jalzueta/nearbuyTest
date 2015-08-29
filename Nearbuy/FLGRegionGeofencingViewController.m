@@ -41,8 +41,6 @@
         [self startReceivingLocation];
     }
     
-    
-    
     // First time app star
 //    if (![FLGUserDefaultsUtils initialRegionsDownloaded]) {
 //        NearbyClient *client = [[NearbyClient alloc] init];
@@ -157,8 +155,17 @@
 }
 
 - (void) sendUserEntranceInRegion: (FLGRegion *) region {
-    NearbyClient *client = [[NearbyClient alloc] init];
-    [client sendUserEntranceInRegion:region];
+    // Check for user permissions
+    BOOL sendNotificationRequest = YES;
+    if (![UIApplication sharedApplication].applicationState == UIApplicationStateActive){
+        if ([FLGUserDefaultsUtils pushNotificationReceptionInBackground]) {
+            sendNotificationRequest = NO;
+        }
+    }
+    if (sendNotificationRequest) {
+        NearbyClient *client = [[NearbyClient alloc] init];
+        [client sendUserEntranceInRegion:region];
+    }
 }
 
 - (void) reloadRegionsObservation{

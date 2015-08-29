@@ -59,4 +59,34 @@
     return nil;
 }
 
++ (void) savePushNotificationReceptionInBackground: (BOOL) pushNotificationReceptionInBackground{
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:@(pushNotificationReceptionInBackground) forKey:PUSH_NOTIFICATION_RECEPTION_IN_BACKGROUND_DEF_KEY];
+    [def synchronize];
+}
+
++ (BOOL) pushNotificationReceptionInBackground {
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    if ([[def dictionaryRepresentation].allKeys containsObject:PUSH_NOTIFICATION_RECEPTION_IN_BACKGROUND_DEF_KEY]) {
+        return [[def objectForKey:PUSH_NOTIFICATION_RECEPTION_IN_BACKGROUND_DEF_KEY]boolValue];
+    }else{
+        return YES;
+    }
+}
+
++ (void) savePushNotificationReceptionWhenAppIsClosed: (BOOL) pushNotificationReceptionWhenAppIsClosed;{
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:@(pushNotificationReceptionWhenAppIsClosed) forKey:PUSH_NOTIFICATION_RECEPTION_WHEN_APP_IS_CLOSED_DEF_KEY];
+    [def synchronize];
+}
+
++ (BOOL) pushNotificationReceptionWhenAppIsClosed {
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    if ([[def dictionaryRepresentation].allKeys containsObject:PUSH_NOTIFICATION_RECEPTION_WHEN_APP_IS_CLOSED_DEF_KEY]) {
+        return [[def objectForKey:PUSH_NOTIFICATION_RECEPTION_WHEN_APP_IS_CLOSED_DEF_KEY]boolValue];
+    }else{
+        return YES;
+    }
+}
+
 @end
