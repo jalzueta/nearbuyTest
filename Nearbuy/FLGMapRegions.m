@@ -23,7 +23,8 @@
 @implementation FLGMapRegions
 
 + (instancetype) mapRegionsWithTrickValues{
-    return [[self alloc]initWithTrickDubaiValues];
+    return [[self alloc]initWithTrickSpainValues];
+//    return [[self alloc]initWithTrickDubaiValues];
 }
 
 + (instancetype) mapRegionsWithRegions: (NSMutableArray *)regions{
