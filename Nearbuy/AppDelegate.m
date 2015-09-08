@@ -176,6 +176,13 @@
     [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
+- (void)locationManager:(CLLocationManager *)manager
+          didExitRegion:(CLRegion *)region {
+    FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
+    flgRegion.shouldLaunchNotification = YES;
+    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
+}
+
 - (void) sendUserEntranceInRegion: (FLGRegion *) region {
     BOOL sendNotificationRequest = NO;
     if (![UIApplication sharedApplication].applicationState == UIApplicationStateActive){
