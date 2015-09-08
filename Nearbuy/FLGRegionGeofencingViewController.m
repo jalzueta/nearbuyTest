@@ -140,10 +140,12 @@
 - (void) sendUserEntranceInRegion: (FLGRegion *) region {
     // Check for user permissions
     BOOL sendNotificationRequest = NO;
-    if (![UIApplication sharedApplication].applicationState == UIApplicationStateActive){
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground){
         if ([FLGUserDefaultsUtils pushNotificationReceptionInBackground]) {
             sendNotificationRequest = YES;
         }
+    }else{
+        sendNotificationRequest = YES;
     }
     if (sendNotificationRequest) {
         NearbyClient *client = [[NearbyClient alloc] init];
@@ -203,11 +205,9 @@
         if (flgRegion.shouldLaunchNotification) {
             [self sendUserEntranceInRegion:flgRegion];
             flgRegion.shouldLaunchNotification = NO;
+            [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
         }
-        flgRegion.shouldLaunchNotification = NO;
-        [self sendUserEntranceInRegion:flgRegion];
     }
-    [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
