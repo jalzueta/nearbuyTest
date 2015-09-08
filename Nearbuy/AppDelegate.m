@@ -168,15 +168,25 @@
          didEnterRegion:(CLRegion *)region {
     if ([FLGUserDefaultsUtils pushNotificationToken]) {
         FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
-        flgRegion.shouldLaunchNotification = NO;
-        [self sendUserEntranceInRegion:flgRegion];
+        if (flgRegion.shouldLaunchNotification) {
+            [self sendUserEntranceInRegion:flgRegion];
+            flgRegion.shouldLaunchNotification = NO;
+        }
     }
     [FLGUserDefaultsUtils saveRegions:self.mapRegions.regions];
 }
 
 - (void) sendUserEntranceInRegion: (FLGRegion *) region {
-    NearbyClient *client = [[NearbyClient alloc] init];
-    [client sendUserEntranceInRegion:region];
+    BOOL sendNotificationRequest = NO;
+    if (![UIApplication sharedApplication].applicationState == UIApplicationStateActive){
+        if ([FLGUserDefaultsUtils pushNotificationReceptionWhenAppIsClosed]) {
+            sendNotificationRequest = YES;
+        }
+    }
+    if (sendNotificationRequest) {
+        NearbyClient *client = [[NearbyClient alloc] init];
+        [client sendUserEntranceInRegion:region];
+    }
 }
 
 @end

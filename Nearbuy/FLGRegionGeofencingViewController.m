@@ -139,10 +139,10 @@
 
 - (void) sendUserEntranceInRegion: (FLGRegion *) region {
     // Check for user permissions
-    BOOL sendNotificationRequest = YES;
+    BOOL sendNotificationRequest = NO;
     if (![UIApplication sharedApplication].applicationState == UIApplicationStateActive){
         if ([FLGUserDefaultsUtils pushNotificationReceptionInBackground]) {
-            sendNotificationRequest = NO;
+            sendNotificationRequest = YES;
         }
     }
     if (sendNotificationRequest) {
@@ -200,6 +200,10 @@
          didEnterRegion:(CLRegion *)region {
     if ([FLGUserDefaultsUtils pushNotificationToken]) {
         FLGRegion *flgRegion = [self.mapRegions regionWithIdentifier:[region.identifier flg_numberWithString]];
+        if (flgRegion.shouldLaunchNotification) {
+            [self sendUserEntranceInRegion:flgRegion];
+            flgRegion.shouldLaunchNotification = NO;
+        }
         flgRegion.shouldLaunchNotification = NO;
         [self sendUserEntranceInRegion:flgRegion];
     }
